@@ -15,6 +15,7 @@ syntax on
 
 " PROCEED!
 
+let snippets_dir = substitute(substitute(globpath(&rtp, 'snippets/'), "\n", ',', 'g'), 'snippets\\,', 'snippets,', 'g')
 let g:SuperTabMappingForward = '<c-space>'
 let g:SuperTabMappingBackward = '<s-c-space>'
 
@@ -124,8 +125,8 @@ nmap [c [cz.
 " Indent or outdent the last 'put' block with Ctrl-Y (outdent) and Ctrl-U
 " (indent). This way you can put a block and immediately move it to the
 " correct indention. This is probably my favorite mapping.
-nmap <C-y> '[<lt>']
-nmap <C-u> '[>']
+nmap <C-h> '[<lt>']
+nmap <C-l> '[>']
 
 " In visual mode, D will Duplicate the selected lines after the visual block.
 vmap D y'>p']

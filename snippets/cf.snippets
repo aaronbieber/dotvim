@@ -1,0 +1,71 @@
+snippet cfdump <cfdump>
+	<cfdump var="#${1:variable}#">
+snippet cfloop <cfloop>
+	<cfloop from="${1:from}" to="${2:to}" index="${3:index}">
+		${4}
+	</cfloop>
+snippet cfloopc <cfloop collection>
+	<cfloop collection="${1:collection}" item="${2:item}">
+		${3}
+	</cfloop>
+snippet cfloopq <cfloop query>
+	<cfloop query="${1:query}">
+		${2}
+	</cfloop>
+snippet cfqp <cfqueryparam>
+	<cfqueryparam value="${1:value}" cfsqltype="cf_sql_${2:varchar}">
+snippet cfquery <cfquery>
+	<cfquery datasource="64recs67o" name="${1:name}">
+		${2}
+	</cfquery>
+snippet cftry <cftry> .. <cfcatch>
+	<cftry>
+		${1}
+
+		<cfcatch>
+		</cfcatch>
+	</cftry>
+snippet funcspec A function specification
+	<!---  Function:	${1:functionName}() {{{
+		Description:	${2}
+			
+		Parameters:		Name				Type		Description
+	--------------------------------------------------------------------------------------------------
+						
+	
+		Returns:		Struct {
+							status		=> Boolean,
+							messages	=> Array[],
+							data		=> Any
+						}
+	-------------------------------------------------------------------------------------------------->
+	<!--- }}} --->
+snippet cffunc <cffunction>
+	<cffunction name="${1:name}" access="${2:public}" output="${3:no}" returntype="${4:struct}">
+		${5}
+	</cffunction>
+snippet cfarg <cfargument>
+	<cfargument name="${1:arg}" type="${2:string}" required="${3:no}">
+snippet cfinv <cfinvoke>
+	<cfinvoke component="${1:component}" method="${2:method}" returnvariable="${3:variable}">
+		${4}
+	</cfinvoke>
+snippet cfinva <cfinvokeargument>
+	<cfinvokeargument name="${1:name}" value="${2:value}">
+snippet cfscript <cfscript>
+	<cfscript>
+		${1}
+	</cfscript>
+snippet com
+	<!-------------------------------------------------------------------------------------------------
+		${1}
+	-------------------------------------------------------------------------------------------------->
+snippet custom
+	<!-------------------------------------------------------------------------------------------------
+		*** Customizations:
+			* ${1}
+	-------------------------------------------------------------------------------------------------->
+snippet cftag <cf ..></..>
+	<cf${1:set}>${2}</cf$1>
+snippet cfo <cfoutput></cfoutput>
+	<cfoutput>${1}</cfoutput>
