@@ -27,8 +27,8 @@ colorscheme sorcerer
 
 set autoindent					" Maintain indent levels automatically
 set backspace=2					" Allow backspacing in basically every possible situation (the way I like it)
-set backupdir=c:\\vim_backups
-set dir=c:\\vim_backups
+"set backupdir=c:\\vim_backups
+"set dir=c:\\vim_backups
 set foldcolumn=4				" Show a 4-column gutter to the left for folding characters
 set foldmethod=marker			" Fold on markers; {{{ and }}} by default
 set formatoptions=tqnw
