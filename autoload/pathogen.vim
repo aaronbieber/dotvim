@@ -123,7 +123,6 @@ function! pathogen#runtime_append_all_bundles(...) " {{{1
     endif
   endfor
   let &rtp = pathogen#join(pathogen#uniq(list))
-  echo &rtp
   return 1
 endfunction
 
