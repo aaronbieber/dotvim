@@ -23,6 +23,22 @@ Clone the repository into your local `vimfiles` directory:
 	git clone git://github.com/aaronbieber/Vim-Configuration.git c:\vim\vimfiles
 
 
-Create a _vimrc that sources the real one:
+Create a \_vimrc that sources the real one:
 
 	so c:\vim\vimfiles\gvimrc
+
+Use Submodules
+--------------
+
+Pathogen bundles are installed as git submodules like so (from the Vim-Configuration root, which is the root of the git repo):
+
+	git submodule add http://github.com/rad_vim_hacker/super-vim-plugin.git bundle/super-vim-plugin
+	git commit -a
+	git push
+
+When restoring the full outer repo, the bundle repos will be empty. Initialize and update them like this:
+
+	git submodule init
+	git submodule update
+
+That's it!
