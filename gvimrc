@@ -19,13 +19,15 @@ let snippets_dir = substitute(substitute(globpath(&rtp, 'snippets/'), "\n", ',',
 let g:SuperTabMappingForward = '<c-space>'
 let g:SuperTabMappingBackward = '<s-c-space>'
 
-colorscheme sorcerer
+colorscheme tango-morning
+" colorscheme sorcerer
 " colorscheme blueshift
 " colorscheme liquidcarbon
 " colorscheme mustang
 " colorscheme desert2
 " colorscheme pyte
 
+set hidden
 set autoindent					" Maintain indent levels automatically
 set backspace=2					" Allow backspacing in basically every possible situation (the way I like it)
 "set backupdir=c:\\vim_backups
@@ -48,13 +50,30 @@ set wildmenu					" Tab completion for files with horizontal list of choices
 set winminheight=0				" Allow window split borders to touch
 set scrolloff=5					" Don't let the cursor get fewer than 5 lines away from the edge whenever possible.
 set modeline					" Always read modeline stuff from the bottom of files.
+let mapleader=","
 "let g:user_zen_leader_key = '<c-h>'
 
 " Use my own status line
 set statusline=%<%f\ %h%m%r\ %=%20{BCFStatusLineElement()}%3{BCFStatusLineElementTicket()}%3{BCFStatusLineElementFileStatus()}\ %-14.(%l,%c%V%)\ %P 
 
 " I have no idea what this does.
-map \bd :bufdo! %s/\(^[A-Z][^ ]\{-}:.*$\n\)\n\(^[A-Z][^ ]\{-}:.*$\)/\1\2/
+" map <leader>bd :bufdo! %s/\(^[A-Z][^ ]\{-}:.*$\n\)\n\(^[A-Z][^ ]\{-}:.*$\)/\1\2/
+
+map <leader>c :copen<CR>
+map <leader>cc :cclose<CR>
+map <leader>r :registers<CR>
+map <leader>b :buffers<CR>
+
+" Y yanks to the end of the line
+nmap Y y$
+" shortcuts for copying to clipboard
+nmap <leader>y "*y
+vmap <leader>y "*y
+
+" copy the current line to the clipboard
+nmap <leader>Y "*yy
+nmap <leader>p "*p
+nmap <leader>P "*P
 
 "let g:VCSCommandSVNExecGlobalOptions = "--username a.bieber --password villiferous005"
 let g:showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'`^\""
@@ -63,25 +82,27 @@ let g:BCFCommitFilePath = "D:/svn_tools/commits/"
 " Cursor line is awesome, but it chews up resources when it's running in lots
 " of windows or buffers, so turn it off when leaving and back on when
 " returning.
-au WinEnter * setlocal cursorline
-au WinLeave * setlocal nocursorline
-au BufEnter * setlocal cursorline
-au BufLeave * setlocal nocursorline
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+autocmd BufEnter * setlocal cursorline
+autocmd BufLeave * setlocal nocursorline
 
 " Set some other options for ColdFusion files.
-au FileType cf set formatoptions=croql textwidth=180
-au FileType cf nnoremap p ]p
-au FileType cf nnoremap P ]P
-au BufRead,BufNewFile *.txt setfiletype text
+autocmd FileType cf set formatoptions=croql textwidth=180
+autocmd FileType cf nnoremap p ]p
+autocmd FileType cf nnoremap P ]P
+autocmd BufRead,BufNewFile *.txt setfiletype text
+
+autocmd BufEnter * lcd %:p:h
 
 fun! WrapCfoutput()
 	:%s/<\/\?cfoutput>//g
 	execute "normal ggO<cfoutput>\<ESC>"
 	execute "normal Go</cfoutput>\<ESC>"
 endfun
-nmap \cfo :call WrapCfoutput()<CR>
+nmap <leader>cfo :call WrapCfoutput()<CR>
 
-nmap \o :exec "silent !start explorer.exe ".expand("%:h")<CR>
+nmap <leader>o :exec "silent !start explorer.exe ".expand("%:h")<CR>
 
 " Make search movements center the result in the window.
 nnoremap n nzz
@@ -96,8 +117,8 @@ nmap <C-t> :FufFile<CR>
 " This will cause VIM to automatically enter 'binary' mode when writing files
 " that are in /custom_tags/ so that they will be saved without a terminating
 " linebreak (at the end of the file). :h binary for more information.
-au BufWritePre */custom_tags/*.cfm	setl binary noeol
-au BufWritePost */custom_tags/*.cfm	setl nobinary eol
+autocmd BufWritePre */custom_tags/*.cfm	setl binary noeol
+autocmd BufWritePost */custom_tags/*.cfm	setl nobinary eol
 
 " 'Maximize' a split with F6.
 nmap <F6> <C-W>_
@@ -190,7 +211,7 @@ function! MatchIndentForward()
 	endif
 	setlocal hlsearch
 endfun
-nmap \if :call MatchIndentForward()<CR>
+nmap <leader>if :call MatchIndentForward()<CR>
 
 " And also in reverse.
 function! MatchIndentBackward()
@@ -204,7 +225,7 @@ function! MatchIndentBackward()
 	endif
 	setlocal hlsearch
 endfun
-nmap \ib :call MatchIndentBackward()<CR>
+nmap <leader>ib :call MatchIndentBackward()<CR>
 
 " Creating comments, mostly for ColdFusion
 " These should be placed in a ColdFusion filetype file
@@ -259,7 +280,7 @@ let IspellLang = 'english'
 " \th = toggle highlight
 " Toggle the highlighting of the most recently found search text. I use this
 " one all the time.
-nnoremap \th :set invhls hls?<CR>
+nnoremap <leader>th :set invhls hls?<CR>
 
 " Allow the up and down arrows to move between LOGICAL lines of text on the
 " screen, even if they are wrapped portions of the same LITERAL line of text.

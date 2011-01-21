@@ -2,13 +2,12 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 setlocal comments=b:#,f:-
-"setlocal formatoptions+=t
-"setlocal formatoptions+=r
-"setlocal formatoptions+=o
 setlocal formatoptions=qnwta
 setlocal spell
 setlocal foldmethod=expr
 setlocal foldexpr=TodoFoldLevel(v:lnum)
+setlocal shiftwidth=2
+setlocal tabstop=2
 
 " Toggle the current task
 nmap <Leader>tt :call SetCurrentTask()<CR>
