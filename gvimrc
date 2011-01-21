@@ -20,10 +20,10 @@ let g:SuperTabMappingForward = '<c-space>'
 let g:SuperTabMappingBackward = '<s-c-space>'
 
 colorscheme tango-morning
+" colorscheme mustang
 " colorscheme sorcerer
 " colorscheme blueshift
 " colorscheme liquidcarbon
-" colorscheme mustang
 " colorscheme desert2
 " colorscheme pyte
 
