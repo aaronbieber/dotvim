@@ -19,7 +19,7 @@ set textwidth=80
 
 " The keywords listed here will be highlighted -- add your own
 syn keyword todoTodo        contained TODO FIXME XXX NOTE ENH NB WTF AFB ???
-syn keyword todoDone		DONE WATCH
+syn keyword todoDone		DONE WATCH HELD
 " TODO: make this a user-defined global: g:TodoKeywords='foo,bar,baz'
 syn keyword todoImportant   San Diego Francisco Los Angeles
 syn keyword todoImportant   contained San Diego Francisco Los Angeles
@@ -39,7 +39,7 @@ syn keyword todoAlias       contained Padres Chargers Burritos
 "syn match   todoKey             '\w\+\(\s\+\w\+\)*\ze\s*:'
 " Lines ending in ':'
 syn match   todoKey             '^.*:\s*$'
-                                \ contains=todoTodo,todoAlias,todoNumber,@Spell,todoDone
+                                \ contains=todoTodo,todoAlias,@Spell
 
 syn match   todoEscape          contained display +\\[\\"abefnrtv^0_ NLP]+
 syn match   todoEscape          contained display '\\x\x\{2}'
@@ -66,10 +66,11 @@ syn keyword todoConstant        yes Yes YES no No NO not Not NOT shall Shall SHA
 syn keyword todoConstant        null Null NULL nil Nil NIL
 
 syn match   todoTimestamp       '\d\d\d\d-\%(1[0-2]\|\d\)-\%(3[0-2]\|2\d\|1\d\|\d\)\%( \%([01]\d\|2[0-3]\):[0-5]\d:[0-5]\d.\d\d [+-]\%([01]\d\|2[0-3]\):[0-5]\d\|t\%([01]\d\|2[0-3]\):[0-5]\d:[0-5]\d.\d\d[+-]\%([01]\d\|2[0-3]\):[0-5]\d\|T\%([01]\d\|2[0-3]\):[0-5]\d:[0-5]\d.\dZ\)\='
+syn match	todoShortTimestamp	'\[\d\d:\d\d\]'
 
 " Lines starting with '*'
 syn match   todoComment         '^\s*[*].*$'
-                                \ contains=todoTodo,todoAlias,todoNumber,@Spell,todoConstant,todoDone,todoDueDate
+                                \ contains=todoTodo,todoAlias,todoNumber,@Spell,todoConstant,todoDone,todoDueDate,todoShortTimestamp
 
 syn match   todoRealComment   "#.*" contains=@Spell
 
@@ -80,7 +81,7 @@ syn match   todoDirective       contained '%[^:]\+:.\+'
 hi def link todoCurrent			Search
 hi def link todoDone			Question
 hi def link todoTodo            Todo
-hi def link todoComment         Comment
+hi def link todoComment         Identifier
 hi def link todoRealComment		Comment
 hi def link todoSectionHeader   PreProc
 hi def link todoDirective       Keyword
@@ -90,12 +91,16 @@ hi def link todoAlias           Type
 hi def link todoDelimiter       Delimiter
 hi def link todoBlock           Operator
 hi def link todoOperator        Operator
-hi def link todoKey             Identifier
+
+" Identifier
+hi def link todoKey             TabLineSel
+
 hi def link todoString          String
 hi def link todoEscape          SpecialChar
 hi def link todoSingleEscape    SpecialChar
 hi def link todoNumber          Number
 hi def link todoDueDate			Special
+hi def link todoShortTimestamp	Special
 hi def link todoConstant        Constant
 hi def link todoImportant       Operator
 hi def link todoTimestamp       Number

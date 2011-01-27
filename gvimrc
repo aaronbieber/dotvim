@@ -30,8 +30,6 @@ colorscheme tango-morning
 set hidden
 set autoindent					" Maintain indent levels automatically
 set backspace=2					" Allow backspacing in basically every possible situation (the way I like it)
-"set backupdir=c:\\vim_backups
-"set dir=c:\\vim_backups
 set foldcolumn=4				" Show a 4-column gutter to the left for folding characters
 set foldmethod=marker			" Fold on markers; {{{ and }}} by default
 set formatoptions=tqnw
@@ -52,6 +50,12 @@ set scrolloff=5					" Don't let the cursor get fewer than 5 lines away from the 
 set modeline					" Always read modeline stuff from the bottom of files.
 let mapleader=","
 "let g:user_zen_leader_key = '<c-h>'
+
+" I only use these backup locations in Windows
+if has("gui_win32")
+	set backupdir=c:\\vim_backups
+	set dir=c:\\vim_backups
+endif
 
 " Use my own status line
 set statusline=%<%f\ %h%m%r\ %=%20{BCFStatusLineElement()}%3{BCFStatusLineElementTicket()}%3{BCFStatusLineElementFileStatus()}\ %-14.(%l,%c%V%)\ %P 
