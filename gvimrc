@@ -79,6 +79,8 @@ nmap <leader>Y "*yy
 nmap <leader>p "*p
 nmap <leader>P "*P
 
+imap <C-A> <ESC>viwc<"></"><ESC>cit
+
 "let g:VCSCommandSVNExecGlobalOptions = "--username a.bieber --password villiferous005"
 let g:showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'`^\""
 let g:BCFCommitFilePath = "D:/svn_tools/commits/"

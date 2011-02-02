@@ -4,8 +4,12 @@ set cpo&vim
 setlocal comments=b:#,f:-
 setlocal formatoptions=qnwta
 setlocal spell
+
+" Folding
 setlocal foldmethod=expr
 setlocal foldexpr=TodoFoldLevel(v:lnum)
+setlocal fillchars="fold: "
+
 setlocal shiftwidth=2
 setlocal tabstop=2
 
