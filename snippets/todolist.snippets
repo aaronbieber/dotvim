@@ -6,3 +6,5 @@ snippet nextweek Date one week from today
 	[`system("c:/cygwin/bin/date.exe -d 'next week' +'%a %F'")`]${1}
 snippet nextmonth Date one month from today
 	[`system("c:/cygwin/bin/date.exe -d 'next month' +'%a %F'")`]${1}
+snippet now The current time to the minute
+	[`system("c:/cygwin/bin/date.exe +'%H:%M'")`]${1}
