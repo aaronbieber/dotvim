@@ -25,3 +25,6 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
+[submodule "bundle/tiny-buffer-explorer"]
+	path = bundle/tiny-buffer-explorer
+	url = git://github.com/vim-scripts/TinyBufferExplorer.git
