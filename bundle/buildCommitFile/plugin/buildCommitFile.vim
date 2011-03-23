@@ -104,6 +104,7 @@ endfunction
 function! s:BCFUnsetCommitFileName()
 	unlet g:BCFCommitFileNameBase
 	unlet g:BCFCommitFileName
+	unlet g:BCFCommitFileTicket
 endfunction
 
 " Function: s:BCFPathFormat(path)

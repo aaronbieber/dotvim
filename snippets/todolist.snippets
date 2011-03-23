@@ -2,6 +2,8 @@ snippet today Today's date
 	[`substitute(system("c:/cygwin/bin/date.exe +'%a %F'"), "\n\+$", "", "")`]${1}
 snippet tomorrow Tomorrow's date
 	[`system("c:/cygwin/bin/date.exe -d tomorrow +'%a %F'")`]${1}
+snippet yesterday Yesterday's date
+	[`system("c:/cygwin/bin/date.exe -d yesterday +'%a %F'")`]${1}
 snippet nextweek Date one week from today
 	[`system("c:/cygwin/bin/date.exe -d 'next week' +'%a %F'")`]${1}
 snippet nextmonth Date one month from today

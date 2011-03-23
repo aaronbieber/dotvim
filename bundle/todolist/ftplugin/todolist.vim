@@ -89,7 +89,7 @@ endfunction
 
 function! TodoFoldText()
 	let lines = v:foldend - v:foldstart + 1
-	return substitute(v:folddashes[2:], '-', '  ', 'g').getline(v:foldstart).' ('.lines.')'
+	return substitute(getline(v:foldstart), "\t", '  ', 'g').' ('.lines.')'
 endfunction
 
 set foldtext=TodoFoldText()
