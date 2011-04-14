@@ -66,7 +66,9 @@ set statusline=%<%f\ %h%m%r\ %=%20{BCFStatusLineElement()}%3{BCFStatusLineElemen
 map <leader>c :copen<CR>
 map <leader>cc :cclose<CR>
 map <leader>r :registers<CR>
-map <leader>b :buffers<CR>
+map <leader>bb :TBE<CR>
+map <leader>bm :TBEMinimal<CR>
+map <leader>bg :TBESimpleGroup<CR>
 
 " Y yanks to the end of the line
 nmap Y y$
@@ -98,6 +100,8 @@ autocmd FileType cf set formatoptions=croql textwidth=180
 autocmd FileType cf nnoremap p ]p
 autocmd FileType cf nnoremap P ]P
 autocmd BufRead,BufNewFile *.txt setfiletype text
+
+autocmd BufRead,BufNewFile *.wiki setfiletype wiki
 
 autocmd BufEnter * lcd %:p:h
 
