@@ -19,7 +19,13 @@ let snippets_dir = substitute(substitute(globpath(&rtp, 'snippets/'), "\n", ',',
 let g:SuperTabMappingForward = '<c-space>'
 let g:SuperTabMappingBackward = '<s-c-space>'
 
-colorscheme tango-morning
+" Brighter for the GUI, darker for the console.
+if has("gui")
+	colorscheme tango-morning
+else
+	colorscheme darkblue
+endif
+
 " colorscheme mustang
 " colorscheme sorcerer
 " colorscheme blueshift
