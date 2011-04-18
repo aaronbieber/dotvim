@@ -28,3 +28,6 @@
 [submodule "bundle/tiny-buffer-explorer"]
 	path = bundle/tiny-buffer-explorer
 	url = git://github.com/vim-scripts/TinyBufferExplorer.git
+[submodule "bundle/latex-suite"]
+	path = bundle/latex-suite
+	url = http://github.com/vim-scripts/LaTeX-Suite-aka-Vim-LaTeX.git
