@@ -214,7 +214,6 @@ function! MatchIndentForward()
 	"Get the current line into a register.
 	normal "xyy
 	let b:indent = matchlist(@x, '^\(\t\{-}\)[^\t]')
-	echo '"' . len(b:indent[1]) . '"'
 	if !empty(b:indent)
 		let @/ = '^\t\{' . len(b:indent[1]) . '}[^\t]'
 		execute "normal /" . '^\t\{' . len(b:indent[1]) . '}[^\t]' . "\<CR>"
@@ -228,7 +227,6 @@ function! MatchIndentBackward()
 	"Get the current line into a register.
 	normal "xyy
 	let b:indent = matchlist(@x, '^\(\t\{-}\)[^\t]')
-	echo '"' . len(b:indent[1]) . '"'
 	if !empty(b:indent)
 		let @/ = '^\t\{' . len(b:indent[1]) . '}[^\t]'
 		execute "normal ?" . '^\t\{' . len(b:indent[1]) . '}[^\t]' . "\<CR>"
