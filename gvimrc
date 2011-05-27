@@ -5,6 +5,10 @@ set nocompatible
 autocmd!
 filetype off
 
+if !has("signs")
+	let loaded_showmarks = 1
+endif
+
 " Load Pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -19,7 +23,15 @@ let snippets_dir = substitute(substitute(globpath(&rtp, 'snippets/'), "\n", ',',
 let g:SuperTabMappingForward = '<c-space>'
 let g:SuperTabMappingBackward = '<s-c-space>'
 
-colorscheme tango-morning
+" Brighter for the GUI, darker for the console.
+if has("gui")
+	colorscheme tango-morning
+else
+	colorscheme darkblue
+endif
+
+set backupskip=/tmp/*,/private/tmp/*
+
 " colorscheme mustang
 " colorscheme sorcerer
 " colorscheme blueshift
