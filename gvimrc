@@ -310,6 +310,10 @@ nmap <C-Down> <C-w><Down><C-w>_z.
 " Pressing capital Q quits unceremoniously without saving.
 nmap Q ZQ
 
+" Pressing <leader>bd deletes the buffer without asking.
+" This ties into TinyBufExplorer's <leader>b scheme; for me it's ,bd
+nmap <Leader>bd :bdelete!<CR>
+
 " Use smart indention on CSS files, because I like it.
 autocmd FileType css set smartindent
 " Use smart indention on PHP files, too.
