@@ -5,6 +5,10 @@ set nocompatible
 autocmd!
 filetype off
 
+if !has("signs")
+	let loaded_showmarks = 1
+endif
+
 " Load Pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -25,6 +29,8 @@ if has("gui")
 else
 	colorscheme darkblue
 endif
+
+set backupskip=/tmp/*,/private/tmp/*
 
 " colorscheme mustang
 " colorscheme sorcerer
