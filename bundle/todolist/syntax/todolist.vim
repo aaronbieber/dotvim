@@ -69,8 +69,13 @@ syn match   todoTimestamp       '\d\d\d\d-\%(1[0-2]\|\d\)-\%(3[0-2]\|2\d\|1\d\|\
 syn match	todoShortTimestamp	'\[\d\d:\d\d\]'
 
 " Lines starting with '*'
-syn match   todoComment         '^\s*[*].*$'
-                                \ contains=todoTodo,todoAlias,todoNumber,@Spell,todoConstant,todoDone,todoDueDate,todoShortTimestamp
+"syn match   todoComment         '^\s*[*].*$'
+"                                \ contains=todoTodo,todoAlias,todoNumber,@Spell,todoConstant,todoDone,todoDueDate,todoShortTimestamp
+
+"syn match	todoNote			'^\s*[*]\s'
+
+syn match	todoNote			'^\(\t*\)[*].\{-}\n\%(\1\t[^*].\{-}\n\)*'
+								\ contains=todoTodo,todoAlias,todoNumber,@Spell,todoConstant,todoDone,todoDueDate,todoShortTimestamp
 
 syn match   todoRealComment   "#.*" contains=@Spell
 
@@ -94,6 +99,7 @@ hi def link todoOperator        Operator
 
 " Identifier
 hi def link todoKey             TabLineSel
+hi def link todoNote			Identifier
 
 hi def link todoString          String
 hi def link todoEscape          SpecialChar

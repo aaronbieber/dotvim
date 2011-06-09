@@ -1,7 +1,7 @@
 let s:cpo_save = &cpo
 set cpo&vim
 
-setlocal comments=b:#,f:-
+setlocal comments=b:#,f:-,f:*
 setlocal formatoptions=qnwta
 setlocal spell
 
