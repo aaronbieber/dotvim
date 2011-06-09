@@ -67,7 +67,16 @@ let mapleader=","
 if has("gui_win32")
 	set backupdir=c:\\vim_backups
 	set dir=c:\\vim_backups
+	set undodir=c:\\vim_undo
+else
+	set undodir ~/.vim/undodir
 endif
+
+set undofile
+set undolevels=1000
+set undoreload=10000
+au BufWritePre /tmp/* setlocal noundofile
+au BufWritePre /private/tmp/* setlocal noundofile
 
 " Use my own status line
 set statusline=%<%f\ %h%m%r\ %=%20{BCFStatusLineElement()}%3{BCFStatusLineElementTicket()}%3{BCFStatusLineElementFileStatus()}\ %-14.(%l,%c%V%)\ %P 
@@ -165,11 +174,17 @@ nmap <S-Right> 5zl
 nmap ]c ]cz.
 nmap [c [cz.
 
-" Indent or outdent the last 'put' block with Ctrl-Y (outdent) and Ctrl-U
+" Indent or 'outdent' the last 'put' block with Ctrl-H (outdent) and Ctrl-L
 " (indent). This way you can put a block and immediately move it to the
 " correct indention. This is probably my favorite mapping.
 nmap <C-h> '[<lt>']
 nmap <C-l> '[>']
+
+" Re-select the same block when indenting or 'outdenting' text in visual mode,
+" allowing you to continue to indent or 'outdent' repeatedly. Thanks to 0sse
+" from reddit for this one.
+vnoremap < <gv
+vnoremap > >gv
 
 " In visual mode, D will Duplicate the selected lines after the visual block.
 vmap D y'>p']
