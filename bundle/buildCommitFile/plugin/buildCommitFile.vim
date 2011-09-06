@@ -114,7 +114,7 @@ endfunction
 function! s:BCFPathFormat(path)
 	let thefile = a:path
 	let thefile = substitute(thefile, "\\", "/", "g")
-	let thefile = substitute(thefile, "J:", "/j", "")
+	let thefile = substitute(thefile, "J:", "/cygdrive/j", "")
 	return thefile
 endfunction
 
@@ -123,7 +123,7 @@ endfunction
 " things with it.
 function! s:BCFPathUnFormat(path)
 	let thefile = a:path
-	let thefile = substitute(thefile, "/j", "J:", "")
+	let thefile = substitute(thefile, "/cygdrive/j", "J:", "")
 	let thefile = substitute(thefile, "/", "\\", "g")
 	return thefile
 endfunction

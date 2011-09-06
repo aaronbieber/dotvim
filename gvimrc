@@ -25,13 +25,14 @@ let g:SuperTabMappingBackward = '<s-c-space>'
 
 " Brighter for the GUI, darker for the console.
 if has("gui")
-	colorscheme tango-morning
+	colorscheme sorcerer
 else
 	colorscheme darkblue
 endif
 
 set backupskip=/tmp/*,/private/tmp/*
 
+" colorscheme tango-morning
 " colorscheme mustang
 " colorscheme sorcerer
 " colorscheme blueshift
