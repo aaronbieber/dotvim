@@ -66,18 +66,40 @@ let mapleader=","
 
 " I only use these backup locations in Windows
 if has("gui_win32")
+	if !filewritable("c:\\vim_backups")
+		call mkdir("c:\\vim_backups")
+	endif
 	set backupdir=c:\\vim_backups
 	set dir=c:\\vim_backups
-	set undodir=c:\\vim_undo
+
+	if v:version > 702
+		if !filewritable("c:\\vim_undo")
+			call mkdir("c:\\vim_undo")
+		endif
+		set undodir=c:\\vim_undo
+	endif
 else
-	set undodir ~/.vim/undodir
+	if !filewritable("/tmp/vim_backups")
+		call mkdir("/tmp/vim_backups")
+	endif
+	set backupdir=/tmp/vim_backups
+	set dir=/tmp/vim_backups
+
+	if v:version > 702
+		if !filewritable("/tmp/vim_undo")
+			call mkdir("/tmp/vim_undo")
+		endif
+		set undodir ~/.vim/undodir
+	endif
 endif
 
-set undofile
-set undolevels=1000
-set undoreload=10000
-au BufWritePre /tmp/* setlocal noundofile
-au BufWritePre /private/tmp/* setlocal noundofile
+if v:version > 702
+	set undofile
+	set undolevels=1000
+	set undoreload=10000
+	au BufWritePre /tmp/* setlocal noundofile
+	au BufWritePre /private/tmp/* setlocal noundofile
+endif
 
 " Use my own status line
 set statusline=%<%f\ %h%m%r\ %=%20{BCFStatusLineElement()}%3{BCFStatusLineElementTicket()}%3{BCFStatusLineElementFileStatus()}\ %-14.(%l,%c%V%)\ %P 
