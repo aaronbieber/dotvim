@@ -1,12 +1,12 @@
 snippet today Today's date
-	[`substitute(system("ruby -r 'date' -e \"print ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][Date.today.wday] + ' ' + Date.today.to_s;\""), "\n\+$", "", "")`]${1}
+	[`strftime("%a %Y-%m-%d")`]${1}
 snippet tomorrow Tomorrow's date
-	[`substitute(system("ruby -r 'date' -e \"print ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][(Date.today+1).wday] + ' ' + (Date.today+1).to_s;\""), "\n\+$", "", "")`]${1}
+	[`strftime("%a %Y-%m-%d", localtime()+86400)`]
 snippet yesterday Yesterday's date
-	[`substitute(system("ruby -r 'date' -e \"print ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][(Date.today-1).wday] + ' ' + (Date.today-1).to_s;\""), "\n\+$", "", "")`]${1}
+	[`strftime("%a %Y-%m-%d", localtime()-86400)`]
 snippet nextweek Date one week from today
-	[`substitute(system("ruby -r 'date' -e \"print ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][(Date.today+7).wday] + ' ' + (Date.today+7).to_s;\""), "\n\+$", "", "")`]${1}
+	[`strftime("%a %Y-%m-%d", localtime()-604800)`]
 snippet nextmonth Date one month from today
 	[`substitute(system("ruby -r 'date' -e \"print ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][(Date.today>>1).wday] + ' ' + (Date.today>>1).to_s;\""), "\n\+$", "", "")`]${1}
 snippet now The current time to the minute
-	[`system("c:/cygwin/bin/date.exe +'%H:%M'")`]${1}
+	[`strftime("%H:%M")`]${1}
