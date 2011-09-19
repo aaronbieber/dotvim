@@ -112,10 +112,10 @@ let g:BCFCommitFilePath = "D:/svn_tools/commits/"
 " Cursor line is awesome, but it chews up resources when it's running in lots
 " of windows or buffers, so turn it off when leaving and back on when
 " returning.
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
-autocmd BufEnter * setlocal cursorline
-autocmd BufLeave * setlocal nocursorline
+" autocmd WinEnter * setlocal cursorline
+" autocmd WinLeave * setlocal nocursorline
+" autocmd BufEnter * setlocal cursorline
+" autocmd BufLeave * setlocal nocursorline
 
 " Set some other options for ColdFusion files.
 autocmd FileType cf set formatoptions=croql textwidth=180
@@ -335,8 +335,8 @@ nmap <C-w>d <C-w><Down><C-w>_
 nmap <C-Up> <C-w><Up><C-w>_z.
 nmap <C-Down> <C-w><Down><C-w>_z.
 
-" Pressing capital Q quits unceremoniously without saving.
-nmap Q ZQ
+" Pressing capital Q destroys the buffer. I use this more than ,bd anyway.
+nmap Q :bdel!<CR>
 
 " Pressing <leader>bd deletes the buffer without asking.
 " This ties into TinyBufExplorer's <leader>b scheme; for me it's ,bd
@@ -361,6 +361,9 @@ autocmd FileType ruby set smartindent
 autocmd FileType ruby set expandtab
 autocmd FileType vim set ts=4
 autocmd FileType vim set sw=4
+autocmd FileType python set expandtab
+autocmd FileType python set ts=2
+autocmd FileType python set sw=2
 
 fun! TemplateInsert()
 	normal |"qd$
