@@ -45,7 +45,7 @@ function! AddNextTimeToTask()
 				break
 			" If this line is a note, we have more checking to do.
 			elseif match(getline(current_line), '\v^\s*\*') > -1
-				if match(getline(current_line), '\vStart \[\d\d:\d\d\]') > -1
+				if match(getline(current_line), '\vStart \[') > -1
 					if match(getline(current_line), '\v, end \[\d\d:\d\d\]') == -1
 						call AddEndTimeToTask(current_line)
 						let matched = 1
@@ -72,14 +72,16 @@ function! AddStartTimeToTask(start)
 	call cursor(a:start,0)
 
 	" Get the timestamp string.
+
+	let today = '['.strftime("%a %Y-%m-%d").']'
 	let now = '['.strftime("%H:%M").']'
 
 	" If the current line is a task line, we have to indent the start time. If 
 	" not, then we don't.
 	if match(getline('.'), '\v^\s*-') > -1
-		exe "normal! o\<Tab>* Start ".now."\<Esc>"
+		exe "normal! o\<Tab>* Start ".today." ".now."\<Esc>"
 	else
-		exe "normal! o* Start ".now."\<Esc>"
+		exe "normal! o* Start ".today." ".now."\<Esc>"
 	endif
 endfunction
 
@@ -87,7 +89,7 @@ function! AddEndTimeToTask(start)
 	" Place the cursor at the given start line.
 	call cursor(a:start,0)
 
-	if match(getline('.'), '\vStart \[\d\d:\d\d\]') == -1
+	if match(getline('.'), '\vStart \[') == -1
 		call AddStartTimeToTask(a:start-1)
 	endif
 

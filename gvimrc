@@ -116,11 +116,10 @@ map <leader>bg :TBESimpleGroup<CR>
 
 " Y yanks to the end of the line
 nmap Y y$
-" shortcuts for copying to clipboard
+
+" shortcuts for copying to/pasting from the clipboard
 nmap <leader>y "*y
 vmap <leader>y "*y
-
-" copy the current line to the clipboard
 nmap <leader>Y "*yy
 nmap <leader>p "*p
 nmap <leader>P "*P
@@ -206,8 +205,8 @@ nmap <C-l> '[>']
 " Re-select the same block when indenting or 'outdenting' text in visual mode,
 " allowing you to continue to indent or 'outdent' repeatedly. Thanks to 0sse
 " from reddit for this one.
-vnoremap < <gv
-vnoremap > >gv
+"vnoremap < <gv
+"vnoremap > >gv
 
 " In visual mode, D will Duplicate the selected lines after the visual block.
 vmap D y'>p']
@@ -376,16 +375,9 @@ autocmd FileType cf set smartindent
 autocmd FileType javascript set smartindent noautoindent nocindent
 autocmd FileType xhtml inoremap <S-CR> <br />
 autocmd FileType cf inoremap <S-CR> <br />
-autocmd FileType ruby set ts=2
-autocmd FileType ruby set sw=2
-autocmd FileType ruby set autoindent
-autocmd FileType ruby set smartindent
-autocmd FileType ruby set expandtab
-autocmd FileType vim set ts=4
-autocmd FileType vim set sw=4
-autocmd FileType python set expandtab
-autocmd FileType python set ts=2
-autocmd FileType python set sw=2
+autocmd FileType ruby set ts=2 sw=2 autoindent smartindent expandtab
+autocmd FileType vim set ts=4 sw=4
+autocmd FileType python set expandtab ts=2 sw=2
 
 fun! TemplateInsert()
 	normal |"qd$
