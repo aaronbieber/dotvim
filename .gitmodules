@@ -40,3 +40,6 @@
 [submodule "bundle/vim-superstatus"]
 	path = bundle/vim-superstatus
 	url = git://github.com/Lokaltog/vim-superstatus.git
+[submodule "bundle/drawit"]
+	path = bundle/drawit
+	url = git://github.com/vim-scripts/DrawIt.git

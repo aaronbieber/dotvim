@@ -124,6 +124,9 @@ nmap <leader>Y "*yy
 nmap <leader>p "*p
 nmap <leader>P "*P
 
+" Control-backspace deletes a whole word backwards in insert mode
+imap <C-BS> <ESC>ldBi
+
 imap <C-A> <ESC>viwc<"></"><ESC>cit
 
 "let g:VCSCommandSVNExecGlobalOptions = "--username a.bieber --password villiferous005"
@@ -357,7 +360,14 @@ nmap <C-Up> <C-w><Up><C-w>_z.
 nmap <C-Down> <C-w><Down><C-w>_z.
 
 " Pressing capital Q destroys the buffer. I use this more than ,bd anyway.
-nmap Q :bdel!<CR>
+function! DeleteBufferOrQuit()
+	if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) > 1
+		execute "bdelete!"
+	elseif winnr('$') == 1
+		execute "q!"
+	endif
+endfunction
+nmap Q :call DeleteBufferOrQuit()<CR>
 
 " Pressing <leader>bd deletes the buffer without asking.
 " This ties into TinyBufExplorer's <leader>b scheme; for me it's ,bd
