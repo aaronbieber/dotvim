@@ -19,9 +19,16 @@ syntax on
 
 " PROCEED!
 
+" Snippets options
 let snippets_dir = substitute(substitute(globpath(&rtp, 'snippets/'), "\n", ',', 'g'), 'snippets\\,', 'snippets,', 'g')
+
+" Supertab options
 let g:SuperTabMappingForward = '<c-space>'
 let g:SuperTabMappingBackward = '<s-c-space>'
+
+" CtrlP options
+let g:ctrlp_map = ''
+nmap <C-p> :CtrlPBuffer<CR>
 
 " Brighter for the GUI, darker for the console.
 if has("gui")
@@ -290,7 +297,7 @@ nmap <leader>ib :call MatchIndentBackward()<CR>
 " Creating comments, mostly for ColdFusion
 " These should be placed in a ColdFusion filetype file
 imap <C-o> <!---  ---><ESC>hhhhi
-nmap <C-p> ^v$h<C-p>
+"nmap <C-p> ^v$h<C-p>
 
 fun! CommentLines()
 	normal `>mu`<myv"ay
