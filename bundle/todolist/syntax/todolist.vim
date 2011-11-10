@@ -59,6 +59,12 @@ syn match   todoNumber          display '(NaN)'
 syn match	todoNumber			display '\C[A-Z]\+-[0-9]\+'
 " Current item
 syn match	todoCurrent			display / >> /hs=s+1,he=e-1
+" Snips
+syn match	snip				display '\[\(Snip \|-\|+\)[a-z0-9]\{8}-[a-z0-9]\{4}-[a-z0-9]\{4}-[a-z0-9]\{4}-[a-z0-9]\{12}\]'
+
+" Incomplete timestamps
+syn match	incompleteTask		display '\* Start\s\[\w\w\w\s\d\d\d\d-\d\d-\d\d\]\s\[\d\d:\d\d\],\@!'hs=s+25
+								\ contains=todoDueDate
 
 syn match   todoConstant        '\<[~yn]\>'
 syn keyword todoConstant        true True TRUE false False FALSE
@@ -75,7 +81,7 @@ syn match	todoShortTimestamp	'\[\d\d:\d\d\]'
 "syn match	todoNote			'^\s*[*]\s'
 
 syn match	todoNote			'^\(\t*\)[*].\{-}\n\%(\1\t[^*].\{-}\n\)*'
-								\ contains=todoTodo,todoAlias,todoNumber,@Spell,todoConstant,todoDone,todoDueDate,todoShortTimestamp
+								\ contains=todoTodo,todoAlias,todoNumber,@Spell,todoConstant,todoDone,todoDueDate,todoShortTimestamp,snip,incompleteTask
 
 syn match   todoRealComment   "#.*" contains=@Spell
 
@@ -100,6 +106,7 @@ hi def link todoOperator        Operator
 " Identifier
 hi def link todoKey             TabLineSel
 hi def link todoNote			Identifier
+hi def link snip				Number
 
 hi def link todoString          String
 hi def link todoEscape          SpecialChar
@@ -110,6 +117,7 @@ hi def link todoShortTimestamp	Special
 hi def link todoConstant        Constant
 hi def link todoImportant       Operator
 hi def link todoTimestamp       Number
+hi def link incompleteTask		Search
 
 let b:current_syntax = "todolist"
 
