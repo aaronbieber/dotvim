@@ -26,13 +26,17 @@ let snippets_dir = substitute(substitute(globpath(&rtp, 'snippets/'), "\n", ',',
 let g:SuperTabMappingForward = '<c-space>'
 let g:SuperTabMappingBackward = '<s-c-space>'
 
+" Tiny Buffer Explorer options
+let g:TBE_showMRUFirst = 1
+
 " CtrlP options
-let g:ctrlp_map = ''
+let g:ctrlp_map = '<Leader>cp'
 nmap <C-p> :CtrlPBuffer<CR>
 
 " Brighter for the GUI, darker for the console.
 if has("gui")
-	colorscheme sorcerer
+	"colorscheme sorcerer
+	colorscheme desert2
 else
 	colorscheme darkblue
 endif
@@ -53,7 +57,9 @@ set backspace=2					" Allow backspacing in basically every possible situation (t
 set foldcolumn=4				" Show a 4-column gutter to the left for folding characters
 set foldmethod=marker			" Fold on markers; {{{ and }}} by default
 set formatoptions=tqnw
-set guifont=Consolas:h11
+"set guifont=Consolas:h11
+set guifont=Tamsyn8x15
+"set guifont=Inconsolata-dz:h9
 set ignorecase smartcase		" Case insensitive search unless caps are used in search term
 set incsearch
 set laststatus=2				" Always show the status line
@@ -132,7 +138,7 @@ nmap <leader>p "*p
 nmap <leader>P "*P
 
 " Control-backspace deletes a whole word backwards in insert mode
-imap <C-BS> <ESC>ldBi
+imap <C-BS> <ESC>Bdawi
 
 imap <C-A> <ESC>viwc<"></"><ESC>cit
 
