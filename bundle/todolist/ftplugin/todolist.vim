@@ -503,5 +503,8 @@ nmap <Leader>tS :call <SID>AddSnipToTask()<CR>
 nmap <Leader>tj :call <SID>JumpToSnip()<CR>
 nmap <Leader>tfi :call <SID>FindIncompleteTimestamps()<CR>:silent set hlsearch \| echo<CR>
 
+" I don't know if this is rude.
+nnoremap <CR> :call <SID>JumpToSnip()<CR>
+
 let &cpo = s:cpo_save
 unlet s:cpo_save
