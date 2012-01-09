@@ -2,20 +2,20 @@
 set nocompatible
 
 " Cycle filetype
-autocmd!
-filetype off
+" autocmd!
+" filetype off
 
 if !has("signs")
 	let loaded_showmarks = 1
 endif
 
 " Load Pathogen
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+call pathogen#infect()
+"call pathogen#helptags()
 
 " Now enable syntax highlighting and filetype stuff.
-filetype plugin indent on
 syntax on
+filetype plugin indent on
 
 " PROCEED!
 
@@ -57,8 +57,8 @@ set backspace=2					" Allow backspacing in basically every possible situation (t
 set foldcolumn=4				" Show a 4-column gutter to the left for folding characters
 set foldmethod=marker			" Fold on markers; {{{ and }}} by default
 set formatoptions=tqnw
-"set guifont=Consolas:h11
-set guifont=Tamsyn8x15
+set guifont=Consolas:h11
+"set guifont=Tamsyn8x15
 "set guifont=Inconsolata-dz:h9
 set ignorecase smartcase		" Case insensitive search unless caps are used in search term
 set incsearch
@@ -102,7 +102,7 @@ else
 		if !filewritable("/tmp/vim_undo")
 			call mkdir("/tmp/vim_undo")
 		endif
-		set undodir ~/.vim/undodir
+		set undodir=~/.vim/undodir
 	endif
 endif
 
@@ -138,9 +138,15 @@ nmap <leader>p "*p
 nmap <leader>P "*P
 
 " Control-backspace deletes a whole word backwards in insert mode
-imap <C-BS> <ESC>Bdawi
+imap <C-BS> <C-W>
 
+" Create surrounding HTML tags out of the word near the cursor.
 imap <C-A> <ESC>viwc<"></"><ESC>cit
+
+" Attempt to maximize the window in Windows only:
+if has('gui') && has('win32')
+	nmap <C-X> :simalt ~x<CR>
+endif
 
 "let g:VCSCommandSVNExecGlobalOptions = "--username a.bieber --password villiferous005"
 let g:showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'`^\""
