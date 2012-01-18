@@ -22,16 +22,25 @@ filetype plugin indent on
 " Snippets options
 let snippets_dir = substitute(substitute(globpath(&rtp, 'snippets/'), "\n", ',', 'g'), 'snippets\\,', 'snippets,', 'g')
 
+" BufferGator options
+let g:buffergator_autoexpand_on_split = 0
+let g:buffergator_viewport_split_policy = "B"
+let g:buffergator_split_size = 10
+let g:buffergator_sort_regime = "mru"
+nmap <c-p> :BuffergatorToggle<CR>
+
 " Supertab options
 let g:SuperTabMappingForward = '<c-space>'
 let g:SuperTabMappingBackward = '<s-c-space>'
 
-" Tiny Buffer Explorer options
-let g:TBE_showMRUFirst = 1
-
-" CtrlP options
-let g:ctrlp_map = '<Leader>cp'
-nmap <C-p> :CtrlPBuffer<CR>
+" Previous color schemes:
+" colorscheme tango-morning
+" colorscheme mustang
+" colorscheme sorcerer
+" colorscheme blueshift
+" colorscheme liquidcarbon
+" colorscheme desert2
+" colorscheme pyte
 
 " Brighter for the GUI, darker for the console.
 if has("gui")
@@ -42,14 +51,6 @@ else
 endif
 
 set backupskip=/tmp/*,/private/tmp/*
-
-" colorscheme tango-morning
-" colorscheme mustang
-" colorscheme sorcerer
-" colorscheme blueshift
-" colorscheme liquidcarbon
-" colorscheme desert2
-" colorscheme pyte
 
 set hidden
 set autoindent					" Maintain indent levels automatically
@@ -123,9 +124,6 @@ set statusline=%<%f\ %h%m%r\ %=%20{BCFStatusLineElement()}%3{BCFStatusLineElemen
 map <leader>c :copen<CR>
 map <leader>cc :cclose<CR>
 map <leader>r :registers<CR>
-map <leader>bb :TBE<CR>
-map <leader>bm :TBEMinimal<CR>
-map <leader>bg :TBESimpleGroup<CR>
 
 " Y yanks to the end of the line
 nmap Y y$
@@ -387,10 +385,6 @@ function! DeleteBufferOrQuit()
 	endif
 endfunction
 nmap Q :call DeleteBufferOrQuit()<CR>
-
-" Pressing <leader>bd deletes the buffer without asking.
-" This ties into TinyBufExplorer's <leader>b scheme; for me it's ,bd
-nmap <Leader>bd :bdelete!<CR>
 
 " Use smart indention on CSS files, because I like it.
 autocmd FileType css set smartindent
