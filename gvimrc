@@ -19,6 +19,9 @@ filetype plugin indent on
 
 " PROCEED!
 
+" Quicktask options
+let g:quicktask_autosave = 1
+
 " Snippets options
 let snippets_dir = substitute(substitute(globpath(&rtp, 'snippets/'), "\n", ',', 'g'), 'snippets\\,', 'snippets,', 'g')
 
