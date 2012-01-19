@@ -40,3 +40,6 @@
 [submodule "bundle/buffergator"]
 	path = bundle/buffergator
 	url = git://github.com/jeetsukumaran/vim-buffergator.git
+[submodule "bundle/quicktask"]
+	path = bundle/quicktask
+	url = git@github.com:aaronbieber/quicktask.git
