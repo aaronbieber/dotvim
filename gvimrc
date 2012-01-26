@@ -47,10 +47,18 @@ let g:SuperTabMappingBackward = '<s-c-space>'
 
 " Brighter for the GUI, darker for the console.
 if has("gui")
-	"colorscheme sorcerer
-	colorscheme desert2
+	colorscheme vanzan-redux
 else
 	colorscheme darkblue
+endif
+
+" Fonts differ across my platforms.
+if has("gui_macvim")
+	set guifont=Menlo:h11
+else
+	set guifont=Consolas:h11
+	"set guifont=Tamsyn8x15
+	"set guifont=Inconsolata-dz:h9
 endif
 
 set backupskip=/tmp/*,/private/tmp/*
@@ -61,9 +69,6 @@ set backspace=2					" Allow backspacing in basically every possible situation (t
 set foldcolumn=4				" Show a 4-column gutter to the left for folding characters
 set foldmethod=marker			" Fold on markers; {{{ and }}} by default
 set formatoptions=tqnw
-set guifont=Consolas:h11
-"set guifont=Tamsyn8x15
-"set guifont=Inconsolata-dz:h9
 set ignorecase smartcase		" Case insensitive search unless caps are used in search term
 set incsearch
 set laststatus=2				" Always show the status line
@@ -222,8 +227,13 @@ nmap [c [cz.
 " Indent or 'outdent' the last 'put' block with Ctrl-H (outdent) and Ctrl-L
 " (indent). This way you can put a block and immediately move it to the
 " correct indention. This is probably my favorite mapping.
-nmap <C-h> '[<lt>']
-nmap <C-l> '[>']
+"nmap <C-h> '[<lt>']
+"nmap <C-l> '[>']
+
+" Keep 'put' text selected and keep indented/outdented text selected.
+nmap p p`[v`]
+vnoremap > >`[v`]
+vnoremap < <`[v`]
 
 " Re-select the same block when indenting or 'outdenting' text in visual mode,
 " allowing you to continue to indent or 'outdent' repeatedly. Thanks to 0sse
