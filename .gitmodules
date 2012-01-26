@@ -10,36 +10,21 @@
 [submodule "bundle/vcscommand"]
 	path = bundle/vcscommand
 	url = git://repo.or.cz/vcscommand
-[submodule "bundle/unimpaired"]
-	path = bundle/unimpaired
-	url = git://github.com/tpope/vim-unimpaired.git
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = git://github.com/ervandew/supertab.git
-[submodule "bundle/lustyjuggler"]
-	path = bundle/lustyjuggler
-	url = git://github.com/sjbach/lusty.git
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
-[submodule "bundle/tiny-buffer-explorer"]
-	path = bundle/tiny-buffer-explorer
-	url = git://github.com/vim-scripts/TinyBufferExplorer.git
 [submodule "bundle/latex-suite"]
 	path = bundle/latex-suite
 	url = http://github.com/vim-scripts/LaTeX-Suite-aka-Vim-LaTeX.git
 [submodule "bundle/indent-object"]
 	path = bundle/indent-object
 	url = http://github.com/michaeljsmith/vim-indent-object
-[submodule "bundle/vim-superstatus"]
-	path = bundle/vim-superstatus
-	url = git://github.com/Lokaltog/vim-superstatus.git
 [submodule "bundle/drawit"]
 	path = bundle/drawit
 	url = git://github.com/vim-scripts/DrawIt.git
-[submodule "bundle/buffergator"]
-	path = bundle/buffergator
-	url = git://github.com/jeetsukumaran/vim-buffergator.git
 [submodule "bundle/quicktask"]
 	path = bundle/quicktask
 	url = git@github.com:aaronbieber/quicktask.git
