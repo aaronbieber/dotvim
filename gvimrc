@@ -19,35 +19,19 @@ filetype plugin indent on
 
 " PROCEED!
 
-" Quicktask options
-let g:quicktask_autosave = 1
-
-" Snippets options
-let snippets_dir = substitute(substitute(globpath(&rtp, 'snippets/'), "\n", ',', 'g'), 'snippets\\,', 'snippets,', 'g')
-
-" BufferGator options
-let g:buffergator_autoexpand_on_split = 0
-let g:buffergator_viewport_split_policy = "B"
-let g:buffergator_split_size = 10
-let g:buffergator_sort_regime = "mru"
-nmap <c-p> :BuffergatorToggle<CR>
-
-" Supertab options
-let g:SuperTabMappingForward = '<c-space>'
-let g:SuperTabMappingBackward = '<s-c-space>'
-
 " Previous color schemes:
 " colorscheme tango-morning
 " colorscheme mustang
 " colorscheme sorcerer
 " colorscheme blueshift
 " colorscheme liquidcarbon
-" colorscheme desert2
+" colorscheme camo
 " colorscheme pyte
+" colorscheme vanzan-redux
 
 " Brighter for the GUI, darker for the console.
 if has("gui")
-	colorscheme vanzan-redux
+	colorscheme desert2
 else
 	colorscheme darkblue
 endif
@@ -62,7 +46,6 @@ else
 endif
 
 set backupskip=/tmp/*,/private/tmp/*
-
 set hidden
 set autoindent					" Maintain indent levels automatically
 set backspace=2					" Allow backspacing in basically every possible situation (the way I like it)
@@ -86,6 +69,27 @@ set modeline					" Always read modeline stuff from the bottom of files.
 let mapleader=","
 "let g:user_zen_leader_key = '<c-h>'
 
+"____Plugin options____
+" Quicktask options
+let g:quicktask_autosave = 1
+if has("gui_win32")
+	let g:quicktask_snip_path = "z:\snips"
+else
+	let g:quicktask_snip_path = "~/Documents/snips"
+endif
+let g:quicktask_snip_win_maximize = 1
+
+" Buffet options
+nmap <Leader>b :Bufferlist<CR>
+
+" Snippets options
+let snippets_dir = substitute(substitute(globpath(&rtp, 'snippets/'), "\n", ',', 'g'), 'snippets\\,', 'snippets,', 'g')
+
+" Supertab options
+let g:SuperTabMappingForward = '<c-space>'
+let g:SuperTabMappingBackward = '<s-c-space>'
+
+"____Environment-specific locations____
 " I only use these backup locations in Windows
 if has("gui_win32")
 	if !filewritable("c:\\vim_backups")
@@ -115,6 +119,7 @@ else
 	endif
 endif
 
+"____Version-specific options____
 if v:version > 702
 	set undofile
 	set undolevels=1000
@@ -126,9 +131,7 @@ endif
 " Use my own status line
 set statusline=%<%f\ %h%m%r\ %=%20{BCFStatusLineElement()}%3{BCFStatusLineElementTicket()}%3{BCFStatusLineElementFileStatus()}\ %-14.(%l,%c%V%)\ %P 
 
-" I have no idea what this does.
-" map <leader>bd :bufdo! %s/\(^[A-Z][^ ]\{-}:.*$\n\)\n\(^[A-Z][^ ]\{-}:.*$\)/\1\2/
-
+"____Helpful mappings____
 map <leader>c :copen<CR>
 map <leader>cc :cclose<CR>
 map <leader>r :registers<CR>
@@ -154,52 +157,12 @@ if has('gui') && has('win32')
 	nmap <C-X> :simalt ~x<CR>
 endif
 
-"let g:VCSCommandSVNExecGlobalOptions = "--username a.bieber --password villiferous005"
-let g:showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'`^\""
-let g:BCFCommitFilePath = "D:/svn_tools/commits/"
-
-" Cursor line is awesome, but it chews up resources when it's running in lots
-" of windows or buffers, so turn it off when leaving and back on when
-" returning.
-" autocmd WinEnter * setlocal cursorline
-" autocmd WinLeave * setlocal nocursorline
-" autocmd BufEnter * setlocal cursorline
-" autocmd BufLeave * setlocal nocursorline
-
-" Set some other options for ColdFusion files.
-autocmd FileType cf set formatoptions=croql textwidth=180
-autocmd FileType cf nnoremap p ]p
-autocmd FileType cf nnoremap P ]P
-autocmd BufRead,BufNewFile *.txt setfiletype text
-
-autocmd BufRead,BufNewFile *.wiki setfiletype wiki
-
-autocmd BufEnter * lcd %:p:h
-
-fun! WrapCfoutput()
-	:%s/<\/\?cfoutput>//g
-	execute "normal ggO<cfoutput>\<ESC>"
-	execute "normal Go</cfoutput>\<ESC>"
-endfun
-nmap <leader>cfo :call WrapCfoutput()<CR>
-
-nmap <leader>o :exec "silent !start explorer.exe ".expand("%:h")<CR>
-
 " Make search movements center the result in the window.
 nnoremap n nzz
 nnoremap N Nzz
 
 " This is still of very questionable utility.
 imap jj <ESC>
-
-" Use TextMate Control-T mapping for Fuzzy Finder file find.
-nmap <C-t> :FufFile<CR>
-
-" This will cause VIM to automatically enter 'binary' mode when writing files
-" that are in /custom_tags/ so that they will be saved without a terminating
-" linebreak (at the end of the file). :h binary for more information.
-autocmd BufWritePre */custom_tags/*.cfm	setl binary noeol
-autocmd BufWritePost */custom_tags/*.cfm	setl nobinary eol
 
 " 'Maximize' a split with F6.
 nmap <F6> <C-W>_
@@ -243,6 +206,39 @@ vnoremap < <`[v`]
 
 " In visual mode, D will Duplicate the selected lines after the visual block.
 vmap D y'>p']
+
+"let g:VCSCommandSVNExecGlobalOptions = "--username a.bieber --password villiferous005"
+let g:showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'`^\""
+let g:BCFCommitFilePath = "D:/svn_tools/commits/"
+
+"____Filetype preferences____
+" Set some other options for ColdFusion files.
+autocmd FileType cf set formatoptions=croql textwidth=180
+autocmd FileType cf nnoremap p ]p
+autocmd FileType cf nnoremap P ]P
+autocmd BufRead,BufNewFile *.txt setfiletype text
+autocmd BufRead,BufNewFile *.wiki setfiletype wiki
+autocmd BufEnter * lcd %:p:h
+
+fun! WrapCfoutput()
+	:%s/<\/\?cfoutput>//g
+	execute "normal ggO<cfoutput>\<ESC>"
+	execute "normal Go</cfoutput>\<ESC>"
+endfun
+nmap <leader>cfo :call WrapCfoutput()<CR>
+
+" <Leader>o opens the folder containing the current file in Windows.
+if has("gui_win32")
+	nmap <leader>o :exec "silent !start explorer.exe ".expand("%:h")<CR>
+endif
+
+" This will cause VIM to automatically enter 'binary' mode when writing files
+" that are in /custom_tags/ so that they will be saved without a terminating
+" linebreak (at the end of the file). :h binary for more information.
+autocmd BufWritePre */custom_tags/*.cfm	setl binary noeol
+autocmd BufWritePost */custom_tags/*.cfm	setl nobinary eol
+
+
 
 " Allow the html syntax file to recognize improper comments.
 " Because I use them. Improperly.
