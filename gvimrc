@@ -78,6 +78,7 @@ else
 	let g:quicktask_snip_path = "~/Documents/snips"
 endif
 let g:quicktask_snip_win_maximize = 1
+let g:quicktask_snip_default_filetype = "markdown"
 
 " Buffet options
 nmap <Leader>b :Bufferlist<CR>
