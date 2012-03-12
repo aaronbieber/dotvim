@@ -73,9 +73,9 @@ let mapleader=","
 " Quicktask options
 let g:quicktask_autosave = 1
 if has("gui_win32")
-	let g:quicktask_snip_path = "z:\snips"
+	let g:quicktask_snip_path = 'c:\Users\a.bieber\Dropbox\snips'
 else
-	let g:quicktask_snip_path = "~/Documents/snips"
+	let g:quicktask_snip_path = '~/Documents/snips'
 endif
 let g:quicktask_snip_win_maximize = 1
 let g:quicktask_snip_default_filetype = "markdown"
@@ -133,9 +133,8 @@ endif
 set statusline=%<%f\ %h%m%r\ %=%20{BCFStatusLineElement()}%3{BCFStatusLineElementTicket()}%3{BCFStatusLineElementFileStatus()}\ %-14.(%l,%c%V%)\ %P 
 
 "____Helpful mappings____
-map <leader>c :copen<CR>
-map <leader>cc :cclose<CR>
 map <leader>r :registers<CR>
+nmap <Leader>cc :let &colorcolumn=virtcol('.')<CR>
 
 " Y yanks to the end of the line
 nmap Y y$
@@ -220,6 +219,7 @@ autocmd FileType cf nnoremap P ]P
 autocmd BufRead,BufNewFile *.txt setfiletype text
 autocmd BufRead,BufNewFile *.wiki setfiletype wiki
 autocmd BufEnter * lcd %:p:h
+autocmd FileType markdown set tw=78 colorcolumn=80
 
 fun! WrapCfoutput()
 	:%s/<\/\?cfoutput>//g
