@@ -15,9 +15,8 @@ call pathogen#infect()
 
 " Now enable syntax highlighting and filetype stuff.
 syntax on
-filetype plugin indent on
 
-" PROCEED!
+" All color scheme processing occurs here.
 
 " Previous color schemes:
 " colorscheme tango-morning
@@ -31,10 +30,18 @@ filetype plugin indent on
 
 " Brighter for the GUI, darker for the console.
 if has("gui")
-	colorscheme desert2
+	set background=light
 else
-	colorscheme darkblue
+	set background=dark
+	" Tell Solarized to use a 256-color terminal mode.
+	let g:solarized_termcolors=256
 endif
+
+let g:solarized_underline=0
+colorscheme solarized
+
+" PROCEED!
+filetype plugin indent on
 
 " Fonts differ across my platforms.
 if has("gui_macvim")
@@ -70,6 +77,9 @@ let mapleader=","
 "let g:user_zen_leader_key = '<c-h>'
 
 "____Plugin options____
+map <c-t> :NERDTreeToggle<CR>
+let NERDTreeDirArrows = 0
+
 " Quicktask options
 let g:quicktask_autosave = 1
 if has("gui_win32")
@@ -190,19 +200,13 @@ nmap [c [cz.
 " Indent or 'outdent' the last 'put' block with Ctrl-H (outdent) and Ctrl-L
 " (indent). This way you can put a block and immediately move it to the
 " correct indention. This is probably my favorite mapping.
-"nmap <C-h> '[<lt>']
-"nmap <C-l> '[>']
+nmap <C-h> '[<lt>']
+nmap <C-l> '[>']
 
 " Keep 'put' text selected and keep indented/outdented text selected.
-nmap p p`[v`]
-vnoremap > >`[v`]
-vnoremap < <`[v`]
-
-" Re-select the same block when indenting or 'outdenting' text in visual mode,
-" allowing you to continue to indent or 'outdent' repeatedly. Thanks to 0sse
-" from reddit for this one.
-"vnoremap < <gv
-"vnoremap > >gv
+"nmap p p`[v`]
+"vnoremap > >`[v`]
+"vnoremap < <`[v`]
 
 " In visual mode, D will Duplicate the selected lines after the visual block.
 vmap D y'>p']
