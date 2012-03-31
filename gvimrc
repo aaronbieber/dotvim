@@ -15,9 +15,8 @@ call pathogen#infect()
 
 " Now enable syntax highlighting and filetype stuff.
 syntax on
-filetype plugin indent on
 
-" PROCEED!
+" All color scheme processing occurs here.
 
 " Previous color schemes:
 " colorscheme tango-morning
@@ -31,10 +30,16 @@ filetype plugin indent on
 
 " Brighter for the GUI, darker for the console.
 if has("gui")
-	colorscheme desert2
+	set background=light
 else
 	colorscheme desert256
 endif
+
+let g:solarized_underline=0
+colorscheme solarized
+
+" PROCEED!
+filetype plugin indent on
 
 " Fonts differ across my platforms.
 if has("gui_macvim")
@@ -71,16 +76,16 @@ let mapleader=","
 
 "____Plugin options____
 " NERDTree options
-nmap <C-t> :NERDTreeToggle<CR>
+map <c-t> :NERDTreeToggle<CR>
 let NERDTreeDirArrows=0
 let NERDTreeQuitOnOpen=1
 
 " Quicktask options
 let g:quicktask_autosave = 1
 if has("gui_win32")
-	let g:quicktask_snip_path = "z:\snips"
+	let g:quicktask_snip_path = 'c:\Users\a.bieber\Dropbox\snips'
 else
-	let g:quicktask_snip_path = "~/Documents/snips"
+	let g:quicktask_snip_path = '~/Documents/snips'
 endif
 let g:quicktask_snip_win_maximize = 1
 let g:quicktask_snip_default_filetype = "markdown"
@@ -138,9 +143,8 @@ endif
 set statusline=%<%f\ %h%m%r\ %=%20{BCFStatusLineElement()}%3{BCFStatusLineElementTicket()}%3{BCFStatusLineElementFileStatus()}\ %-14.(%l,%c%V%)\ %P 
 
 "____Helpful mappings____
-map <leader>c :copen<CR>
-map <leader>cc :cclose<CR>
 map <leader>r :registers<CR>
+nmap <Leader>cc :let &colorcolumn=virtcol('.')<CR>
 
 " Y yanks to the end of the line
 nmap Y y$
@@ -196,19 +200,13 @@ nmap [c [cz.
 " Indent or 'outdent' the last 'put' block with Ctrl-H (outdent) and Ctrl-L
 " (indent). This way you can put a block and immediately move it to the
 " correct indention. This is probably my favorite mapping.
-"nmap <C-h> '[<lt>']
-"nmap <C-l> '[>']
+nmap <C-h> '[<lt>']
+nmap <C-l> '[>']
 
 " Keep 'put' text selected and keep indented/outdented text selected.
-nmap p p`[v`]
-vnoremap > >`[v`]
-vnoremap < <`[v`]
-
-" Re-select the same block when indenting or 'outdenting' text in visual mode,
-" allowing you to continue to indent or 'outdent' repeatedly. Thanks to 0sse
-" from reddit for this one.
-"vnoremap < <gv
-"vnoremap > >gv
+"nmap p p`[v`]
+"vnoremap > >`[v`]
+"vnoremap < <`[v`]
 
 " In visual mode, D will Duplicate the selected lines after the visual block.
 vmap D y'>p']
@@ -225,6 +223,7 @@ autocmd FileType cf nnoremap P ]P
 autocmd BufRead,BufNewFile *.txt setfiletype text
 autocmd BufRead,BufNewFile *.wiki setfiletype wiki
 autocmd BufEnter * lcd %:p:h
+autocmd FileType markdown set tw=78 colorcolumn=80
 
 fun! WrapCfoutput()
 	:%s/<\/\?cfoutput>//g
