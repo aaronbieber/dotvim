@@ -31,12 +31,11 @@ syntax on
 " Brighter for the GUI, darker for the console.
 if has("gui")
 	set background=light
+	let g:solarized_underline=0
+	colorscheme solarized
 else
 	colorscheme desert256
 endif
-
-let g:solarized_underline=0
-colorscheme solarized
 
 " PROCEED!
 filetype plugin indent on
