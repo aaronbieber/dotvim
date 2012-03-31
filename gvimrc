@@ -33,7 +33,7 @@ filetype plugin indent on
 if has("gui")
 	colorscheme desert2
 else
-	colorscheme darkblue
+	colorscheme desert256
 endif
 
 " Fonts differ across my platforms.
@@ -70,6 +70,11 @@ let mapleader=","
 "let g:user_zen_leader_key = '<c-h>'
 
 "____Plugin options____
+" NERDTree options
+nmap <C-t> :NERDTreeToggle<CR>
+let NERDTreeDirArrows=0
+let NERDTreeQuitOnOpen=1
+
 " Quicktask options
 let g:quicktask_autosave = 1
 if has("gui_win32")
@@ -408,7 +413,7 @@ autocmd FileType cf set smartindent
 autocmd FileType javascript set smartindent noautoindent nocindent
 autocmd FileType xhtml inoremap <S-CR> <br />
 autocmd FileType cf inoremap <S-CR> <br />
-autocmd FileType ruby set ts=2 sw=2 autoindent smartindent expandtab
+autocmd FileType ruby set ts=2 sw=2 autoindent expandtab cinkeys-=0# nosmartindent
 autocmd FileType vim set ts=4 sw=4
 autocmd FileType python set expandtab ts=2 sw=2
 
