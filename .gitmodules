@@ -37,3 +37,6 @@
 [submodule "bundle/inkpot"]
 	path = bundle/inkpot
 	url = git://github.com/ciaranm/inkpot.git
+[submodule "bundle/vim-less"]
+	path = bundle/vim-less
+	url = git://github.com/groenewege/vim-less.git
