@@ -2,7 +2,7 @@
 set nocompatible
 
 " ############################################################################
-" #			Bootstrap my configuration and plugins (with Pathogen)           #
+" #         Bootstrap my configuration and plugins (with Pathogen)           #
 " ############################################################################
 
 " I use vim in three environments: gVim in Windows, MacVim in OS X, and 
