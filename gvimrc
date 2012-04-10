@@ -5,11 +5,11 @@ set nocompatible
 " #         Bootstrap my configuration and plugins (with Pathogen)           #
 " ############################################################################
 
-" I use vim in three environments: gVim in Windows, MacVim in OS X, and 
-" terminal vim in a Cygwin shell. The major differences between the 
-" environments is the way paths are expressed and my own personal path 
-" preferences for storage of select files. This is the only way I could come 
-" up with to close that gap.
+" I use vim in four environments: gVim in Windows, MacVim in OS X, and 
+" terminal vim in various shells (Cygwin, OS X, Ubuntu). The major differences 
+" between the environments is the way paths are expressed and my own personal 
+" path preferences for storage of select files. This is the only way I could 
+" come up with to close that gap efficiently.
 if has("gui_win32") || has("win32unix")
 	" This covers Windows and the Cygwin terminal.
 	let s:config_prefix = 'c:/vim/vimfiles/'
@@ -28,7 +28,7 @@ call togglebg#map("")
 " Now enable syntax highlighting and filetype stuff.
 syntax on
 
-" PROCEED!
+" Enable filetype handling.
 filetype plugin indent on
 
 " Now process all of the configuration files that I have stored in my 'config' 
@@ -83,9 +83,5 @@ if v:version > 702
 	au BufWritePre /tmp/* setlocal noundofile
 	au BufWritePre /private/tmp/* setlocal noundofile
 endif
-
-augroup VCSCommand
-	au VCSCommand User VCSBufferCreated silent! normal 13_
-augroup END
 
 vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
