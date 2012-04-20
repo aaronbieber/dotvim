@@ -39,7 +39,7 @@ set hidden					" Don't unload buffers that are abandoned; hide
 set backupskip=/tmp/*,/private/tmp/*
 
 " Display unprintable characters in a particular way.
-set list listchars=tab:›\ ,trail:-,extends:>,precedes:<,eol:¬
+set list listchars=tab:â€º\ ,trail:-,extends:>,precedes:<,eol:Â¬
 
 " Allow the html syntax file to recognize improper comments.
 " Because I use them. Improperly.
@@ -47,6 +47,3 @@ let g:html_wrong_comments = 1
 
 " A couple of environment variables for the spelling stuff.
 let IspellLang = 'english'
-
-" Use my own status line
-set statusline=%<%f\ %h%m%r\ %=%20{BCFStatusLineElement()}%3{BCFStatusLineElementTicket()}%3{BCFStatusLineElementFileStatus()}\ %-14.(%l,%c%V%)\ %P 

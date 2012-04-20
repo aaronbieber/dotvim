@@ -1,6 +1,11 @@
 " Don't be compatible with vi.
 set nocompatible
 
+if &termencoding == ""
+	let &termencoding = &encoding
+endif
+set encoding=utf-8
+
 " ############################################################################
 " #         Bootstrap my configuration and plugins (with Pathogen)           #
 " ############################################################################
@@ -41,6 +46,9 @@ endfor
 " #          Configure any plugin-specific settings and mappings.            #
 " ############################################################################
 
+" ------------------------------- PowerLine ----------------------------------
+let g:Powerline_symbols = 'fancy'
+
 " --------------------------------- TagBar -----------------------------------
 if has("gui_win32")
 	let g:tagbar_ctags_bin = 'c:\cygwin\bin\ctags.exe'
@@ -49,7 +57,7 @@ nmap <F8> :TagbarToggle<CR>
 
 " -------------------------------- NERDTree ----------------------------------
 map <c-t> :NERDTreeToggle<CR>
-let NERDTreeDirArrows=0
+let NERDTreeDirArrows=1
 let NERDTreeQuitOnOpen=1
 
 " ------------------------------- Quicktask ----------------------------------

@@ -43,7 +43,8 @@ if has("gui")
 	if has("gui_macvim")
 		set guifont=Menlo:h11
 	else
-		set guifont=Consolas:h11
+		set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h10
+		"set guifont=Consolas:h11
 		"set guifont=Tamsyn8x15
 		"set guifont=Inconsolata-dz:h9
 	endif
