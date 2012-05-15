@@ -36,14 +36,15 @@ endif
 " Brighter for the GUI, darker for the console.
 if has("gui")
 	set background=light
-	let g:solarized_underline=0
+	let g:solarized_underline=0    		"default value is 1
+	let g:solarized_visibility="low"    "default value is normal
 	colorscheme solarized
 
 	" Fonts differ across my platforms.
 	if has("gui_macvim")
 		set guifont=Menlo:h11
 	else
-		set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h10
+		set guifont=DejaVu\ Sans\ Mono:h10
 		"set guifont=Consolas:h11
 		"set guifont=Tamsyn8x15
 		"set guifont=Inconsolata-dz:h9
