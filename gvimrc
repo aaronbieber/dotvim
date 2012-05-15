@@ -18,6 +18,9 @@ set encoding=utf-8
 if has("gui_win32") || has("win32unix")
 	" This covers Windows and the Cygwin terminal.
 	let s:config_prefix = 'c:/vim/vimfiles/'
+	" Don't load Powerline in Windows because I open a lot of files over
+	" network shares and Powerline makes Vim crawl.
+	let g:Powerline_loaded = 1
 else
 	" This covers everything else, which will include MacVim and any UN*X-like 
 	" shell.
@@ -46,8 +49,11 @@ endfor
 " #          Configure any plugin-specific settings and mappings.            #
 " ############################################################################
 
+" ----------------------------- Indent Guides --------------------------------
+let g:indent_guides_color_change_percent = 3
+
 " ------------------------------- PowerLine ----------------------------------
-let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'compatible'
 
 " --------------------------------- TagBar -----------------------------------
 if has("gui_win32")
@@ -58,7 +64,7 @@ nmap <F8> :TagbarToggle<CR>
 " -------------------------------- NERDTree ----------------------------------
 map <c-t> :NERDTreeToggle<CR>
 let NERDTreeDirArrows=1
-let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=0
 
 " ------------------------------- Quicktask ----------------------------------
 let g:quicktask_autosave = 1
