@@ -97,3 +97,14 @@ nmap <C-w>d <C-w><Down><C-w>_
 " down, maximizes it, and centers the window on the current line.
 nmap <C-Up> <C-w><Up><C-w>_z.
 nmap <C-Down> <C-w><Down><C-w>_z.
+
+" ----------------------------- Omnicompletion --------------------------------
+" Remap the omnicompletion commands because all the <C-x> shit is annoying.
+" Words
+inoremap <Leader><Tab> <C-x><C-o>
+
+" Filenames
+inoremap <Leader>: <C-x><C-f>
+
+" Lines
+inoremap <Leader>= <C-x><C-l>
