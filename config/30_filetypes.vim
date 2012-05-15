@@ -30,3 +30,11 @@ autocmd FileType ruby set ts=2 sw=2 autoindent expandtab cinkeys-=0# nosmartinde
 autocmd FileType vim set ts=4 sw=4
 autocmd FileType python set expandtab ts=2 sw=2
 
+" Special settings for Markdown
+autocmd FileType markdown set expandtab ts=4 sw=4
+
+" Special settings for PHP, to comply with Zend style guidelines
+autocmd FileType php set expandtab ts=4 sw=4 tw=120 colorcolumn=80 previewheight=1
+
+" Close the preview window when leaving insert mode.
+autocmd InsertLeave *.php if pumvisible() == 0|pclose|endif
