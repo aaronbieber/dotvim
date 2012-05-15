@@ -22,9 +22,6 @@
 [submodule "bundle/quicktask"]
 	path = bundle/quicktask
 	url = git@github.com:aaronbieber/quicktask.git
-[submodule "bundle/buffet"]
-	path = bundle/buffet
-	url = git@github.com:aaronbieber/vim-buffet
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
