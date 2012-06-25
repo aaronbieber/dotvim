@@ -49,3 +49,6 @@
 [submodule "bundle/smartinput"]
 	path = bundle/smartinput
 	url = git://github.com/kana/vim-smartinput.git
+[submodule "bundle/buffet"]
+	path = bundle/buffet
+	url = git://github.com/sandeepcr529/Buffet.vim.git
