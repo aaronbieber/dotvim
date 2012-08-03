@@ -6,6 +6,9 @@ nmap <Leader>cc :let &colorcolumn=virtcol('.')<CR>
 " Y yanks to the end of the line
 nmap Y y$
 
+" Delete trailing whitespace.
+nnoremap S :silent! %s/[\r \t]\+$//<CR>
+
 " shortcuts for copying to/pasting from the clipboard
 nmap <leader>y "*y
 vmap <leader>y "*y
@@ -21,7 +24,7 @@ imap <C-A> <ESC>viwc<"></"><ESC>cit
 
 " Attempt to maximize the window in Windows only:
 if has('gui') && has('win32')
-	nmap <C-X> :simalt ~x<CR>
+    nmap <C-X> :simalt ~x<CR>
 endif
 
 " Make search movements center the result in the window.
@@ -40,7 +43,7 @@ nmap <F6> <C-W>_
 nmap <C-Right> :bnext!<CR>
 nmap <C-Left> :bprev!<CR>
 
-" Set up bindings to move between tabs.
+" Set up bindings for working with tabs. Because tabs are handy.
 nmap <C-Tab> :tabnext<CR>
 nmap <C-S-Tab> :tabprevious<CR>
 
