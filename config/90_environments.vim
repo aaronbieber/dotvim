@@ -43,6 +43,8 @@ if has("gui")
 	" Fonts differ across my platforms.
 	if has("gui_macvim")
 		set guifont=Menlo:h11
+	elseif has("gui_gtk")
+		set guifont=Inconsolata\ Medium\ 12
 	else
 		set guifont=DejaVu\ Sans\ Mono:h10
 		"set guifont=Consolas:h11
