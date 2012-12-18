@@ -71,7 +71,7 @@ let g:quicktask_autosave = 1
 if has("gui_win32")
 	let g:quicktask_snip_path = 'c:\Users\a.bieber\Dropbox\snips'
 else
-	let g:quicktask_snip_path = '~/Documents/snips'
+	let g:quicktask_snip_path = '~/Dropbox/snips'
 endif
 let g:quicktask_snip_win_maximize = 1
 let g:quicktask_snip_default_filetype = "markdown"
