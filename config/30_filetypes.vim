@@ -29,6 +29,8 @@ autocmd FileType cf inoremap <S-CR> <br />
 autocmd FileType ruby set ts=2 sw=2 autoindent expandtab cinkeys-=0# nosmartindent
 autocmd FileType vim set ts=4 sw=4
 autocmd FileType python set expandtab ts=2 sw=2
+" Wiki articles
+autocmd FileType wiki set tw=0 fo=tqnw
 
 " Special settings for Markdown
 autocmd FileType markdown set expandtab ts=4 sw=4
