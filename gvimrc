@@ -66,6 +66,9 @@ map <c-t> :NERDTreeToggle<CR>
 let NERDTreeDirArrows=1
 let NERDTreeQuitOnOpen=0
 
+" --------------------------------- CtrlP ------------------------------------
+let g:ctrlp_open_new_file = 'h'
+
 " ------------------------------- Quicktask ----------------------------------
 let g:quicktask_autosave = 1
 if has("gui_win32")

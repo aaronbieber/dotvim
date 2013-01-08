@@ -52,3 +52,6 @@
 [submodule "bundle/buffet"]
 	path = bundle/buffet
 	url = git://github.com/sandeepcr529/Buffet.vim.git
+[submodule "bundle/vim-twig"]
+	path = bundle/vim-twig
+	url = https://github.com/beyondwords/vim-twig.git
