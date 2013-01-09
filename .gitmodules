@@ -58,3 +58,6 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "bundle/vim-paren-crosshairs"]
+	path = bundle/vim-paren-crosshairs
+	url = https://github.com/chreekat/vim-paren-crosshairs.git
