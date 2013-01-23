@@ -52,6 +52,6 @@ if has("gui")
 		"set guifont=Inconsolata-dz:h9
 	endif
 else
-	colorscheme desert256
+	colorscheme jellybeans
 endif
 

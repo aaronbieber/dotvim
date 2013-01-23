@@ -28,6 +28,7 @@ set scrolloff=5				" Don't let the cursor get fewer than 5 lines
 							" away from the edge whenever possible.
 set modeline				" Always read modeline stuff from the bottom of
 							" files.
+set modelines=1				" Read the modeline only from the last line.
 let mapleader=","			" Use comma instead of backslash as my map
 							" leader.
 set incsearch				" Search incrementally (while typing).

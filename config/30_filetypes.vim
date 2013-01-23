@@ -14,29 +14,19 @@ autocmd FileType markdown set tw=78
 autocmd BufWritePre */custom_tags/*.cfm	setl binary noeol
 autocmd BufWritePost */custom_tags/*.cfm	setl nobinary eol
 
-" Use smart indention on CSS files, because I like it.
-autocmd FileType css set smartindent
-" Use smart indention on PHP files, too.
-autocmd FileType php set smartindent
-" And in PERL for chrissake.
-autocmd FileType perl set smartindent
-" And in goddamned ColdFusion mother of god.
-autocmd FileType cf set smartindent
-" Wouldn't you think we'd smart indent in JavaScript for the love of god?
-autocmd FileType javascript set smartindent noautoindent nocindent
-autocmd FileType xhtml inoremap <S-CR> <br />
 autocmd FileType cf inoremap <S-CR> <br />
+autocmd FileType cf set smartindent
+autocmd FileType css set smartindent
+autocmd FileType javascript set smartindent noautoindent nocindent
+autocmd FileType markdown set expandtab ts=4 sw=4
+autocmd FileType perl set smartindent
+autocmd FileType php set expandtab ts=4 sw=4 tw=120 previewheight=1 cindent
+autocmd FileType python set expandtab ts=2 sw=2
 autocmd FileType ruby set ts=2 sw=2 autoindent expandtab cinkeys-=0# nosmartindent
 autocmd FileType vim set ts=4 sw=4
-autocmd FileType python set expandtab ts=2 sw=2
-" Wiki articles
 autocmd FileType wiki set tw=0 fo=tqnw
-
-" Special settings for Markdown
-autocmd FileType markdown set expandtab ts=4 sw=4
-
-" Special settings for PHP, to comply with Zend style guidelines
-autocmd FileType php set expandtab ts=4 sw=4 tw=120  previewheight=1
+autocmd FileType xhtml inoremap <S-CR> <br />
+autocmd FileType yaml set ts=2 sw=2 expandtab
 
 " Close the preview window when leaving insert mode.
 autocmd InsertLeave *.php if pumvisible() == 0|pclose|endif
