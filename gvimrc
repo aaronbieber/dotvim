@@ -100,5 +100,3 @@ if v:version > 702
 	au BufWritePre /tmp/* setlocal noundofile
 	au BufWritePre /private/tmp/* setlocal noundofile
 endif
-
-vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
