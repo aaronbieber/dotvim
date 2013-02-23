@@ -61,3 +61,9 @@
 [submodule "bundle/vim-paren-crosshairs"]
 	path = bundle/vim-paren-crosshairs
 	url = https://github.com/chreekat/vim-paren-crosshairs.git
+[submodule "bundle/autoclose"]
+	path = bundle/autoclose
+	url = https://github.com/Townk/vim-autoclose.git
+[submodule "bundle/vimblog"]
+	path = bundle/vimblog
+	url = https://github.com/pedromg/vimblog.vim.git
