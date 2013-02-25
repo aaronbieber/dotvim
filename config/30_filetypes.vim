@@ -24,6 +24,9 @@ autocmd FileType php set expandtab ts=4 sw=4 tw=120 previewheight=1 cindent
 autocmd FileType php inoremap {<cr> {<cr>}<c-o>O
 autocmd FileType php inoremap [<cr> [<cr>]<c-o>O
 autocmd FileType php inoremap (<cr> (<cr>)<c-o>O
+autocmd FileType javascript inoremap {<cr> {<cr>}<c-o>O
+autocmd FileType javascript inoremap [<cr> [<cr>]<c-o>O
+autocmd FileType javascript inoremap (<cr> (<cr>)<c-o>O
 autocmd FileType python set expandtab ts=2 sw=2
 autocmd FileType ruby set ts=2 sw=2 autoindent expandtab cinkeys-=0# nosmartindent
 autocmd FileType vim set ts=4 sw=4
