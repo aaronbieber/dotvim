@@ -79,9 +79,6 @@ endif
 let g:quicktask_snip_win_maximize = 1
 let g:quicktask_snip_default_filetype = "markdown"
 
-" --------------------------------- Buffet -----------------------------------
-nmap <Leader>b :Bufferlist<CR>
-
 " -------------------------------- Snippets ----------------------------------
 let snippets_dir = substitute(substitute(globpath(&rtp, 'snippets/'), "\n", ',', 'g'), 'snippets\\,', 'snippets,', 'g')
 
