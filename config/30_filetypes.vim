@@ -17,13 +17,14 @@ autocmd BufWritePost */custom_tags/*.cfm	setl nobinary eol
 autocmd FileType cf inoremap <S-CR> <br />
 autocmd FileType cf set smartindent
 autocmd FileType css set smartindent
-autocmd FileType javascript set smartindent noautoindent nocindent
 autocmd FileType markdown set expandtab ts=4 sw=4
+autocmd FileType haml set expandtab ts=2 sw=2
 autocmd FileType perl set smartindent
 autocmd FileType php set expandtab ts=4 sw=4 tw=120 previewheight=1 cindent
 autocmd FileType php inoremap {<cr> {<cr>}<c-o>O
 autocmd FileType php inoremap [<cr> [<cr>]<c-o>O
 autocmd FileType php inoremap (<cr> (<cr>)<c-o>O
+autocmd FileType javascript set noexpandtab ts=4 sw=4 fo=nwcroql tw=80
 autocmd FileType javascript inoremap {<cr> {<cr>}<c-o>O
 autocmd FileType javascript inoremap [<cr> [<cr>]<c-o>O
 autocmd FileType javascript inoremap (<cr> (<cr>)<c-o>O
