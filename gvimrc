@@ -49,6 +49,10 @@ endfor
 " #          Configure any plugin-specific settings and mappings.            #
 " ############################################################################
 
+
+" ------------------------------- AutoClose ----------------------------------
+let g:AutoClosePairs = "' \" [] () {}"
+
 " ----------------------------- Indent Guides --------------------------------
 let g:indent_guides_color_change_percent = 3
 
