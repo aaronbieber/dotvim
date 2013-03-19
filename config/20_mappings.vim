@@ -28,8 +28,8 @@ if has('gui') && has('win32')
 endif
 
 " Make search movements center the result in the window.
-nnoremap n nzz
-nnoremap N Nzz
+" nnoremap n nzz
+" nnoremap N Nzz
 
 " This is still of very questionable utility.
 imap jj <ESC>
@@ -111,3 +111,16 @@ inoremap <Leader>: <C-x><C-f>
 
 " Lines
 inoremap <Leader>= <C-x><C-l>
+
+" Toggle number and relativenumber (requires this little function)
+function! ToggleNumbering()
+    if &number == 1
+        setlocal relativenumber
+    else
+        setlocal number
+    endif
+endfunction
+nmap <Leader>n :call ToggleNumbering()<CR>
+
+nmap <C-P> :CtrlP<CR>
+nmap <Leader>b :CtrlPBuffer<CR>

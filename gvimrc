@@ -49,6 +49,10 @@ endfor
 " #          Configure any plugin-specific settings and mappings.            #
 " ############################################################################
 
+
+" ------------------------------- AutoClose ----------------------------------
+let g:AutoClosePairs = "' \" [] () {}"
+
 " ----------------------------- Indent Guides --------------------------------
 let g:indent_guides_color_change_percent = 3
 
@@ -78,9 +82,6 @@ else
 endif
 let g:quicktask_snip_win_maximize = 1
 let g:quicktask_snip_default_filetype = "markdown"
-
-" --------------------------------- Buffet -----------------------------------
-nmap <Leader>b :Bufferlist<CR>
 
 " -------------------------------- Snippets ----------------------------------
 let snippets_dir = substitute(substitute(globpath(&rtp, 'snippets/'), "\n", ',', 'g'), 'snippets\\,', 'snippets,', 'g')

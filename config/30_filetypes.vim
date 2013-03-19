@@ -6,7 +6,6 @@ autocmd FileType cf nnoremap P ]P
 autocmd BufRead,BufNewFile *.txt setfiletype text
 autocmd BufRead,BufNewFile *.wiki setfiletype wiki
 autocmd BufEnter * lcd %:p:h
-autocmd FileType markdown set tw=78
 
 " This will cause VIM to automatically enter 'binary' mode when writing files
 " that are in /custom_tags/ so that they will be saved without a terminating
@@ -14,13 +13,23 @@ autocmd FileType markdown set tw=78
 autocmd BufWritePre */custom_tags/*.cfm	setl binary noeol
 autocmd BufWritePost */custom_tags/*.cfm	setl nobinary eol
 
+" Override filetype detection for Octopress.
+autocmd BufNewFile,BufRead *.markdown set filetype=octopress
+
 autocmd FileType cf inoremap <S-CR> <br />
 autocmd FileType cf set smartindent
 autocmd FileType css set smartindent
-autocmd FileType javascript set smartindent noautoindent nocindent
-autocmd FileType markdown set expandtab ts=4 sw=4
+autocmd FileType markdown set tw=78 expandtab ts=4 sw=4 spell
+autocmd FileType haml set expandtab ts=2 sw=2
 autocmd FileType perl set smartindent
 autocmd FileType php set expandtab ts=4 sw=4 tw=120 previewheight=1 cindent
+autocmd FileType php inoremap {<cr> {<cr>}<c-o>O
+autocmd FileType php inoremap [<cr> [<cr>]<c-o>O
+autocmd FileType php inoremap (<cr> (<cr>)<c-o>O
+autocmd FileType javascript set noexpandtab ts=4 sw=4 fo=nwcroql tw=80
+autocmd FileType javascript inoremap {<cr> {<cr>}<c-o>O
+autocmd FileType javascript inoremap [<cr> [<cr>]<c-o>O
+autocmd FileType javascript inoremap (<cr> (<cr>)<c-o>O
 autocmd FileType python set expandtab ts=2 sw=2
 autocmd FileType ruby set ts=2 sw=2 autoindent expandtab cinkeys-=0# nosmartindent
 autocmd FileType vim set ts=4 sw=4
