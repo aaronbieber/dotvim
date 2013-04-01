@@ -57,10 +57,6 @@
 	path = bundle/powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
 	ignore = dirty
-[submodule "bundle/vim-indent-guides"]
-	path = bundle/vim-indent-guides
-	url = git://github.com/nathanaelkane/vim-indent-guides.git
-	ignore = dirty
 [submodule "bundle/vim-twig"]
 	path = bundle/vim-twig
 	url = https://github.com/beyondwords/vim-twig.git
