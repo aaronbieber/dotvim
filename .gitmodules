@@ -10,10 +10,6 @@
 	path = bundle/zencoding
 	url = git://github.com/mattn/zencoding-vim.git
 	ignore = dirty
-[submodule "bundle/supertab"]
-	path = bundle/supertab
-	url = git://github.com/ervandew/supertab.git
-	ignore = dirty
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
