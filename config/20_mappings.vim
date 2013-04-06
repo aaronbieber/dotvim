@@ -14,10 +14,12 @@ nmap <leader>y "*y
 vmap <leader>y "*y
 nmap <leader>Y "*yy
 nmap <leader>p "*p
+vmap <leader>p "*p
 nmap <leader>P "*P
 
 " Control-backspace deletes a whole word backwards in insert mode
-imap <C-BS> <C-W>
+" I should rid myself of this bad habit and use <C-w> instead.
+" imap <C-BS> <C-W>
 
 " Create surrounding HTML tags out of the word near the cursor.
 imap <C-A> <ESC>viwc<"></"><ESC>cit
@@ -26,13 +28,6 @@ imap <C-A> <ESC>viwc<"></"><ESC>cit
 if has('gui') && has('win32')
     nmap <C-X> :simalt ~x<CR>
 endif
-
-" Make search movements center the result in the window.
-" nnoremap n nzz
-" nnoremap N Nzz
-
-" This is still of very questionable utility.
-imap jj <ESC>
 
 " 'Maximize' a split with F6.
 nmap <F6> <C-W>_
@@ -66,18 +61,9 @@ nmap <C-l> '[>']
 " In visual mode, D will Duplicate the selected lines after the visual block.
 vmap D y'>p']
 
-" Creating comments, mostly for ColdFusion
-" These should be placed in a ColdFusion filetype file
-imap <C-o> <!---  ---><ESC>hhhhi
-
 " Ctrl-E while in insert mode moves the cursor to the end of the line, a la
 " OS X and other UN*X interfaces (e.g. bash).
 imap <C-e> <Esc>A
-
-" Ctrl-Enter while in insert mode places a set of braces, great for starting
-" functions and CSS style blocks.
-" This should also be in filetype-specific file(s).
-imap <C-> {<CR>}<Esc>O
 
 " \th = toggle highlight
 " Toggle the highlighting of the most recently found search text. I use this
@@ -122,5 +108,6 @@ function! ToggleNumbering()
 endfunction
 nmap <Leader>n :call ToggleNumbering()<CR>
 
+" --------------------------------- Ctrl-P ------------------------------------
 nmap <C-P> :CtrlP<CR>
 nmap <Leader>b :CtrlPBuffer<CR>

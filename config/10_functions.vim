@@ -25,26 +25,6 @@ function! MatchIndentBackward()
 endfun
 nmap <leader>ib :call MatchIndentBackward()<CR>
 
-function! CommentLines()
-    normal `>mu`<myv"ay
-    if (col('.') == 1) || (char2nr(@a) == 9)
-        if (&filetype == "css")
-            execute "normal O/*\<ESC>`u"
-            execute "normal o*/\<ESC>"
-        elseif (&filetype == "cf")
-            execute "normal O<!-------------------------------------------------------------------------------------------------\<ESC>`u"
-            execute "normal o-------------------------------------------------------------------------------------------------->\<ESC>"
-        endif
-    else
-        if (&filetype == "css")
-            execute "normal `ua*/\<ESC>`yi/*\<ESC>"
-        elseif (&filetype == "cf")
-            execute "normal `ua--->\<ESC>`yi<!---\<ESC>"
-        endif
-    endif
-endfun
-vmap <C-p> <ESC>:call CommentLines()<CR>
-
 " Pressing capital Q destroys the buffer. I use this more than ,bd anyway.
 function! DeleteBufferOrQuit()
     if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) > 1
@@ -70,8 +50,7 @@ endfun
 
 " Take the text output from SQL Management Studio and convert it into insert
 " statements. This is hackish and doesn't always work, but when it does, damn
-" is it cool This is hackish and doesn't always work, but when it does, damn
-" is it cool
+" is it cool.
 function! CreateInserts()
     " Go to the first line, which should be the header values
     " and snag it into the h register
@@ -117,8 +96,3 @@ function! CreateInserts()
         normal "ap
     endfor
 endfun
-
-function! ZendClean()
-    execute "silent! %s/\\t/    /g"
-    execute "silent! %s/\\s\\+$//"
-endfunction
