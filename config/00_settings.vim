@@ -50,3 +50,5 @@ let g:html_wrong_comments = 1
 
 " A couple of environment variables for the spelling stuff.
 let IspellLang = 'english'
+
+let g:Tex_DefaultTargetFormat = 'pdf'
