@@ -22,7 +22,7 @@ autocmd FileType css set smartindent
 autocmd FileType markdown set tw=78 expandtab ts=4 sw=4 spell
 autocmd FileType haml set expandtab ts=2 sw=2
 autocmd FileType perl set smartindent
-autocmd FileType php set expandtab ts=4 sw=4 tw=120 previewheight=1 cindent
+autocmd FileType php set expandtab ts=2 sw=2 tw=120 previewheight=1 cindent
 autocmd FileType php inoremap {<cr> {<cr>}<c-o>O
 autocmd FileType php inoremap [<cr> [<cr>]<c-o>O
 autocmd FileType php inoremap (<cr> (<cr>)<c-o>O
@@ -42,6 +42,6 @@ autocmd InsertLeave *.php if pumvisible() == 0|pclose|endif
 
 "____Version-specific filetype preferences____
 if v:version > 702
-	autocmd FileType php set colorcolumn=80
+	autocmd FileType php set colorcolumn=120
 	autocmd FileType markdown set colorcolumn=80
 endif
