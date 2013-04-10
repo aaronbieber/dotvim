@@ -20,7 +20,7 @@ if has("gui_win32") || has("win32unix")
 	let s:config_prefix = 'c:/vim/vimfiles/'
 	" Don't load Powerline in Windows because I open a lot of files over
 	" network shares and Powerline makes Vim crawl.
-	let g:Powerline_loaded = 1
+	" let g:Powerline_loaded = 1
 else
 	" This covers everything else, which will include MacVim and any UN*X-like 
 	" shell.
