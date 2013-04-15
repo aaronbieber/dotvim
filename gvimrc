@@ -7,22 +7,26 @@ endif
 set encoding=utf-8
 
 " ############################################################################
-" #         Bootstrap my configuration and plugins (with Pathogen)           #
+" #			Bootstrap my configuration and plugins (with Pathogen)			 #
 " ############################################################################
 
-" I use vim in four environments: gVim in Windows, MacVim in OS X, and 
-" terminal vim in various shells (Cygwin, OS X, Ubuntu). The major differences 
-" between the environments is the way paths are expressed and my own personal 
-" path preferences for storage of select files. This is the only way I could 
+" I use vim in four environments: gVim in Windows, MacVim in OS X, and
+" terminal vim in various shells (Cygwin, OS X, Ubuntu). The major differences
+" between the environments is the way paths are expressed and my own personal
+" path preferences for storage of select files. This is the only way I could
 " come up with to close that gap efficiently.
-if has("gui_win32") || has("win32unix")
-	" This covers Windows and the Cygwin terminal.
-	let s:config_prefix = 'c:/vim/vimfiles/'
+if has("gui_win32")
+	" This covers Windows GUI only.
+	let s:config_prefix = $HOME.'\vimfiles\'
 	" Don't load Powerline in Windows because I open a lot of files over
 	" network shares and Powerline makes Vim crawl.
 	" let g:Powerline_loaded = 1
+elseif has("win32unix")
+	" This covers the Cygwin terminal, which has POSIX-style paths, but should
+	" use the Windows gVim installation for simplicity.
+	let s:config_prefix = $HOME.'/vimfiles/'
 else
-	" This covers everything else, which will include MacVim and any UN*X-like 
+	" This covers everything else, which will include MacVim and any UN*X-like
 	" shell.
 	let s:config_prefix = '~/.vim/'
 endif
@@ -39,14 +43,14 @@ syntax on
 " Enable filetype handling.
 filetype plugin indent on
 
-" Now process all of the configuration files that I have stored in my 'config' 
+" Now process all of the configuration files that I have stored in my 'config'
 " directory, which significantly cleans up this file.
 for f in sort(split(glob(s:config_prefix.'config/*.vim'), '\n'))
 	execute 'source '.f
 endfor
 
 " ############################################################################
-" #          Configure any plugin-specific settings and mappings.            #
+" #			 Configure any plugin-specific settings and mappings.			 #
 " ############################################################################
 
 
@@ -60,8 +64,12 @@ let g:indent_guides_color_change_percent = 3
 let g:Powerline_symbols = 'compatible'
 
 " --------------------------------- TagBar -----------------------------------
+let g:tagbar_autoclose = 1
 if has("gui_win32")
-	let g:tagbar_ctags_bin = 'c:\cygwin\bin\ctags.exe'
+	let g:tagbar_ctags_bin = 'd:\bin\ctags\ctags.exe'
+
+	" This one is not really TagBar-specific, but it involves tags. Use my global PHP tags in Windows.
+	set tags=c:\Users\abieber\tags-php
 endif
 nmap <F8> :TagbarToggle<CR>
 
