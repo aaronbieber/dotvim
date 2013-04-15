@@ -38,7 +38,7 @@ if has("gui")
 	set background=light
 	let g:solarized_underline=0    		"default value is 1
 	let g:solarized_visibility="low"    "default value is normal
-	colorscheme jellybeans
+	colorscheme solarized
 
 	" Fonts differ across my platforms.
 	if has("gui_macvim")
