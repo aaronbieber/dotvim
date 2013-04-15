@@ -58,9 +58,6 @@ nmap [c [cz.
 nmap <C-h> '[<lt>']
 nmap <C-l> '[>']
 
-" In visual mode, D will Duplicate the selected lines after the visual block.
-vmap D y'>p']
-
 " Ctrl-E while in insert mode moves the cursor to the end of the line, a la
 " OS X and other UN*X interfaces (e.g. bash).
 imap <C-e> <Esc>A
@@ -111,3 +108,14 @@ nmap <Leader>n :call ToggleNumbering()<CR>
 " --------------------------------- Ctrl-P ------------------------------------
 nmap <C-P> :CtrlP<CR>
 nmap <Leader>b :CtrlPBuffer<CR>
+
+
+" --------------------------- Visual Mode Mappings ----------------------------
+" In visual mode, D will Duplicate the selected lines after the visual block.
+vmap D y'>p']
+
+" Allow * and # to work the way you would expect when some text is selected.
+" These use the z register for now until I can find the more elegant solution,
+" which I know exists.
+vmap * "zy/<C-r>z<CR>
+vmap # "zy?<C-r>z<CR>
