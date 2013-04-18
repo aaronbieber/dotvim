@@ -37,6 +37,12 @@ set hidden					" Don't unload buffers that are abandoned; hide
 set fileformats=unix,dos	" Create UNIX format files by default, but
 							" autodetect dos files.
 
+" GUI-specific options.
+if has('gui')
+    " Do not use the toolbar, it takes up too much space.
+    set guioptions-=T
+endif
+
 " Don't create backup files when editing in these locations.
 set backupskip=/tmp/*,/private/tmp/*
 
