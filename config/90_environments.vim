@@ -34,7 +34,7 @@ if has("gui_win32")
 endif
 
 " Brighter for the GUI, darker for the console.
-if has("gui")
+if has("gui_running")
 	set background=light
 	let g:solarized_underline=0    		"default value is 1
 	let g:solarized_visibility="low"    "default value is normal
