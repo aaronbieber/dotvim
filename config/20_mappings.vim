@@ -1,7 +1,28 @@
 "____Helpful mappings____
 
-map <leader>r :registers<CR>
+" Show registers.
+map <leader>rg :registers<CR>
+
+" Open reference documents. This could almost be a plugin.
+function! OpenReference()
+    execute "tabnew"
+    execute "cd ".g:Reference_File_Location
+    execute "CtrlP"
+endfunction
+nmap <Leader>re :call OpenReference()<CR>
+
+" Open a TODO list document.
+function! OpenTodoList()
+    execute "tabnew"
+    execute "edit ".g:Todo_List_Location
+endfunction
+nmap <Leader>td :call OpenTodoList()<CR>
+
+" Set colorcolumn to the column the cursor is currently in.
 nmap <Leader>cc :let &colorcolumn=virtcol('.')<CR>
+
+" Reformat paragraph.
+nmap <Leader>rp vipJVgq``
 
 " Y yanks to the end of the line
 nmap Y y$

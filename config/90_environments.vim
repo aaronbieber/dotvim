@@ -6,6 +6,8 @@ if has("gui_win32")
 	endif
 	set backupdir=c:\\vim_backups
 	set dir=c:\\vim_backups
+    let g:Reference_File_Location='u:\reference'
+    let g:Todo_List_Location='u:\TODO.txt'
 
 	if v:version > 702
 		if !filewritable("c:\\vim_undo")
@@ -19,6 +21,8 @@ else
 	endif
 	set backupdir=/tmp/vim_backups
 	set dir=/tmp/vim_backups
+    let g:Reference_File_Location='~/Dropbox/reference'
+    let g:Todo_List_Location='~/Dropbox/TODO.txt'
 
 	if v:version > 702
 		if !filewritable("/tmp/vim_undo")
