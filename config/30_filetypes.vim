@@ -19,7 +19,7 @@ autocmd BufNewFile,BufRead *.markdown set filetype=octopress
 autocmd FileType cf inoremap <S-CR> <br />
 autocmd FileType cf set smartindent
 autocmd FileType css set smartindent
-autocmd FileType markdown set tw=78 expandtab ts=4 sw=4 spell
+autocmd FileType octopress set tw=78 expandtab ts=4 sw=4 spell nocindent autoindent
 autocmd FileType haml set expandtab ts=2 sw=2
 autocmd FileType perl set smartindent
 autocmd FileType php set expandtab ts=2 sw=2 tw=120 previewheight=1 cindent
