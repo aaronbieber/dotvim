@@ -57,4 +57,66 @@ let g:html_wrong_comments = 1
 " A couple of environment variables for the spelling stuff.
 let IspellLang = 'english'
 
+
+" ------------------------- Version-specific options -------------------------
+if v:version > 702
+	set undofile
+	set undolevels=1000
+	set undoreload=10000
+	au BufWritePre /tmp/* setlocal noundofile
+	au BufWritePre /private/tmp/* setlocal noundofile
+endif
+
+" ############################################################################
+" #			 Configure any plugin-specific settings and mappings.			 #
+" ############################################################################
+
+" ------------------------------- AutoClose ----------------------------------
+let g:AutoClosePairs = "' \" [] () {}"
+
+" ----------------------------- Indent Guides --------------------------------
+let g:indent_guides_color_change_percent = 3
+
+" ------------------------------- PowerLine ----------------------------------
+let g:Powerline_symbols = 'compatible'
+
+" --------------------------------- TagBar -----------------------------------
+let g:tagbar_autoclose = 1
+if has("gui_win32")
+	let g:tagbar_ctags_bin = 'd:\bin\ctags\ctags.exe'
+
+	" This one is not really TagBar-specific, but it involves tags. Use my global PHP tags in Windows.
+	set tags=c:\Users\abieber\tags-php
+else
+    let g:tagbar_ctags_bin = 'ctags'
+    set tags=~/ctags_php
+endif
+nmap <F8> :TagbarToggle<CR>
+
+" -------------------------------- NERDTree ----------------------------------
+map <c-t> :NERDTreeToggle<CR>
+let NERDTreeDirArrows=1
+let NERDTreeQuitOnOpen=0
+
+" --------------------------------- CtrlP ------------------------------------
+let g:ctrlp_open_new_file = 'h'
+
+" ------------------------------- Quicktask ----------------------------------
+let g:quicktask_autosave = 1
+if has("gui_win32")
+	let g:quicktask_snip_path = 'c:\Users\a.bieber\Dropbox\snips'
+else
+	let g:quicktask_snip_path = '~/Dropbox/snips'
+endif
+let g:quicktask_snip_win_maximize = 1
+let g:quicktask_snip_default_filetype = "markdown"
+
+" -------------------------------- Snippets ----------------------------------
+"let snippets_dir = substitute(substitute(globpath(&rtp, 'snippets/'), "\n", ',', 'g'), 'snippets\\,', 'snippets,', 'g')
+let g:snips_author = 'Aaron Bieber <abieber@wayfair.com>'
+
+" -------------------------------- Syntastic ---------------------------------
+let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
+
+" ------------------------------- LaTeX Suite -------------------------------
 let g:Tex_DefaultTargetFormat = 'pdf'
