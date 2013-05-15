@@ -86,8 +86,8 @@ if has("gui_win32")
 	" This one is not really TagBar-specific, but it involves tags. Use my global PHP tags in Windows.
 	set tags=c:\Users\abieber\tags-php
 else
-    let g:tagbar_ctags_bin = 'ctags'
-    set tags=~/ctags_php
+	let g:tagbar_ctags_bin = 'ctags'
+	set tags=~/ctags_php
 endif
 nmap <F8> :TagbarToggle<CR>
 
@@ -122,3 +122,5 @@ let g:syntastic_warning_symbol='⚠'
 let g:Tex_DefaultTargetFormat = 'pdf'
 
 let g:BCFCommitFilePath = '/home/abieber/commits/'
+
+" vim: set noexpandtab ts=4 sw=4 :
