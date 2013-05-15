@@ -37,12 +37,6 @@ set hidden					" Don't unload buffers that are abandoned; hide
 set fileformats=unix,dos	" Create UNIX format files by default, but
 							" autodetect dos files.
 
-" GUI-specific options.
-if has('gui')
-    " Do not use the toolbar, it takes up too much space.
-    set guioptions-=T
-endif
-
 " Don't create backup files when editing in these locations.
 set backupskip=/tmp/*,/private/tmp/*
 
@@ -57,6 +51,7 @@ let g:html_wrong_comments = 1
 " A couple of environment variables for the spelling stuff.
 let IspellLang = 'english'
 
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 " ------------------------- Version-specific options -------------------------
 if v:version > 702
@@ -79,6 +74,9 @@ let g:indent_guides_color_change_percent = 3
 
 " ------------------------------- PowerLine ----------------------------------
 let g:Powerline_symbols = 'compatible'
+if has('gui_gtk')
+	let g:Powerline_symbols = 'fancy'
+endif
 
 " --------------------------------- TagBar -----------------------------------
 let g:tagbar_autoclose = 1
@@ -117,6 +115,10 @@ let g:snips_author = 'Aaron Bieber <abieber@wayfair.com>'
 
 " -------------------------------- Syntastic ---------------------------------
 let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
 
 " ------------------------------- LaTeX Suite -------------------------------
 let g:Tex_DefaultTargetFormat = 'pdf'
+
+let g:BCFCommitFilePath = '/home/abieber/commits/'
