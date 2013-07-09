@@ -5,13 +5,14 @@ autocmd FileType cf nnoremap p ]p
 autocmd FileType cf nnoremap P ]P
 autocmd BufRead,BufNewFile *.txt setfiletype text
 autocmd BufRead,BufNewFile *.wiki setfiletype wiki
+autocmd BufRead,BufNewFile *.md setfiletype octopress
 autocmd BufEnter * lcd %:p:h
 
 " This will cause VIM to automatically enter 'binary' mode when writing files
 " that are in /custom_tags/ so that they will be saved without a terminating
 " linebreak (at the end of the file). :h binary for more information.
-autocmd BufWritePre */custom_tags/*.cfm	setl binary noeol
-autocmd BufWritePost */custom_tags/*.cfm	setl nobinary eol
+autocmd BufWritePre */custom_tags/*.cfm setl binary noeol
+autocmd BufWritePost */custom_tags/*.cfm    setl nobinary eol
 
 " Override filetype detection for Octopress.
 autocmd BufNewFile,BufRead *.markdown set filetype=octopress
@@ -19,14 +20,15 @@ autocmd BufNewFile,BufRead *.markdown set filetype=octopress
 autocmd FileType cf inoremap <S-CR> <br />
 autocmd FileType cf set smartindent
 autocmd FileType css set smartindent
+autocmd FileType markdown set tw=78 expandtab ts=4 sw=4 spell nocindent autoindent
 autocmd FileType octopress set tw=78 expandtab ts=4 sw=4 spell nocindent autoindent
 autocmd FileType haml set expandtab ts=2 sw=2
 autocmd FileType perl set smartindent
-autocmd FileType php set expandtab ts=2 sw=2 tw=120 previewheight=1 cindent
+autocmd FileType php set expandtab ts=2 sw=2 tw=120 cc=+1 previewheight=1 cindent
 autocmd FileType php inoremap {<cr> {<cr>}<c-o>O
 autocmd FileType php inoremap [<cr> [<cr>]<c-o>O
 autocmd FileType php inoremap (<cr> (<cr>)<c-o>O
-autocmd FileType javascript set noexpandtab ts=4 sw=4 fo=nwcroql tw=80
+autocmd FileType javascript set expandtab ts=2 sw=2 fo=nwcroql tw=120
 autocmd FileType javascript inoremap {<cr> {<cr>}<c-o>O
 autocmd FileType javascript inoremap [<cr> [<cr>]<c-o>O
 autocmd FileType javascript inoremap (<cr> (<cr>)<c-o>O
@@ -42,6 +44,8 @@ autocmd InsertLeave *.php if pumvisible() == 0|pclose|endif
 
 "____Version-specific filetype preferences____
 if v:version > 702
-	autocmd FileType php set colorcolumn=120
-	autocmd FileType markdown set colorcolumn=80
+    autocmd FileType php set colorcolumn=120
+    autocmd FileType markdown set colorcolumn=80
 endif
+
+" vim: set et ts=4 sw=4 :
