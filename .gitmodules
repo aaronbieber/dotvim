@@ -73,3 +73,9 @@
 	path = bundle/vim-octopress
 	url = git://github.com/tangledhelix/vim-octopress.git
 	ignore = dirty
+[submodule "bundle/commit-tracker"]
+	path = bundle/commit-tracker
+	url = git@github.com:aaronbieber/commit-tracker.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter
