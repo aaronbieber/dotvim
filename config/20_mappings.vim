@@ -18,6 +18,11 @@ function! OpenTodoList()
 endfunction
 nmap <Leader>td :call OpenTodoList()<CR>
 
+" Move around in tabs.
+nnoremap <Leader>tn :tabnext<CR>
+nnoremap <Leader>tp :tabprevious<CR>
+nnoremap <Leader>tc :tabnew<CR>
+
 " Set colorcolumn to the column the cursor is currently in.
 nmap <Leader>cc :let &colorcolumn=virtcol('.')<CR>
 
@@ -140,3 +145,5 @@ vmap D y'>p']
 " which I know exists.
 vmap * "zy/<C-r>z<CR>
 vmap # "zy?<C-r>z<CR>
+
+" vim: set et ts=4 sw=4 :
