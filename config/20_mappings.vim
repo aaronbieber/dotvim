@@ -88,10 +88,10 @@ nmap <C-l> '[>']
 " OS X and other UN*X interfaces (e.g. bash).
 imap <C-e> <Esc>A
 
-" \th = toggle highlight
-" Toggle the highlighting of the most recently found search text. I use this
-" one all the time.
-nnoremap <leader>th :set invhls hls?<CR>
+" Toggle the highlighting of the searched text. I use this one all the time.
+" I am trying out space for this, but also use <Leader>th ("toggle highlight")
+nnoremap <Leader>th :set hlsearch! hlsearch?<CR>
+nnoremap <Space> :set hlsearch! hlsearch?<CR>
 
 " Allow the up and down arrows to move between LOGICAL lines of text on the
 " screen, even if they are wrapped portions of the same LITERAL line of text.
