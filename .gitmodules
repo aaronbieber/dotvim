@@ -18,10 +18,6 @@
 	path = bundle/latex-suite
 	url = http://github.com/vim-scripts/LaTeX-Suite-aka-Vim-LaTeX.git
 	ignore = dirty
-[submodule "bundle/drawit"]
-	path = bundle/drawit
-	url = git://github.com/vim-scripts/DrawIt.git
-	ignore = dirty
 [submodule "bundle/quicktask"]
 	path = bundle/quicktask
 	url = git@github.com:aaronbieber/quicktask.git
