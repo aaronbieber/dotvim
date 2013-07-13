@@ -1,6 +1,44 @@
 " Don't be compatible with vi.
 set nocompatible
 
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Vundle manages Vundle. Vundleception!
+Bundle 'gmarik/vundle'
+
+" Tim Pope FTW.
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-surround'
+
+" Scrooloose FTW.
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+
+" Colors
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'ciaranm/inkpot'
+Bundle 'flazz/vim-colorschemes'
+
+" Syntaxes and language support
+Bundle 'juvenn/mustache.vim'
+Bundle 'beyondwords/vim-twig'
+Bundle 'groenewege/vim-less'
+Bundle 'pangloss/vim-javascript'
+Bundle 'tangledhelix/vim-octopress'
+Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+
+" Helpers
+Bundle 'godlygeek/tabular'
+Bundle 'kien/ctrlp.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'mattn/zencoding-vim'
+Bundle 'mhinz/vim-signify'
+Bundle 'msanders/snipmate.vim'
+
 if &termencoding == ""
 	let &termencoding = &encoding
 endif
@@ -32,7 +70,7 @@ else
 endif
 
 " Load Pathogen.
-call pathogen#infect()
+"call pathogen#infect()
 
 " Fix the Solarized mapping.
 call togglebg#map("")
