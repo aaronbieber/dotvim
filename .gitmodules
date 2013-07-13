@@ -1,6 +1,6 @@
 [submodule "bundle/quicktask"]
 	path = bundle/quicktask
-	url = git@github.com:aaronbieber/quicktask.git
+	url = git@github.com:aaronbieber/quicktask
 [submodule "bundle/commit-tracker"]
 	path = bundle/commit-tracker
-	url = git@github.com:aaronbieber/commit-tracker.git
+	url = git@github.com:aaronbieber/commit-tracker
