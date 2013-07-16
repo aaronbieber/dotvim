@@ -7,6 +7,10 @@ call vundle#rc()
 " Vundle manages Vundle. Vundleception!
 Bundle 'gmarik/vundle'
 
+" My own stuff.
+Bundle 'git@github.com:aaronbieber/quicktask.git'
+Bundle 'git@github.com:aaronbieber/commit-tracker.git'
+
 " Nyan cat is critical.
 Bundle 'koron/nyancat-vim'
 
@@ -41,6 +45,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'mattn/zencoding-vim'
 Bundle 'mhinz/vim-signify'
 Bundle 'msanders/snipmate.vim'
+Bundle 'Lokaltog/powerline'
 
 if &termencoding == ""
 	let &termencoding = &encoding
