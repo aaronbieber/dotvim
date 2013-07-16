@@ -7,6 +7,9 @@ call vundle#rc()
 " Vundle manages Vundle. Vundleception!
 Bundle 'gmarik/vundle'
 
+" Nyan cat is critical.
+Bundle 'koron/nyancat-vim'
+
 " Tim Pope FTW.
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
