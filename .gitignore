@@ -1,5 +1,3 @@
 .netrwhist
 bundle/**
 !bundle/vundle
-!bundle/quicktask
-!bundle/commit-tracker

@@ -7,6 +7,10 @@ call vundle#rc()
 " Vundle manages Vundle. Vundleception!
 Bundle 'gmarik/vundle'
 
+Bundle 'Lokaltog/powerline'
+Bundle 'git@github.com:aaronbieber/quicktask'
+Bundle 'git@github.com:aaronbieber/commit-tracker'
+
 " Nyan cat is critical.
 Bundle 'koron/nyancat-vim'
 
