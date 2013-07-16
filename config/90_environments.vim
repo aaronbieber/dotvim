@@ -38,7 +38,7 @@ if has("gui_running")
         endif
     elseif has("gui_macvim")
         " Mac GUI Settings ---------------------------------------------------
-        set guifont=Menlo:h11
+        set guifont=Menlo\ Regular\ for\ Powerline:h12
     elseif has("gui_gtk")
         " Linux GUI (GTK+) Settings ------------------------------------------
         if !filewritable("/tmp/vim_backups")
