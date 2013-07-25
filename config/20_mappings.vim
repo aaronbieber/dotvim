@@ -32,6 +32,9 @@ nmap <Leader>rp vipJVgq``
 " Y yanks to the end of the line
 nmap Y y$
 
+" <Leader>d shows a diff of the current file in color.
+nmap <Leader>d :execute "!jsvn diff ".expand('%:p')." \| colordiff \| less -R"<CR>
+
 " Delete trailing whitespace.
 nnoremap S :silent! %s/[\r \t]\+$//<CR>
 

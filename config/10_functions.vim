@@ -51,7 +51,7 @@ function! DeleteBufferOrQuit()
         execute "q!"
     endif
 endfunction
-nmap Q :call DeleteBufferOrQuit()<CR>
+nmap Q :bd!<CR>
 
 " Function: TitleCase()
 "

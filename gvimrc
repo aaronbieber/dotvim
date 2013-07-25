@@ -7,9 +7,11 @@ call vundle#rc()
 " Vundle manages Vundle. Vundleception!
 Bundle 'gmarik/vundle'
 
-Bundle 'Lokaltog/powerline'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
 Bundle 'git@github.com:aaronbieber/quicktask'
 Bundle 'git@github.com:aaronbieber/commit-tracker'
+Bundle 'terryma/vim-expand-region'
+Bundle 'terryma/vim-multiple-cursors'
 
 " Nyan cat is critical.
 Bundle 'koron/nyancat-vim'

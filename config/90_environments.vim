@@ -62,7 +62,7 @@ if has("gui_running")
     endif
 else
     " All console-specific settings. -----------------------------------------
-    colorscheme jellybeans
+    colorscheme xoria256
 
     if !filewritable("/tmp/vim_backups")
         call mkdir("/tmp/vim_backups")
