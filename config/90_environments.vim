@@ -38,7 +38,21 @@ if has("gui_running")
         endif
     elseif has("gui_macvim")
         " Mac GUI Settings ---------------------------------------------------
-        set guifont=Menlo:h11
+        set guifont=Source\ Code\ Pro\ for\ Powerline:h13
+
+        if !filewritable("/tmp/vim_backups")
+            call mkdir("/tmp/vim_backups")
+        endif
+        set backupdir=/tmp/vim_backups
+        set dir=/tmp/vim_backups
+
+        if v:version > 702
+            " Only for versions above 7.2 where these features are available.
+            if !filewritable("/tmp/vim_undo")
+                call mkdir("/tmp/vim_undo")
+            endif
+            set undodir=~/tmp/vim_undo
+        endif
     elseif has("gui_gtk")
         " Linux GUI (GTK+) Settings ------------------------------------------
         if !filewritable("/tmp/vim_backups")
@@ -46,6 +60,14 @@ if has("gui_running")
         endif
         set backupdir=/tmp/vim_backups
         set dir=/tmp/vim_backups
+
+        if v:version > 702
+            " Only for versions above 7.2 where these features are available.
+            if !filewritable("/tmp/vim_undo")
+                call mkdir("/tmp/vim_undo")
+            endif
+            set undodir=~/tmp/vim_undo
+        endif
 
         set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
         let g:syntastic_error_symbol='✗'

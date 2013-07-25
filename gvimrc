@@ -8,10 +8,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
-Bundle 'git@github.com:aaronbieber/quicktask'
-Bundle 'git@github.com:aaronbieber/commit-tracker'
 Bundle 'terryma/vim-expand-region'
 Bundle 'terryma/vim-multiple-cursors'
+
+" My own stuff.
+Bundle 'git@github.com:aaronbieber/quicktask.git'
+Bundle 'git@github.com:aaronbieber/commit-tracker.git'
 
 " Nyan cat is critical.
 Bundle 'koron/nyancat-vim'
@@ -47,6 +49,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'mattn/zencoding-vim'
 Bundle 'mhinz/vim-signify'
 Bundle 'msanders/snipmate.vim'
+Bundle 'Lokaltog/powerline'
 
 if &termencoding == ""
 	let &termencoding = &encoding
