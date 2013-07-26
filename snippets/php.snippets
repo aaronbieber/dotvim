@@ -111,15 +111,12 @@ snippet doc_h
 	/**
 	 * ${1}
 	 *
-	 * @author ${2:`g:snips_author`}
-	 * @version ${3:$Id$}
-	 * @copyright ${4:$2}, `strftime('%d %B, %Y')`
-	 * @package ${5:default}
+	 * PHP Version 5
+	 *
+	 * @author    ${2:`g:snips_author`}
+	 * @copyright `strftime('%Y')` Wayfair LLC, All Rights Reserved
+	 * @version   SVN: $Id$
 	 */
-	
-	/**
-	 * Define DocBlock
-	 *//
 # Interface
 snippet doc_i
 	/**
@@ -210,3 +207,5 @@ snippet fun
 # $... = array (...)
 snippet array
 	$${1:arrayName} = array('${2}' => ${3});${4}
+snippet param
+	@param ${1:string} $${2:foo} ${3:Description}
