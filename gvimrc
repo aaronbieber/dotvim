@@ -25,6 +25,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-unimpaired'
 
 " Scrooloose FTW.
 Bundle 'scrooloose/nerdcommenter'
