@@ -8,6 +8,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
+Bundle 'Lokaltog/vim-easymotion'
 Bundle 'terryma/vim-expand-region'
 Bundle 'terryma/vim-multiple-cursors'
 
