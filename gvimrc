@@ -11,6 +11,7 @@ Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'terryma/vim-expand-region'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'Yggdroot/indentLine'
 
 " My own stuff.
 Bundle 'git@github.com:aaronbieber/quicktask.git'

@@ -124,6 +124,9 @@ let g:Tex_DefaultTargetFormat = 'pdf'
 
 let g:BCFCommitFilePath = '/home/abieber/commits/'
 
+let g:indentLine_char = '│'
+let g:indentLine_color_term = 236
+
 " Set a nicer cursor in insert mode (from terryma on github)
 " Tmux will only forward escape sequences to the terminal if surrounded by
 " a DCS sequence
