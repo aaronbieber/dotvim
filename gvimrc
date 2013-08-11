@@ -12,6 +12,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'terryma/vim-expand-region'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'Yggdroot/indentLine'
+Bundle 'Raimondi/delimitMate'
 
 " My own stuff.
 Bundle 'git@github.com:aaronbieber/quicktask.git'
