@@ -1,33 +1,19 @@
 "____Filetype preferences____
-" Set some other options for ColdFusion files.
-autocmd FileType cf set formatoptions=croql textwidth=180
-autocmd FileType cf nnoremap p ]p
-autocmd FileType cf nnoremap P ]P
 autocmd BufRead,BufNewFile *.txt setfiletype text
 autocmd BufRead,BufNewFile *.wiki setfiletype wiki
 autocmd BufRead,BufNewFile *.md setfiletype octopress
+autocmd BufRead,BufNewFile *.markdown setfiletype octopress
+
+" When entering a buffer, change the local working directory to the location 
+" of the file. This is actually really handy, most of the time.
 autocmd BufEnter * lcd %:p:h
 
-" This will cause VIM to automatically enter 'binary' mode when writing files
-" that are in /custom_tags/ so that they will be saved without a terminating
-" linebreak (at the end of the file). :h binary for more information.
-autocmd BufWritePre */custom_tags/*.cfm setl binary noeol
-autocmd BufWritePost */custom_tags/*.cfm    setl nobinary eol
-
-" Override filetype detection for Octopress.
-autocmd BufNewFile,BufRead *.markdown set filetype=octopress
-
-autocmd FileType cf inoremap <S-CR> <br />
-autocmd FileType cf set smartindent
+" Set specific settings for specific filetypes.
 autocmd FileType css set smartindent
 autocmd FileType markdown set tw=78 expandtab ts=4 sw=4 spell nocindent autoindent
 autocmd FileType octopress set tw=78 expandtab ts=4 sw=4 spell nocindent autoindent
 autocmd FileType haml set expandtab ts=2 sw=2
 autocmd FileType perl set smartindent
-autocmd FileType php set expandtab ts=2 sw=2 tw=120 cc=+1 previewheight=1 cindent
-autocmd FileType php inoremap {<cr> {<cr>}<c-o>O
-autocmd FileType php inoremap [<cr> [<cr>]<c-o>O
-autocmd FileType php inoremap (<cr> (<cr>)<c-o>O
 autocmd FileType javascript set expandtab ts=2 sw=2 fo=nwcroql tw=120
 autocmd FileType javascript inoremap {<cr> {<cr>}<c-o>O
 autocmd FileType javascript inoremap [<cr> [<cr>]<c-o>O
@@ -39,8 +25,15 @@ autocmd FileType wiki set tw=0 fo=tqnw
 autocmd FileType xhtml inoremap <S-CR> <br />
 autocmd FileType yaml set ts=2 sw=2 expandtab
 
+autocmd FileType php set expandtab ts=2 sw=2 tw=120 cc=+1 previewheight=1 cindent
+autocmd FileType php inoremap {<cr> {<cr>}<c-o>O
+autocmd FileType php inoremap [<cr> [<cr>]<c-o>O
+autocmd FileType php inoremap (<cr> (<cr>)<c-o>O
+
 " Close the preview window when leaving insert mode.
 autocmd InsertLeave *.php if pumvisible() == 0|pclose|endif
+
+autocmd FileType php autocmd BufWritePre <buffer> :call StripTrailingWhitespace()
 
 "____Version-specific filetype preferences____
 if v:version > 702

@@ -123,4 +123,11 @@ function! MarkdownFilter()
     call system('cat /home/abieber/u/notes/codehilite.css >> ' . path_to_html_file)
 endfunction
 
+function! StripTrailingWhitespace()
+    let l = line('.')
+    let c = col('.')
+    %s/[\r \t]\+$//e
+    call cursor(l, c)
+endfunction
+
 " vim: set et ts=4 sw=4 :

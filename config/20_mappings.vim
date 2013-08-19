@@ -36,7 +36,7 @@ nmap Y y$
 nmap <Leader>d :execute "!jsvn diff ".expand('%:p')." \| colordiff \| less -R"<CR>
 
 " Delete trailing whitespace.
-nnoremap S :silent! %s/[\r \t]\+$//<CR>
+nnoremap S :call StripTrailingWhitespace()<CR>
 
 " shortcuts for copying to/pasting from the clipboard
 nmap <leader>y "*y
