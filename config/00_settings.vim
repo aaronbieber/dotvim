@@ -115,9 +115,13 @@ let g:quicktask_snip_default_filetype = "markdown"
 let g:snips_author = 'Aaron Bieber <abieber@wayfair.com>'
 
 " -------------------------------- Syntastic ---------------------------------
-let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
+
+let g:syntastic_php_phpcs_errorformat =
+    \ '%-GFile\,Line\,Column\,Type\,Message\,Source\,Severity,'.
+    \ '"%f"\,%l\,%c\,%t%*[a-zA-Z]\,"%m"\,%*[a-zA-Z0-9_.-\*]\,%*[0-9]'
 
 " ------------------------------- LaTeX Suite -------------------------------
 let g:Tex_DefaultTargetFormat = 'pdf'
