@@ -131,15 +131,4 @@ let g:BCFCommitFilePath = '/home/abieber/commits/'
 let g:indentLine_char = '│'
 let g:indentLine_color_term = 236
 
-" Set a nicer cursor in insert mode (from terryma on github)
-" Tmux will only forward escape sequences to the terminal if surrounded by
-" a DCS sequence
-if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
-
 " vim: set et ts=4 sw=4 :
