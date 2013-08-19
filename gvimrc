@@ -91,9 +91,6 @@ else
 	let s:config_prefix = '~/.vim/'
 endif
 
-" Load Pathogen.
-"call pathogen#infect()
-
 " Fix the Solarized mapping.
 call togglebg#map("")
 
