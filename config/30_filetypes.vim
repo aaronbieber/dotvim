@@ -32,8 +32,7 @@ autocmd FileType php inoremap (<cr> (<cr>)<c-o>O
 
 " Close the preview window when leaving insert mode.
 autocmd InsertLeave *.php if pumvisible() == 0|pclose|endif
-
-autocmd FileType php autocmd BufWritePre <buffer> :call StripTrailingWhitespace()
+autocmd BufWritePre *.php :call StripTrailingWhitespace()
 
 "____Version-specific filetype preferences____
 if v:version > 702
