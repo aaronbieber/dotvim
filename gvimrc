@@ -7,7 +7,7 @@ call vundle#rc()
 " Vundle manages Vundle. Vundleception!
 Bundle 'gmarik/vundle'
 
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
+Bundle 'itchyny/lightline.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'terryma/vim-expand-region'
 Bundle 'terryma/vim-multiple-cursors'
@@ -38,7 +38,6 @@ Bundle 'scrooloose/syntastic'
 " Colors
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ciaranm/inkpot'
-Bundle 'flazz/vim-colorschemes'
 
 " Syntaxes and language support
 Bundle 'juvenn/mustache.vim'
@@ -59,8 +58,6 @@ Bundle 'mhinz/vim-signify'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
-
-Bundle 'Lokaltog/powerline'
 
 if &termencoding == ""
     let &termencoding = &encoding
