@@ -52,8 +52,6 @@ let g:html_wrong_comments = 1
 " A couple of environment variables for the spelling stuff.
 let IspellLang = 'english'
 
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-
 " ------------------------- Version-specific options -------------------------
 if v:version > 702
     set undofile
@@ -72,12 +70,6 @@ let g:AutoClosePairs = "' \" [] () {}"
 
 " ----------------------------- Indent Guides --------------------------------
 let g:indent_guides_color_change_percent = 3
-
-" ------------------------------- PowerLine ----------------------------------
-let g:Powerline_symbols = 'compatible'
-if has('gui_gtk')
-    let g:Powerline_symbols = 'fancy'
-endif
 
 " --------------------------------- TagBar -----------------------------------
 let g:tagbar_autoclose = 1
