@@ -2,56 +2,70 @@ let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename', 'commit-tracker' ] ]
       \ },
       \ 'component_function': {
-      \   'modified': 'MyModified',
-      \   'readonly': 'MyReadonly',
-      \   'fugitive': 'MyFugitive',
-      \   'filename': 'MyFilename',
-      \   'fileformat': 'MyFileformat',
-      \   'filetype': 'MyFiletype',
-      \   'fileencoding': 'MyFileencoding',
-      \   'mode': 'MyMode',
+      \   'modified': 'LLModified',
+      \   'readonly': 'LLReadOnly',
+      \   'fugitive': 'LLFugitive',
+      \   'filename': 'LLFilename',
+      \   'fileformat': 'LLFileFormat',
+      \   'filetype': 'LLFileType',
+      \   'fileencoding': 'LLFileEncoding',
+      \   'mode': 'LLMode',
+      \   'commit-tracker': 'LLCommitTracker'
       \ },
       \ 'separator': { 'left': '⮀', 'right': '⮂' },
       \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
       \ }
 
-function! MyModified()
+function! LLCommitTracker()
+    if !exists("*BCFStatusLineElement")
+        return ''
+    endif
+
+    let line = BCFStatusLineElementFileStatus() . ' ' . BCFStatusLineElement()
+    if len(line) > 1
+        return line
+    else
+        return ''
+    endif
+endfunction
+
+function! LLModified()
   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction
 
-function! MyReadonly()
+function! LLReadOnly()
   return &ft !~? 'help\|vimfiler\|gundo' && &ro ? '⭤' : ''
 endfunction
 
-function! MyFilename()
-  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+function! LLFilename()
+  return ('' != LLReadOnly() ? LLReadOnly() . ' ' : '') .
         \ (&ft == 'vimfiler' ? vimfiler#get_status_string() : 
         \  &ft == 'unite' ? unite#get_status_string() : 
         \  &ft == 'vimshell' ? substitute(b:vimshell.current_dir,expand('~'),'~','') : 
         \ '' != expand('%t') ? expand('%t') : '[No Name]') .
-        \ ('' != MyModified() ? ' ' . MyModified() : '')
+        \ ('' != LLModified() ? ' ' . LLModified() : '')
 endfunction
 
-function! MyFugitive()
+function! LLFugitive()
   return &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head') && strlen(fugitive#head()) ? '⭠ '.fugitive#head() : ''
 endfunction
 
-function! MyFileformat()
+function! LLFileFormat()
   return winwidth('.') > 70 ? &fileformat : ''
 endfunction
 
-function! MyFiletype()
+function! LLFileType()
   return winwidth('.') > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
 endfunction
 
-function! MyFileencoding()
+function! LLFileEncoding()
   return winwidth('.') > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
 endfunction
 
-function! MyMode()
+function! LLMode()
   return winwidth('.') > 60 ? lightline#mode() : ''
 endfunction
 
