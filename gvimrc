@@ -7,6 +7,7 @@ call vundle#rc()
 " Vundle manages Vundle. Vundleception!
 Bundle 'gmarik/vundle'
 
+Bundle 'PeterRincker/vim-argumentative.git'
 Bundle 'itchyny/lightline.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'terryma/vim-expand-region'
