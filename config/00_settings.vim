@@ -118,7 +118,7 @@ let g:syntastic_php_phpcs_errorformat =
 " ------------------------------- LaTeX Suite -------------------------------
 let g:Tex_DefaultTargetFormat = 'pdf'
 
-let g:BCFCommitFilePath = '/home/abieber/commits/'
+let g:BCFCommitFilePath = expand('~') . '/commits/'
 
 let g:indentLine_char = '│'
 let g:indentLine_color_term = 236
