@@ -42,9 +42,6 @@ nnoremap S :call StripTrailingWhitespace()<CR>
 nmap <leader>y "*y
 vmap <leader>y "*y
 nmap <leader>Y "*yy
-nmap <leader>p "*p
-vmap <leader>p "*p
-nmap <leader>P "*P
 
 " Control-backspace deletes a whole word backwards in insert mode
 " I should rid myself of this bad habit and use <C-w> instead.
