@@ -118,9 +118,4 @@ let g:syntastic_php_phpcs_errorformat =
 " ------------------------------- LaTeX Suite -------------------------------
 let g:Tex_DefaultTargetFormat = 'pdf'
 
-let g:BCFCommitFilePath = expand('~') . '/commits/'
-
-let g:indentLine_char = '│'
-let g:indentLine_color_term = 236
-
 " vim: set et ts=4 sw=4 :
