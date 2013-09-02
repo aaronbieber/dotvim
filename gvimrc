@@ -47,7 +47,7 @@ Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'mhinz/vim-signify'
 
 " Snipmate and its dependencies.
