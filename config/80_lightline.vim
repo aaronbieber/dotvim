@@ -20,11 +20,11 @@ let g:lightline = {
       \ }
 
 function! LLCommitTracker()
-    if !exists("*BCFStatusLineElement")
+    if !exists("*committed#status_line_symbol")
         return ''
     endif
 
-    let line = BCFStatusLineElementFileStatus() . ' ' . BCFStatusLineElement()
+    let line = committed#status_line_symbol() . ' ' . committed#status_line_filename()
     if len(line) > 1
         return line
     else
