@@ -9,15 +9,12 @@ Bundle 'gmarik/vundle'
 
 Bundle 'PeterRincker/vim-argumentative.git'
 Bundle 'itchyny/lightline.vim'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'terryma/vim-expand-region'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'Yggdroot/indentLine'
 Bundle 'Raimondi/delimitMate'
 
 " My own stuff.
 Bundle 'git@github.com:aaronbieber/quicktask.git'
-Bundle 'git@github.com:aaronbieber/commit-tracker.git'
+Bundle 'git@github.com:aaronbieber/vim-committed.git'
 
 " Nyan cat is critical.
 Bundle 'koron/nyancat-vim'
@@ -27,12 +24,10 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-unimpaired'
 
 " Scrooloose FTW.
-Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 
