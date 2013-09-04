@@ -50,11 +50,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/emmet-vim'
 Bundle 'mhinz/vim-signify'
-
-" Snipmate and its dependencies.
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
+Bundle 'SirVer/ultisnips'
 
 if &termencoding == ""
     let &termencoding = &encoding
