@@ -29,6 +29,7 @@ autocmd FileType php set expandtab ts=2 sw=2 tw=120 cc=+1 previewheight=1 cinden
 autocmd FileType php inoremap {<cr> {<cr>}<c-o>O
 autocmd FileType php inoremap [<cr> [<cr>]<c-o>O
 autocmd FileType php inoremap (<cr> (<cr>)<c-o>O
+autocmd FileType php set foldmethod=manual
 
 " Close the preview window when leaving insert mode.
 autocmd InsertLeave *.php if pumvisible() == 0|pclose|endif

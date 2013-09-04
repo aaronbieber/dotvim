@@ -105,6 +105,7 @@ let g:quicktask_snip_default_filetype = "markdown"
 " -------------------------------- Snippets ----------------------------------
 "let snippets_dir = substitute(substitute(globpath(&rtp, 'snippets/'), "\n", ',', 'g'), 'snippets\\,', 'snippets,', 'g')
 let g:snips_author = 'Aaron Bieber <abieber@wayfair.com>'
+let g:UltiSnipsSnippetsDir = "~/.vim/snippets"
 
 " -------------------------------- Syntastic ---------------------------------
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']

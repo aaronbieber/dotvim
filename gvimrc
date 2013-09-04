@@ -1,5 +1,6 @@
 " Don't be compatible with vi.
 set nocompatible
+filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -9,8 +10,8 @@ Bundle 'gmarik/vundle'
 
 Bundle 'PeterRincker/vim-argumentative.git'
 Bundle 'itchyny/lightline.vim'
-Bundle 'terryma/vim-expand-region'
 Bundle 'Raimondi/delimitMate'
+Bundle 'sjl/gundo.vim'
 
 " My own stuff.
 Bundle 'git@github.com:aaronbieber/quicktask.git'
