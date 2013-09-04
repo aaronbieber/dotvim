@@ -1,8 +1,3 @@
-"____Helpful mappings____
-
-" Show registers.
-map <leader>rg :registers<CR>
-
 " Open reference documents. This could almost be a plugin.
 function! OpenReference()
     execute "tabnew"
@@ -11,41 +6,21 @@ function! OpenReference()
 endfunction
 nmap <Leader>re :call OpenReference()<CR>
 
-" Open a TODO list document.
-function! OpenTodoList()
-    execute "tabnew"
-    execute "edit ".g:Todo_List_Location
-endfunction
-nmap <Leader>td :call OpenTodoList()<CR>
-
-" Move around in tabs.
-nnoremap <Leader>tn :tabnext<CR>
-nnoremap <Leader>tp :tabprevious<CR>
-nnoremap <Leader>tc :tabnew<CR>
-
-" Set colorcolumn to the column the cursor is currently in.
-nmap <Leader>cc :let &colorcolumn=virtcol('.')<CR>
-
 " Reformat paragraph.
-nmap <Leader>rp vipJVgq``
+nmap <Leader>rp vipJVgq
 
-" Y yanks to the end of the line
+" Toggle paste.
+nmap cp :set paste!<CR>
+
+" Y yanks to the end of the line, as you would expect it to.
 nmap Y y$
 
 " <Leader>d shows a diff of the current file in color.
+" Only works where colordiff can be found.
 nmap <Leader>d :execute "!jsvn diff ".expand('%:p')." \| colordiff \| less -R"<CR>
 
 " Delete trailing whitespace.
 nnoremap S :call StripTrailingWhitespace()<CR>
-
-" shortcuts for copying to/pasting from the clipboard
-nmap <leader>y "*y
-vmap <leader>y "*y
-nmap <leader>Y "*yy
-
-" Control-backspace deletes a whole word backwards in insert mode
-" I should rid myself of this bad habit and use <C-w> instead.
-" imap <C-BS> <C-W>
 
 " Create surrounding HTML tags out of the word near the cursor.
 imap <C-A> <ESC>viwc<"></"><ESC>cit
@@ -57,16 +32,6 @@ endif
 
 " 'Maximize' a split with F6.
 nmap <F6> <C-W>_
-
-" Set up Ctrl-Left and Ctrl-Right to cycle through buffers (invisible
-" windows). Helpful when you use the right click command 'open all in single
-" Vim' to move through them. Use :buffers to view list of open buffers.
-nmap <C-Right> :bnext!<CR>
-nmap <C-Left> :bprev!<CR>
-
-" Set up bindings for working with tabs. Because tabs are handy.
-nmap <C-Tab> :tabnext<CR>
-nmap <C-S-Tab> :tabprevious<CR>
 
 " Set Shift-Left and Shift-Right to scroll left and right. Helpful while using
 " the diff function.
@@ -88,11 +53,6 @@ nmap <C-l> '[>']
 " OS X and other UN*X interfaces (e.g. bash).
 imap <C-e> <Esc>A
 
-" Toggle the highlighting of the searched text. I use this one all the time.
-" I am trying out space for this, but also use <Leader>th ("toggle highlight")
-nnoremap <Leader>th :set hlsearch! hlsearch?<CR>
-nnoremap <Space> :set hlsearch! hlsearch?<CR>
-
 " Allow the up and down arrows to move between LOGICAL lines of text on the
 " screen, even if they are wrapped portions of the same LITERAL line of text.
 " Works in any mode.
@@ -104,11 +64,6 @@ map <Down> gj
 " either up or down and maximizes it all at once.
 nmap <C-w>u <C-w><Up><C-w>_
 nmap <C-w>d <C-w><Down><C-w>_
-
-" Ctrl-Up and Ctrl-Down (in normal mode) moves to the next window either up or
-" down, maximizes it, and centers the window on the current line.
-nmap <C-Up> <C-w><Up><C-w>_z.
-nmap <C-Down> <C-w><Down><C-w>_z.
 
 " ----------------------------- Omnicompletion --------------------------------
 " Remap the omnicompletion commands because all the <C-x> shit is annoying.
@@ -135,10 +90,11 @@ nmap <Leader>n :call ToggleNumbering()<CR>
 nmap <C-P> :CtrlP<CR>
 nmap <Leader>b :CtrlPBuffer<CR>
 
-
 " --------------------------- Visual Mode Mappings ----------------------------
 " In visual mode, D will Duplicate the selected lines after the visual block.
 vmap D y'>p']
+
+Whoever's
 
 " Allow * and # to work the way you would expect when some text is selected.
 " These use the z register for now until I can find the more elegant solution,
