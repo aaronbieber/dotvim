@@ -9,6 +9,8 @@ nmap <Leader>re :call OpenReference()<CR>
 " Reformat paragraph.
 nmap <Leader>rp vipJVgq
 
+nmap <Space> :set hlsearch!<CR>
+
 " Toggle paste.
 nmap cp :set paste!<CR>
 
