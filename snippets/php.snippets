@@ -68,9 +68,23 @@ private static function ${1:name}(${2:$param}) {
 $0
 endsnippet
 
+snippet doc_fp "Document function, post" !b
+/**
+ * ${1:undocumented function}
+ *
+ * @return ${2:void}
+ */${3}
+endsnippet
+
 snippet fu "Function snip" !b
-function ${1:name}(${2:$param}) {
-  ${VISUAL}${3:return null;}
+/**
+ * Function $3
+ *
+ * @return ${5:string} ${6:Returns a string}
+ */
+${1:public }${2:static }function ${3:name}(${4:$param}) {
+  // ${7:Code}
+  return null;
 }
 $0
 endsnippet
