@@ -94,8 +94,6 @@ nmap <Leader>b :CtrlPBuffer<CR>
 " In visual mode, D will Duplicate the selected lines after the visual block.
 vmap D y'>p']
 
-Whoever's
-
 " Allow * and # to work the way you would expect when some text is selected.
 " These use the z register for now until I can find the more elegant solution,
 " which I know exists.
