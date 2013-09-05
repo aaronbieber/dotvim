@@ -84,13 +84,40 @@ endsnippet
 snippet class "Class declaration template" !b
 /**
  * Class ${1:`!p snip.rv=snip.fn.split('.')[0]`} 
- * @author $2
+ *
+ * @author ${2:`!v g:snips_author`}
  */
 class $1 {
   public function ${3:__construct}(${4:$options}) {
     ${4:// code}
   }
 }
-$0
 endsnippet
 
+snippet doc_cp "Class declaration, post" !b
+/**
+ * ${1:undocumented class}
+ *
+ * @author ${3:`!v g:snips_author`}
+ */${4}
+endsnippet
+
+snippet doc_h "File (head) document block" !b
+/**
+ * ${1}
+ *
+ * PHP Version 5
+ *
+ * @author    Aaron Bieber <abieber@wayfair.com>
+ * @copyright `!v strftime('%Y')` Wayfair LLC, All Rights Reserved
+ * @version   SVN: $Id$
+ */
+endsnippet
+
+snippet array
+$${1:array_name} = array('$2' => $3);$4
+endsnippet
+
+snippet param
+@param ${1:string} $${2:foo} ${3:Description}
+endsnippet
