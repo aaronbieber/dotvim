@@ -10,6 +10,7 @@ nmap <Leader>re :call OpenReference()<CR>
 nmap <Leader>rp vipJVgq
 
 nmap <Space> :set hlsearch!<CR>
+nmap <Return> :silent! normal za<CR>
 
 " Toggle paste.
 nmap cp :set paste!<CR>
