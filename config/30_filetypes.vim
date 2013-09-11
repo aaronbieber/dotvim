@@ -4,10 +4,6 @@ autocmd BufRead,BufNewFile *.wiki setfiletype wiki
 autocmd BufRead,BufNewFile *.md setfiletype octopress
 autocmd BufRead,BufNewFile *.markdown setfiletype octopress
 
-" When entering a buffer, change the local working directory to the location 
-" of the file. This is actually really handy, most of the time.
-autocmd BufEnter * lcd %:p:h
-
 " Set specific settings for specific filetypes.
 autocmd FileType css set smartindent
 autocmd FileType markdown set tw=78 expandtab ts=4 sw=4 spell nocindent autoindent

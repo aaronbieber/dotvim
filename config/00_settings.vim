@@ -37,6 +37,9 @@ set hidden                  " Don't unload buffers that are abandoned; hide
                             " them.
 set fileformats=unix,dos    " Create UNIX format files by default, but
                             " autodetect dos files.
+set tags=tags;/             " Search for a file called tags. If it is not
+                            " found in the current directory, continue up one
+                            " directory at a time until we reach /.
 
 " Don't create backup files when editing in these locations.
 set backupskip=/tmp/*,/private/tmp/*
@@ -65,24 +68,15 @@ endif
 " #          Configure any plugin-specific settings and mappings.            #
 " ############################################################################
 
-" ------------------------------- AutoClose ----------------------------------
-let g:AutoClosePairs = "' \" [] () {}"
-
-" ----------------------------- Indent Guides --------------------------------
-let g:indent_guides_color_change_percent = 3
-
 " --------------------------------- TagBar -----------------------------------
 let g:tagbar_autoclose = 1
 if has("gui_win32")
     let g:tagbar_ctags_bin = 'd:\bin\ctags\ctags.exe'
-
-    " This one is not really TagBar-specific, but it involves tags. Use my global PHP tags in Windows.
-    set tags=c:\Users\abieber\tags-php
 else
     let g:tagbar_ctags_bin = 'ctags'
-    set tags=~/ctags_php
 endif
 nmap <F8> :TagbarToggle<CR>
+nmap <Leader>t :TagbarToggle<CR>
 
 " -------------------------------- NERDTree ----------------------------------
 map <c-t> :NERDTreeToggle<CR>
@@ -103,7 +97,6 @@ let g:quicktask_snip_win_maximize = 1
 let g:quicktask_snip_default_filetype = "markdown"
 
 " -------------------------------- Snippets ----------------------------------
-"let snippets_dir = substitute(substitute(globpath(&rtp, 'snippets/'), "\n", ',', 'g'), 'snippets\\,', 'snippets,', 'g')
 let g:snips_author = 'Aaron Bieber <abieber@wayfair.com>'
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snippets"]
 let g:UltiSnipsDontReverseSearchPath = "1"
@@ -119,5 +112,11 @@ let g:syntastic_php_phpcs_errorformat =
 
 " ------------------------------- LaTeX Suite -------------------------------
 let g:Tex_DefaultTargetFormat = 'pdf'
+
+" ---------------------------------- Gundo ----------------------------------
+nmap <Leader>u :GundoToggle<CR>
+
+" -------------------------------- Committed --------------------------------
+let g:committed_symbols_fancy = 1
 
 " vim: set et ts=4 sw=4 :
