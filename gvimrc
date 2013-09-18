@@ -13,6 +13,10 @@ Bundle 'itchyny/lightline.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'sjl/gundo.vim'
 
+" A whole collection of language support files.
+Bundle 'sheerun/vim-polyglot'
+Bundle 'StanAngeloff/php.vim'
+
 " My own stuff.
 Bundle 'git@github.com:aaronbieber/quicktask.git'
 Bundle 'git@github.com:aaronbieber/vim-committed.git'
@@ -22,7 +26,6 @@ Bundle 'koron/nyancat-vim'
 
 " Tim Pope FTW.
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-unimpaired'
@@ -36,11 +39,8 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'ciaranm/inkpot'
 
 " Syntaxes and language support
-Bundle 'juvenn/mustache.vim'
-Bundle 'beyondwords/vim-twig'
-Bundle 'groenewege/vim-less'
 Bundle 'pangloss/vim-javascript'
-Bundle 'tangledhelix/vim-octopress'
+" Bundle 'tangledhelix/vim-octopress'
 " Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 
 " Helpers
