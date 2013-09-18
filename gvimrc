@@ -21,7 +21,6 @@ Bundle 'git@github.com:aaronbieber/vim-committed.git'
 Bundle 'koron/nyancat-vim'
 
 " Tim Pope FTW.
-Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-surround'
@@ -42,7 +41,7 @@ Bundle 'beyondwords/vim-twig'
 Bundle 'groenewege/vim-less'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tangledhelix/vim-octopress'
-Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+" Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 
 " Helpers
 Bundle 'godlygeek/tabular'
