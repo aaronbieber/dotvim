@@ -18,9 +18,11 @@ nmap cp :set paste!<CR>
 " Y yanks to the end of the line, as you would expect it to.
 nmap Y y$
 
-" <Leader>d shows a diff of the current file in color.
-" Only works where colordiff can be found.
-nmap <Leader>d :execute "!jsvn diff ".expand('%:p')." \| colordiff \| less -R"<CR>
+" Leader-d toggles signify, which displays diff status for version-controlled files.
+nmap <Leader>d :SignifyToggle<CR>
+
+" Leader-s toggles syntastic, which displays errors for 'interpretable' files.
+nmap <Leader>s :SyntasticToggleMode<CR>
 
 " Delete trailing whitespace.
 nnoremap S :call StripTrailingWhitespace()<CR>

@@ -119,4 +119,7 @@ nmap <Leader>u :GundoToggle<CR>
 " -------------------------------- Committed --------------------------------
 let g:committed_symbols_fancy = 1
 
+" --------------------------------- Signify ---------------------------------
+let g:signify_disable_by_default = 1
+
 " vim: set et ts=4 sw=4 :
