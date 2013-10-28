@@ -27,6 +27,7 @@ autocmd FileType php inoremap [<cr> [<cr>]<c-o>O
 autocmd FileType php inoremap (<cr> (<cr>)<c-o>O
 autocmd FileType php set foldmethod=manual
 autocmd FileType php let b:surround_45 = "<?php \r ?>"
+autocmd FileType php let b:surround_63 = "<?=\r;?>"
 
 " Close the preview window when leaving insert mode.
 autocmd InsertLeave *.php if pumvisible() == 0|pclose|endif
