@@ -15,7 +15,7 @@ set textwidth=0             " By default, don't wrap at any specific
 set linebreak wrap          " Wrap text while typing (this is a soft wrap
                             " without textwidth set).
 set mouse=a                 " Allow use of the mouse in all situations.
-set nu                      " Use line numbering.
+set number                  " Use line numbering.
 set shiftwidth=4            " That means I like to indent by that amount as
                             " well.
 set showcmd                 " Show commands as I am typing them.
@@ -37,7 +37,7 @@ set hidden                  " Don't unload buffers that are abandoned; hide
                             " them.
 set fileformats=unix,dos    " Create UNIX format files by default, but
                             " autodetect dos files.
-set tags=tags;/             " Search for a file called tags. If it is not
+set tags=./tags;/           " Search for a file called tags. If it is not
                             " found in the current directory, continue up one
                             " directory at a time until we reach /.
 
@@ -64,6 +64,11 @@ if v:version > 702
     au BufWritePre /private/tmp/* setlocal noundofile
 endif
 
+if v:version >= 704
+    " With Vim 7.4, relativenumber is definitely the way to go.
+    set relativenumber
+endif
+
 " ############################################################################
 " #          Configure any plugin-specific settings and mappings.            #
 " ############################################################################
@@ -85,6 +90,7 @@ let NERDTreeQuitOnOpen=0
 
 " --------------------------------- CtrlP ------------------------------------
 let g:ctrlp_open_new_file = 'h'
+let g:ctrlp_user_command = "find %s -type f -not -wholename '*/.svn*' | sort -d"
 
 " ------------------------------- Quicktask ----------------------------------
 let g:quicktask_autosave = 1

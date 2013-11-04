@@ -10,7 +10,7 @@ nmap <Leader>re :call OpenReference()<CR>
 nmap <Leader>rp vipJVgq
 
 nmap <Space> :set hlsearch!<CR>
-nmap <Return> :silent! normal za<CR>
+"nmap <Return> :silent! normal za<CR>
 
 " Toggle paste.
 nmap cp :set paste!<CR>
@@ -36,7 +36,7 @@ if has('gui') && has('win32')
 endif
 
 " 'Maximize' a split with F6.
-nmap <F6> <C-W>_
+" nmap <F6> <C-W>_
 
 " Set Shift-Left and Shift-Right to scroll left and right. Helpful while using
 " the diff function.
