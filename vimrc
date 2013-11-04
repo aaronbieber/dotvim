@@ -65,6 +65,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'mattn/emmet-vim'
 Bundle 'mhinz/vim-signify'
 Bundle 'SirVer/ultisnips'
+Bundle 'ervandew/supertab'
 
 if vundle_autoinstall
     echo "Installing bundles..."
