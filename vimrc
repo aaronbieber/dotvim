@@ -12,6 +12,7 @@ Bundle 'PeterRincker/vim-argumentative.git'
 Bundle 'itchyny/lightline.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'sjl/gundo.vim'
+Bundle 'osyo-manga/vim-over'
 
 " A whole collection of language support files.
 Bundle 'sheerun/vim-polyglot'
