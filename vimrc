@@ -20,10 +20,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'PeterRincker/vim-argumentative.git'
 Bundle 'itchyny/lightline.vim'
-Bundle 'Raimondi/delimitMate'
-Bundle 'sjl/gundo.vim'
 Bundle 'osyo-manga/vim-over'
-Bundle 'ervandew/supertab'
 
 " A whole collection of language support files.
 Bundle 'sheerun/vim-polyglot'
@@ -59,13 +56,14 @@ Bundle 'tangledhelix/vim-octopress'
 " Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 
 " Helpers
+Bundle 'Raimondi/delimitMate'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/emmet-vim'
-Bundle 'mhinz/vim-signify'
 Bundle 'SirVer/ultisnips'
 Bundle 'ervandew/supertab'
+Bundle 'sjl/gundo.vim'
 
 if vundle_autoinstall
     echo "Installing bundles..."
