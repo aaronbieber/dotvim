@@ -2,6 +2,16 @@
 set nocompatible
 filetype off
 
+let vundle_autoinstall = 0
+let vundle_readme = expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle..."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let vundle_autoinstall = 1
+endif
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -55,6 +65,12 @@ Bundle 'majutsushi/tagbar'
 Bundle 'mattn/emmet-vim'
 Bundle 'mhinz/vim-signify'
 Bundle 'SirVer/ultisnips'
+
+if vundle_autoinstall
+    echo "Installing bundles..."
+    echo ""
+    :BundleInstall
+endif
 
 if &termencoding == ""
     let &termencoding = &encoding
