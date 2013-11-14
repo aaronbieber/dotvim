@@ -9,17 +9,17 @@ nmap <Leader>re :call OpenReference()<CR>
 " Reformat paragraph.
 nmap <Leader>rp vipJVgq
 
+" Toggle paste mode.
+nmap <Leader>, :set paste!<CR>
+
+" Edit the alternate file (the same as ctrl-6).
+nmap <Leader>. :e #<CR>
+
 nmap <Space> :set hlsearch!<CR>
 "nmap <Return> :silent! normal za<CR>
 
-" Toggle paste.
-nmap cp :set paste!<CR>
-
 " Y yanks to the end of the line, as you would expect it to.
 nmap Y y$
-
-" Leader-d toggles signify, which displays diff status for version-controlled files.
-nmap <Leader>d :SignifyToggle<CR>
 
 " Leader-s toggles syntastic, which displays errors for 'interpretable' files.
 nmap <Leader>s :SyntasticToggleMode<CR>
@@ -28,15 +28,7 @@ nmap <Leader>s :SyntasticToggleMode<CR>
 nnoremap S :call StripTrailingWhitespace()<CR>
 
 " Create surrounding HTML tags out of the word near the cursor.
-imap <C-A> <ESC>viwc<"></"><ESC>cit
-
-" Attempt to maximize the window in Windows only:
-if has('gui') && has('win32')
-    nmap <C-X> :simalt ~x<CR>
-endif
-
-" 'Maximize' a split with F6.
-" nmap <F6> <C-W>_
+imap <C-a> <ESC>viwc<"></"><ESC>cit
 
 " Set Shift-Left and Shift-Right to scroll left and right. Helpful while using
 " the diff function.
@@ -66,12 +58,13 @@ map <Down> gj
 
 " Mappings for easier split window navigation:
 " Ctrl-w followed by u and d for up and down moves you to the next window
-" either up or down and maximizes it all at once.
+" either up or down and maximizes it all at once (accordion mode).
 nmap <C-w>u <C-w><Up><C-w>_
 nmap <C-w>d <C-w><Down><C-w>_
 
 " ----------------------------- Omnicompletion --------------------------------
 " Remap the omnicompletion commands because all the <C-x> shit is annoying.
+
 " Words
 inoremap <Leader><Tab> <C-x><C-o>
 
@@ -81,18 +74,8 @@ inoremap <Leader>: <C-x><C-f>
 " Lines
 inoremap <Leader>= <C-x><C-l>
 
-" Toggle number and relativenumber (requires this little function)
-function! ToggleNumbering()
-    if &number == 1
-        setlocal relativenumber
-    else
-        setlocal number
-    endif
-endfunction
-nmap <Leader>n :call ToggleNumbering()<CR>
-
 " --------------------------------- Ctrl-P ------------------------------------
-nmap <C-P> :CtrlP<CR>
+nmap <C-p> :CtrlP<CR>
 nmap <Leader>b :CtrlPBuffer<CR>
 
 " --------------------------- Visual Mode Mappings ----------------------------
