@@ -13,6 +13,7 @@ Bundle 'itchyny/lightline.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'sjl/gundo.vim'
 Bundle 'osyo-manga/vim-over'
+Bundle 'ervandew/supertab'
 
 " A whole collection of language support files.
 Bundle 'sheerun/vim-polyglot'
@@ -41,7 +42,10 @@ Bundle 'ciaranm/inkpot'
 
 " Syntaxes and language support
 Bundle 'pangloss/vim-javascript'
-" Bundle 'tangledhelix/vim-octopress'
+Bundle 'tangledhelix/vim-octopress'
+" This plug-in is huge and causes errors during BundleInstall, but it's the
+" de-facto standard for LaTeX so I'm leaving it here as a reminder for the
+" day I want to edit LaTeX, which is not uncommon for me at all.
 " Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 
 " Helpers
