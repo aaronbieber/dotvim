@@ -1,8 +1,9 @@
 "____Filetype preferences____
 autocmd BufRead,BufNewFile *.txt setfiletype text
 autocmd BufRead,BufNewFile *.wiki setfiletype wiki
-autocmd BufRead,BufNewFile *.md setfiletype octopress
-autocmd BufRead,BufNewFile *.markdown setfiletype octopress
+autocmd BufRead,BufNewFile */_posts/* set filetype=octopress
+autocmd BufRead,BufNewFile *.md setfiletype markdown
+autocmd BufRead,BufNewFile *.markdown setfiletype markdown
 
 " Set specific settings for specific filetypes.
 autocmd FileType css set smartindent
