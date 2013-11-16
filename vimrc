@@ -56,13 +56,13 @@ Bundle 'tangledhelix/vim-octopress'
 " Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 
 " Helpers
-Bundle 'Raimondi/delimitMate'
-Bundle 'godlygeek/tabular'
+Bundle 'ervandew/supertab'
+Bundle 'junegunn/vim-easy-align'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/emmet-vim'
+Bundle 'Raimondi/delimitMate'
 Bundle 'SirVer/ultisnips'
-Bundle 'ervandew/supertab'
 Bundle 'sjl/gundo.vim'
 
 if vundle_autoinstall
