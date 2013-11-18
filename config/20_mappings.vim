@@ -12,7 +12,8 @@ nmap <Leader>rp vipJVgq
 " Toggle paste mode.
 nmap <Leader>, :set paste!<CR>
 
-" Edit the alternate file (the same as ctrl-6).
+" Easily edit the alternate file without having to reach up and hit Ctrl-6.
+" Because my <Leader> is set to comma, I just hit `,,` to run this.
 nmap <Leader>. :e #<CR>
 
 nmap <Space> :set hlsearch!<CR>
@@ -61,10 +62,6 @@ map <Down> gj
 " either up or down and maximizes it all at once (accordion mode).
 nmap <C-w>u <C-w><Up><C-w>_
 nmap <C-w>d <C-w><Down><C-w>_
-
-" Easily edit the alternate file without having to reach up and hit Ctrl-6.
-" Because my <Leader> is set to comma, I just hit `,,` to run this.
-nmap <Leader>, :e #<CR>
 
 " ----------------------------- Omnicompletion --------------------------------
 " Remap the omnicompletion commands because all the <C-x> shit is annoying.
