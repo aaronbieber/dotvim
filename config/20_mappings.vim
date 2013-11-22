@@ -89,4 +89,7 @@ vmap D y'>p']
 vmap * "zy/<C-r>z<CR>
 vmap # "zy?<C-r>z<CR>
 
+" Let ,a start an easy align command for me.
+vmap <Leader>a :EasyAlign<CR>
+
 " vim: set et ts=4 sw=4 :
