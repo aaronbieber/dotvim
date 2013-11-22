@@ -22,7 +22,7 @@ autocmd FileType wiki set tw=0 fo=tqnw
 autocmd FileType xhtml inoremap <S-CR> <br />
 autocmd FileType yaml set ts=2 sw=2 expandtab
 
-autocmd FileType php set expandtab ts=2 sw=2 tw=120 cc=+1 previewheight=1 cindent
+autocmd FileType php set expandtab ts=2 sw=2 tw=120 cc=+1 cindent
 autocmd FileType php inoremap {<cr> {<cr>}<c-o>O
 autocmd FileType php inoremap [<cr> [<cr>]<c-o>O
 autocmd FileType php inoremap (<cr> (<cr>)<c-o>O
