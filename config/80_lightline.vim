@@ -2,7 +2,7 @@ let g:lightline = {
       \ 'colorscheme': 'powerline',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename', 'commit-tracker' ] ]
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
       \ },
       \ 'component_function': {
       \   'modified': 'LLModified',
@@ -12,25 +12,11 @@ let g:lightline = {
       \   'fileformat': 'LLFileFormat',
       \   'filetype': 'LLFileType',
       \   'fileencoding': 'LLFileEncoding',
-      \   'mode': 'LLMode',
-      \   'commit-tracker': 'LLCommitTracker'
+      \   'mode': 'LLMode'
       \ },
       \ 'separator': { 'left': '⮀', 'right': '⮂' },
       \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
       \ }
-
-function! LLCommitTracker()
-    if !exists("*committed#status_line_symbol")
-        return ''
-    endif
-
-    let line = committed#status_line_symbol() . ' ' . committed#status_line_filename()
-    if len(line) > 1
-        return line
-    else
-        return ''
-    endif
-endfunction
 
 function! LLModified()
   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
