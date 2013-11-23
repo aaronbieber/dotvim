@@ -28,7 +28,6 @@ Bundle 'StanAngeloff/php.vim'
 
 " My own stuff.
 Bundle 'git@github.com:aaronbieber/quicktask.git'
-Bundle 'git@github.com:aaronbieber/vim-committed.git'
 
 " Nyan cat is critical.
 Bundle 'koron/nyancat-vim'
@@ -44,7 +43,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 
 " Colors
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'ciaranm/inkpot'
 Bundle 'MaxSt/FlatColor'
 
@@ -80,9 +78,6 @@ set encoding=utf-8
 " #############################################################################
 " #                 Bootstrap my configuration and plugins                    #
 " #############################################################################
-
-" Fix the Solarized mapping.
-call togglebg#map("")
 
 " Now enable syntax highlighting and filetype stuff.
 syntax on
