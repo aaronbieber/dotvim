@@ -46,6 +46,7 @@ Bundle 'scrooloose/syntastic'
 " Colors
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ciaranm/inkpot'
+Bundle 'MaxSt/FlatColor'
 
 " Syntaxes and language support
 Bundle 'pangloss/vim-javascript'
