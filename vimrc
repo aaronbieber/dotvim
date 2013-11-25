@@ -18,9 +18,8 @@ call vundle#rc()
 " Vundle manages Vundle. Vundleception!
 Bundle 'gmarik/vundle'
 
-Bundle 'PeterRincker/vim-argumentative.git'
+" Lightline is a nice alternative to Powerline.
 Bundle 'itchyny/lightline.vim'
-Bundle 'osyo-manga/vim-over'
 
 " A whole collection of language support files.
 Bundle 'sheerun/vim-polyglot'
@@ -62,7 +61,6 @@ Bundle 'majutsushi/tagbar'
 Bundle 'mattn/emmet-vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'SirVer/ultisnips'
-Bundle 'sjl/gundo.vim'
 
 if vundle_autoinstall
     echo "Installing bundles..."
