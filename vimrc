@@ -61,6 +61,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'mattn/emmet-vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'SirVer/ultisnips'
+Bundle 'mileszs/ack.vim'
 
 if vundle_autoinstall
     echo "Installing bundles..."
