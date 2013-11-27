@@ -5,8 +5,6 @@ let g:lightline = {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
       \ },
       \ 'component_function': {
-      \   'modified': 'LLModified',
-      \   'readonly': 'LLReadOnly',
       \   'fugitive': 'LLFugitive',
       \   'filename': 'LLFilename',
       \   'fileformat': 'LLFileFormat',
@@ -19,20 +17,17 @@ let g:lightline = {
       \ }
 
 function! LLModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? ' +' : &modifiable ? '' : ' -'
 endfunction
 
 function! LLReadOnly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &ro ? '⭤' : ''
+  return &ft !~? 'help\|vimfiler\|gundo' && &ro ? '⭤ ' : ''
 endfunction
 
 function! LLFilename()
-  return ('' != LLReadOnly() ? LLReadOnly() . ' ' : '') .
-        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() : 
-        \  &ft == 'unite' ? unite#get_status_string() : 
-        \  &ft == 'vimshell' ? substitute(b:vimshell.current_dir,expand('~'),'~','') : 
-        \ '' != expand('%t') ? expand('%t') : '[No Name]') .
-        \ ('' != LLModified() ? ' ' . LLModified() : '')
+  return LLReadOnly() .
+       \ ('' != expand('%t') ? expand('%t') : '[No Name]') .
+       \ LLModified()
 endfunction
 
 function! LLFugitive()
