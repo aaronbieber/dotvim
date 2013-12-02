@@ -43,16 +43,6 @@ endfun
 nmap <leader>if :call MatchIndent('f')<CR>
 nmap <leader>ib :call MatchIndent('b')<CR>
 
-" Pressing capital Q destroys the buffer. I use this more than ,bd anyway.
-function! DeleteBufferOrQuit()
-    if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) > 1
-        execute "bdelete!"
-    elseif winnr('$') == 1
-        execute "q!"
-    endif
-endfunction
-nmap Q :bd!<CR>
-
 " Function: TitleCase()
 "
 " Convert the selected area into title case capitalization.
