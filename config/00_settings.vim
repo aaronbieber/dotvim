@@ -118,7 +118,8 @@ let g:UltiSnipsDontReverseSearchPath = "1"
 
 " -------------------------------- Syntastic ---------------------------------
 let g:syntastic_always_populate_loc_list=1
-let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+let g:syntastic_auto_loc_list=1
+let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 
