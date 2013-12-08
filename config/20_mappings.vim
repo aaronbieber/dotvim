@@ -17,7 +17,6 @@ nmap <Leader>, :set paste!<CR>
 nmap <Leader>. :e #<CR>
 
 nmap <Space> :set hlsearch!<CR>
-"nmap <Return> :silent! normal za<CR>
 
 " Y yanks to the end of the line, as you would expect it to.
 nmap Y y$
