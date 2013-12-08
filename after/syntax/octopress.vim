@@ -8,4 +8,3 @@ syn region octopressExtendedLiquidBlock matchgroup=octopressExtendedLiquidBlockD
 
 " Link the regions and matches to highlight groups.
 hi def link  octopressExtendedLiquidBlockDelimiter   PreProc
-hi def link  octopressExtendedLiquidBlock            Underlined
