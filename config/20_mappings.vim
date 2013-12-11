@@ -6,6 +6,9 @@ function! OpenReference()
 endfunction
 nmap <Leader>re :call OpenReference()<CR>
 
+" Instead of using the not-so-awesome 'gf', use my awesome one.
+nmap gf :call Awesomegf()<CR>
+
 " Reformat paragraph.
 nmap <Leader>rp vipJVgq
 

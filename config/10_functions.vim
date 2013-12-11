@@ -114,10 +114,29 @@ function! MarkdownFilter()
 endfunction
 
 function! StripTrailingWhitespace()
-    let l = line('.')
-    let c = col('.')
+    " Save the current line and column so that I can return the cursor to where it started.
+    let line = line('.')
+    let col = col('.')
+
+    " Run a substitution to remove trailing whitespace on all lines that do not match an e-mail signature separator, 
+    " which (by spec) should always have a space at the end of it.
     v/^-- /s/[\r \t]\+$//e
-    call cursor(l, c)
+
+    " Return the cursor from whence it came.
+    call cursor(line, col)
+endfunction
+
+function! Awesomegf()
+    let possible_filename_matches = matchlist(getline("."), "\\v['\"]([^'\"]+)['\"]")
+
+    if len(possible_filename_matches) > 0
+        let possible_filename = possible_filename_matches[1]
+        if filereadable(expand(possible_filename))
+            exec "e " . expand(possible_filename)
+        elseif filereadable(expand(strpart(possible_filename, 1)))
+            exec "e " . expand(strpart(possible_filename, 1))
+        endif
+    endif
 endfunction
 
 " vim: set et ts=4 sw=4 :
