@@ -116,7 +116,7 @@ endfunction
 function! StripTrailingWhitespace()
     let l = line('.')
     let c = col('.')
-    %s/[\r \t]\+$//e
+    v/^-- /s/[\r \t]\+$//e
     call cursor(l, c)
 endfunction
 

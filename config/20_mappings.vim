@@ -85,8 +85,8 @@ vmap D y'>p']
 " Allow * and # to work the way you would expect when some text is selected.
 " These use the z register for now until I can find the more elegant solution,
 " which I know exists.
-vmap * "zy/<C-r>z<CR>
-vmap # "zy?<C-r>z<CR>
+vmap * "zy/\V<C-r>z<CR>
+vmap # "zy?\V<C-r>z<CR>
 
 " Let ,a start an easy align command for me.
 vmap <Leader>a :EasyAlign<CR>
