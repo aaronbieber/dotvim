@@ -44,6 +44,12 @@ Bundle 'scrooloose/syntastic'
 " Colors
 Bundle 'ciaranm/inkpot'
 Bundle 'MaxSt/FlatColor'
+Bundle 'w0ng/vim-hybrid'
+Bundle 'sjl/badwolf'
+Bundle 'shawncplus/skittles_berry'
+Bundle 'Lokaltog/vim-distinguished'
+Bundle 'Pychimp/vim-luna'
+Bundle 'blackgate/tropikos-vim-theme'
 
 " Syntaxes and language support
 Bundle 'pangloss/vim-javascript'
