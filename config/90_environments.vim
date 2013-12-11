@@ -84,7 +84,7 @@ if has("gui_running")
     endif
 else
     " All console-specific settings. -----------------------------------------
-    colorscheme jellybeans
+    colorscheme luna-term-mod
 
     if !filewritable("/tmp/vim_backups")
         call mkdir("/tmp/vim_backups")
