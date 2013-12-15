@@ -25,7 +25,7 @@ nmap Y y$
 nmap <Leader>s :SyntasticToggleMode<CR>
 
 " Delete trailing whitespace.
-nnoremap S :call StripTrailingWhitespace()<CR>
+nnoremap <Leader>S :call StripTrailingWhitespace()<CR>
 
 " Create surrounding HTML tags out of the word near the cursor.
 imap <C-a> <ESC>viwc<"></"><ESC>cit
