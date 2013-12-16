@@ -68,7 +68,6 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'SirVer/ultisnips'
 Bundle 'mileszs/ack.vim'
 Bundle 'justinmk/vim-sneak'
-Bundle 'tommcdo/vim-lion'
 
 if vundle_autoinstall
     echo "Installing bundles..."
