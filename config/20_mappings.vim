@@ -19,7 +19,13 @@ nmap <Leader>, :set paste!<CR>
 " Because my <Leader> is set to comma, I just hit `,,` to run this.
 nmap <Leader>. :e #<CR>
 
+" Toggle search highlighting.
 nmap <Space> :set hlsearch!<CR>
+
+" Display a list of all search matches. This mapping cleverly uses the :g 
+" command to find lines matching the last-used search pattern and implicitly 
+" runs its default command "p", which prints matches.
+nmap g/ :g//<CR>
 
 " Y yanks to the end of the line, as you would expect it to.
 nmap Y y$
