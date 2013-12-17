@@ -59,15 +59,16 @@ Bundle 'tangledhelix/vim-octopress'
 " Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 
 " Helpers
-Bundle 'ervandew/supertab'
-Bundle 'junegunn/vim-easy-align'
-Bundle 'kien/ctrlp.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'mattn/emmet-vim'
-Bundle 'Raimondi/delimitMate'
-Bundle 'SirVer/ultisnips'
-Bundle 'mileszs/ack.vim'
-Bundle 'justinmk/vim-sneak'
+Bundle 'ervandew/supertab'            " One tab to rule them all.
+Bundle 'junegunn/vim-easy-align'      " Align things. Easily.
+Bundle 'kien/ctrlp.vim'               " Fuzzy finder like Sublime Text.
+Bundle 'majutsushi/tagbar'            " Display tags in a file and navigate.
+Bundle 'mattn/emmet-vim'              " Create HTML quickly.
+Bundle 'Raimondi/delimitMate'         " Type matching surrounds quickly.
+Bundle 'SirVer/ultisnips'             " Like snippets from TextMate.
+Bundle 'mileszs/ack.vim'              " Use ack directly from Vim.
+Bundle 'justinmk/vim-sneak'           " Sneak around by two-letter searches.
+Bundle 'Keithbsmiley/investigate.vim' " Look up language definitions.
 
 if vundle_autoinstall
     echo "Installing bundles..."
