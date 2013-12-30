@@ -41,6 +41,18 @@ set tags=./tags;/           " Search for a file called tags. If it is not
                             " found in the current directory, continue up one
                             " directory at a time until we reach /.
 
+" Save only the given options when using 'mksession'.
+set sessionoptions=blank,buffers,curdir,folds,help,tabpages,unix
+
+" If there is support for the unnamed plus register (default X11 clipboard), use
+" it as the default yank, delete, change, and put operations.
+if has('unnamedplus')
+    set clipboard=unnamedplus
+endif
+
+" Set my colorscheme.
+colorscheme skittles_berry
+
 " Don't create backup files when editing in these locations.
 set backupskip=/tmp/*,/private/tmp/*
 
