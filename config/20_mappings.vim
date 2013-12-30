@@ -6,6 +6,9 @@ function! OpenReference()
 endfunction
 nmap <Leader>re :call OpenReference()<CR>
 
+" Try to ween myself off of pressing zero ALL THE TIME.
+nmap 0 :echoe "Stop doing that!"<CR>
+
 " Instead of using the not-so-awesome 'gf', use my awesome one.
 nmap gf :call Awesomegf()<CR>
 
