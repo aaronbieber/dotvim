@@ -4,12 +4,6 @@
 if has("gui_running")
     " All GUI settings -------------------------------------------------------
 
-    " I only use Solarized in the GUI, so configure it here.
-    set background=light
-    let g:solarized_underline=0         "default value is 1
-    let g:solarized_visibility="low"    "default value is normal
-    colorscheme solarized
-
     " No menu nor toolbar.
     set guioptions-=m
     set guioptions-=T
@@ -84,8 +78,6 @@ if has("gui_running")
     endif
 else
     " All console-specific settings. -----------------------------------------
-    colorscheme luna-term-mod
-
     if !filewritable("/tmp/vim_backups")
         call mkdir("/tmp/vim_backups")
     endif
