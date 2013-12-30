@@ -58,7 +58,8 @@ Bundle 'tangledhelix/vim-octopress'
 " day I want to edit LaTeX, which is not uncommon for me at all.
 " Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 
-" Helpers
+" Helpers -- these use the direct call to vundle#config#bundle because the
+" Bundle command thinks that the comments at the end are arguments. Woof.
 call vundle#config#bundle('ervandew/supertab')            " One tab to rule them all.
 call vundle#config#bundle('junegunn/vim-easy-align')      " Align things. Easily.
 call vundle#config#bundle('kien/ctrlp.vim')               " Fuzzy finder like Sublime Text.
