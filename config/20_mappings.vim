@@ -22,6 +22,10 @@ nmap <Leader>, :set paste!<CR>
 " Because my <Leader> is set to comma, I just hit `,,` to run this.
 nmap <Leader>. :e #<CR>
 
+" Do full line completion more easily by hitting ,<Tab> because who wants to 
+" press CTRL-X CTRL-L all the time? Nobody.
+imap <Leader><Tab> <C-x><C-l>
+
 " Toggle search highlighting.
 nmap <Space> :set hlsearch!<CR>
 
