@@ -40,6 +40,8 @@ set fileformats=unix,dos    " Create UNIX format files by default, but
 set tags=./tags;/           " Search for a file called tags. If it is not
                             " found in the current directory, continue up one
                             " directory at a time until we reach /.
+set cryptmethod=blowfish    " Use the much stronger and more secure Blowfish
+                            " algorithm for encrypting files.
 
 " Save only the given options when using 'mksession'.
 set sessionoptions=blank,buffers,curdir,folds,help,tabpages,unix
