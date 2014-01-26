@@ -18,4 +18,6 @@ let b:surround_63 = "<?=\r;?>"
 
 " Close the preview window when leaving insert mode.
 autocmd InsertLeave *.php if pumvisible() == 0|pclose|endif
+
+" Strip trailing whitespace on save.
 autocmd BufWritePre *.php :call StripTrailingWhitespace()
