@@ -114,12 +114,14 @@ function! MarkdownFilter()
 endfunction
 
 function! StripTrailingWhitespace()
-    " Save the current line and column so that I can return the cursor to where it started.
+    " Save the current line and column so that I can return the cursor to where 
+    " it started.
     let line = line('.')
     let col = col('.')
 
-    " Run a substitution to remove trailing whitespace on all lines that do not match an e-mail signature separator, 
-    " which (by spec) should always have a space at the end of it.
+    " Run a substitution to remove trailing whitespace on all lines that do not 
+    " match an e-mail signature separator, which (by spec) should always have a 
+    " space at the end of it.
     v/^-- /s/[\r \t]\+$//e
 
     " Return the cursor from whence it came.
