@@ -37,9 +37,10 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-vinegar'
+Bundle 'tpope/vim-obsession'
 
 " Scrooloose FTW.
-Bundle 'scrooloose/nerdtree'
+" Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 
 " Colors
@@ -69,8 +70,11 @@ call vundle#config#bundle('mattn/emmet-vim')              " Create HTML quickly.
 call vundle#config#bundle('Raimondi/delimitMate')         " Type matching surrounds quickly.
 call vundle#config#bundle('SirVer/ultisnips')             " Like snippets from TextMate.
 call vundle#config#bundle('mileszs/ack.vim')              " Use ack directly from Vim.
+call vundle#config#bundle('rking/ag.vim')                 " Use ag directly from Vim.
 call vundle#config#bundle('justinmk/vim-sneak')           " Sneak around by two-letter searches.
 call vundle#config#bundle('Keithbsmiley/investigate.vim') " Look up language definitions.
+call vundle#config#bundle('vim-php/tagbar-phpctags.vim')  " TagBar support for phpctags.
+call vundle#config#bundle('terryma/vim-multiple-cursors') " Eat it, Sublime Text.
 
 if vundle_autoinstall
     echo "Installing bundles..."
