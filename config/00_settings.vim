@@ -53,7 +53,7 @@ if has('unnamedplus')
 endif
 
 " Set my colorscheme.
-colorscheme skittles_berry
+colorscheme xoria256
 
 " Don't create backup files when editing in these locations.
 set backupskip=/tmp/*,/private/tmp/*
@@ -89,12 +89,6 @@ endif
 
 " --------------------------------- TagBar -----------------------------------
 let g:tagbar_autoclose = 1
-if has("gui_win32")
-    let g:tagbar_ctags_bin = 'd:\bin\ctags\ctags.exe'
-else
-    let g:tagbar_ctags_bin = 'ctags'
-endif
-nmap <F8> :TagbarToggle<CR>
 nmap <Leader>t :TagbarToggle<CR>
 
 " -------------------------------- NERDTree ----------------------------------
