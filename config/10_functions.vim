@@ -29,7 +29,10 @@ function! MatchIndent(direction)
     endif
 
     if !empty(indent)
-        let next_matching_line = search('^' . indent_char . '\{' . len(indent[1]) . '}[^' . indent_char . ']', search_flags)
+        let next_matching_line = search(
+                '^' . indent_char . '\{' . len(indent[1]) . '}[^' . 
+                indent_char . ']', search_flags
+            )
         "execute "normal /" . '^\t\{' . len(b:indent[1]) . '}[^\t]' . "\<CR>"
         if next_matching_line
             call cursor(next_matching_line, 0)
@@ -122,7 +125,7 @@ function! StripTrailingWhitespace()
     " Run a substitution to remove trailing whitespace on all lines that do not 
     " match an e-mail signature separator, which (by spec) should always have a 
     " space at the end of it.
-    v/^-- /s/[\r \t]\+$//e
+    v/^-- /s/\s*$//e
 
     " Return the cursor from whence it came.
     call cursor(line, col)
