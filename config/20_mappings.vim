@@ -6,6 +6,9 @@ function! OpenReference()
 endfunction
 nmap <Leader>re :call OpenReference()<CR>
 
+" Pass the selected lines through tidy with ,x.
+vmap <Leader>x :<Home>silent <End>!tidy -q -i --show-errors 0<CR>
+
 " Try to ween myself off of pressing zero ALL THE TIME.
 nmap 0 :echoe "Stop doing that!"<CR>
 
