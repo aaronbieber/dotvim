@@ -12,8 +12,10 @@ inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O
 inoremap (<cr> (<cr>)<c-o>O
 
-" Extra settings for the Surround plug-in, specific to PHP.
+" Extra settings for the Surround plug-in, specific to PHP:
+" Surround with long PHP tags by pressing `-`
 let b:surround_45 = "<?php \r ?>"
+" Surround with PHP echo tags by pressing `?`
 let b:surround_63 = "<?=\r;?>"
 
 " Close the preview window when leaving insert mode.
