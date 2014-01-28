@@ -125,7 +125,7 @@ function! StripTrailingWhitespace()
     " Run a substitution to remove trailing whitespace on all lines that do not 
     " match an e-mail signature separator, which (by spec) should always have a 
     " space at the end of it.
-    v/^-- /s/\s*$//e
+    v/^-- /s/\s\+$//e
 
     " Return the cursor from whence it came.
     call cursor(line, col)
