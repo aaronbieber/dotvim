@@ -98,7 +98,9 @@ let NERDTreeQuitOnOpen=0
 
 " --------------------------------- CtrlP ------------------------------------
 let g:ctrlp_open_new_file = 'h'
-let g:ctrlp_user_command = "find %s -type f -not -wholename '*.svn*' " .
+let g:ctrlp_user_command = "find %s -type f " .
+                         \ "-not -wholename '*.svn*' " .
+                         \ "-not -wholename '*.git*' " .
                          \ "-not -iname '*.jpg' " .
                          \ "-not -iname '*.gif' " .
                          \ "-not -iname '*.pdf' " .
@@ -122,6 +124,7 @@ let g:quicktask_snip_default_filetype = "markdown"
 " -------------------------------- Snippets ----------------------------------
 let g:snips_author = 'Aaron Bieber <abieber@wayfair.com>'
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snippets"]
+let g:UltiSnipsDontReverseSearchPath = "1"
 
 " -------------------------------- Syntastic ---------------------------------
 let g:syntastic_always_populate_loc_list=1
