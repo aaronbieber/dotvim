@@ -26,7 +26,7 @@ Bundle 'sheerun/vim-polyglot'
 Bundle 'StanAngeloff/php.vim'
 
 " My own stuff.
-Bundle 'git@github.com:aaronbieber/quicktask.git'
+Bundle 'git@github.com:aaronbieber/vim-quicktask.git'
 
 " Nyan cat is critical.
 Bundle 'koron/nyancat-vim'
