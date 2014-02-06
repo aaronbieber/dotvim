@@ -124,7 +124,7 @@ let g:quicktask_snip_default_filetype = "markdown"
 " -------------------------------- Snippets ----------------------------------
 let g:snips_author = 'Aaron Bieber <abieber@wayfair.com>'
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snippets"]
-let g:UltiSnipsDontReverseSearchPath = "1"
+let g:UltiSnipsDontReverseSearchPath = "0"
 
 " -------------------------------- Syntastic ---------------------------------
 let g:syntastic_always_populate_loc_list=1
