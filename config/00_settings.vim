@@ -114,13 +114,8 @@ let g:ctrlp_custom_ignore = {
 
 " ------------------------------- Quicktask ----------------------------------
 let g:quicktask_autosave = 1
-if has("gui_win32")
-    let g:quicktask_snip_path = 'c:\Users\a.bieber\Dropbox\snips'
-else
-    let g:quicktask_snip_path = '~/Dropbox/snips'
-endif
+let g:quicktask_snip_path = '~/Dropbox/snips'
 let g:quicktask_snip_win_maximize = 1
-let g:quicktask_snip_default_filetype = "markdown"
 
 " -------------------------------- Snippets ----------------------------------
 let g:snips_author = 'Aaron Bieber <abieber@wayfair.com>'
