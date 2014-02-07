@@ -51,6 +51,7 @@ Bundle 'sjl/badwolf'
 Bundle 'shawncplus/skittles_berry'
 Bundle 'Lokaltog/vim-distinguished'
 Bundle 'blackgate/tropikos-vim-theme'
+Bundle 'baverman/vim-babymate256'
 
 " Syntaxes and language support
 Bundle 'pangloss/vim-javascript'
