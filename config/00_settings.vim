@@ -98,6 +98,7 @@ let NERDTreeQuitOnOpen=0
 
 " --------------------------------- CtrlP ------------------------------------
 let g:ctrlp_open_new_file = 'h'
+let g:ctrlp_extensions = ['funky']
 let g:ctrlp_user_command = "find %s -type f " .
                          \ "-not -wholename '*.svn*' " .
                          \ "-not -wholename '*.git*' " .
