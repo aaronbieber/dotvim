@@ -4,78 +4,78 @@ function! OpenReference()
     execute "cd ".g:Reference_File_Location
     execute "CtrlP"
 endfunction
-nmap <Leader>re :call OpenReference()<CR>
+nnoremap <Leader>re :call OpenReference()<CR>
 
 " Pass the selected lines through tidy with ,x.
-vmap <Leader>x :<Home>silent <End>!tidy -q -i --show-errors 0<CR>
+vnoremap <Leader>x :<Home>silent <End>!tidy -q -i --show-errors 0<CR>
 
 " Try to ween myself off of pressing zero ALL THE TIME.
-nmap 0 :echoe "Stop doing that!"<CR>
+nnoremap 0 :echoe "Stop doing that!"<CR>
 
 " Instead of using the not-so-awesome 'gf', use my awesome one.
-nmap gf :call Awesomegf()<CR>
+nnoremap gf :call Awesomegf()<CR>
 
 " Reformat paragraph.
-nmap <Leader>rp vipJVgq
+nnoremap <Leader>rp vipJVgq
 
 " Toggle paste mode.
-nmap <Leader>, :set paste!<CR>
+nnoremap <Leader>, :set paste!<CR>
 
 " Easily edit the alternate file without having to reach up and hit Ctrl-6.
 " Because my <Leader> is set to comma, I just hit `,,` to run this.
-nmap <Leader>. :e #<CR>
+nnoremap <Leader>. :e #<CR>
 
 " Toggle search highlighting.
-nmap <Space> :set hlsearch!<CR>
+nnoremap <Space> :set hlsearch!<CR>
 
 " Display a list of all search matches. This mapping cleverly uses the :g 
 " command to find lines matching the last-used search pattern and implicitly 
 " runs its default command "p", which prints matches.
-nmap g/ :g//<CR>
+nnoremap g/ :g//<CR>
 
 " Y yanks to the end of the line, as you would expect it to.
-nmap Y y$
+nnoremap Y y$
 
 " Leader-s toggles syntastic, which displays errors for 'interpretable' files.
-nmap <Leader>s :SyntasticToggleMode<CR>
+nnoremap <Leader>s :SyntasticToggleMode<CR>
 
 " Delete trailing whitespace.
 nnoremap <Leader>S :call StripTrailingWhitespace()<CR>
 
 " Create surrounding HTML tags out of the word near the cursor.
-imap <C-a> <ESC>viwc<"></"><ESC>cit
+inoremap <C-a> <ESC>viwc<"></"><ESC>cit
 
 " Set Shift-Left and Shift-Right to scroll left and right. Helpful while using
 " the diff function.
-nmap <S-Left> 5zh
-nmap <S-Right> 5zl
+nnoremap <S-Left> 5zh
+nnoremap <S-Right> 5zl
 
 " Map the movement command that cycles through diff changes to also center the
 " line vertically in the window when it is arrived at. It's convenient.
-nmap ]c ]cz.
-nmap [c [cz.
+nnoremap ]c ]cz.
+nnoremap [c [cz.
 
 " Indent or 'outdent' the last 'put' block with Ctrl-H (outdent) and Ctrl-L
 " (indent). This way you can put a block and immediately move it to the
 " correct indention. This is probably my favorite mapping.
-nmap <C-h> '[<lt>']
-nmap <C-l> '[>']
+nnoremap <C-h> '[<lt>']
+nnoremap <C-l> '[>']
 
 " Ctrl-E while in insert mode moves the cursor to the end of the line, a la
 " OS X and other UN*X interfaces (e.g. bash).
-imap <C-e> <Esc>A
+inoremap <C-e> <Esc>A
 
 " Allow the up and down arrows to move between LOGICAL lines of text on the
 " screen, even if they are wrapped portions of the same LITERAL line of text.
 " Works in any mode.
-map <Up> gk
-map <Down> gj
+noremap <Up> gk
+noremap <Down> gj
 
 " Mappings for easier split window navigation:
 " Ctrl-w followed by u and d for up and down moves you to the next window
 " either up or down and maximizes it all at once (accordion mode).
-nmap <C-w>u <C-w><Up><C-w>_
-nmap <C-w>d <C-w><Down><C-w>_
+nnoremap <C-w>u <C-w><Up><C-w>_
+nnoremap <C-w>d <C-w><Down><C-w>_
 
 " ----------------------------- Omnicompletion --------------------------------
 " Remap the omnicompletion commands because all the <C-x> shit is annoying.
@@ -90,20 +90,21 @@ inoremap <Leader>: <C-x><C-f>
 inoremap <Leader>= <C-x><C-l>
 
 " --------------------------------- Ctrl-P ------------------------------------
-nmap <C-p> :CtrlP<CR>
-nmap <Leader>b :CtrlPBuffer<CR>
+nnoremap <C-p> :CtrlP<CR>
+nnoremap <Leader>b :CtrlPBuffer<CR>
+nnoremap <Leader>f :CtrlPFunky<CR>
 
 " --------------------------- Visual Mode Mappings ----------------------------
 " In visual mode, D will Duplicate the selected lines after the visual block.
-vmap D y'>p']
+vnoremap D y'>p']
 
 " Allow * and # to work the way you would expect when some text is selected.
 " These use the z register for now until I can find the more elegant solution,
 " which I know exists.
-vmap * "zy/\V<C-r>z<CR>
-vmap # "zy?\V<C-r>z<CR>
+vnoremap * "zy/\V<C-r>z<CR>
+vnoremap # "zy?\V<C-r>z<CR>
 
 " Let ,a start an easy align command for me.
-vmap <Leader>a :EasyAlign<CR>
+vnoremap <Leader>a :EasyAlign<CR>
 
 " vim: set et ts=4 sw=4 :

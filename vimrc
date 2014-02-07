@@ -26,7 +26,7 @@ Bundle 'sheerun/vim-polyglot'
 Bundle 'StanAngeloff/php.vim'
 
 " My own stuff.
-Bundle 'git@github.com:aaronbieber/quicktask.git'
+Bundle 'git@github.com:aaronbieber/vim-quicktask.git'
 
 " Nyan cat is critical.
 Bundle 'koron/nyancat-vim'
@@ -66,6 +66,7 @@ Bundle 'tangledhelix/vim-octopress'
 call vundle#config#bundle('ervandew/supertab')            " One tab to rule them all.
 call vundle#config#bundle('junegunn/vim-easy-align')      " Align things. Easily.
 call vundle#config#bundle('kien/ctrlp.vim')               " Fuzzy finder like Sublime Text.
+call vundle#config#bundle('tacahiroy/ctrlp-funky')        " Fuzzy find tags!
 call vundle#config#bundle('majutsushi/tagbar')            " Display tags in a file and navigate.
 call vundle#config#bundle('mattn/emmet-vim')              " Create HTML quickly.
 call vundle#config#bundle('Raimondi/delimitMate')         " Type matching surrounds quickly.
