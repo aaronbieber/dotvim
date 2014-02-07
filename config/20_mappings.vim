@@ -6,6 +6,10 @@ function! OpenReference()
 endfunction
 nnoremap <Leader>re :call OpenReference()<CR>
 
+" Change colors (mnemonic: change your colors {light|dark}).
+nnoremap cycl :colorscheme Tomorrow<CR>
+nnoremap cycd :colorscheme xoria256<CR>
+
 " Pass the selected lines through tidy with ,x.
 vnoremap <Leader>x :<Home>silent <End>!tidy -q -i --show-errors 0<CR>
 
