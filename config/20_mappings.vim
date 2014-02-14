@@ -1,10 +1,6 @@
-" Open reference documents. This could almost be a plugin.
-function! OpenReference()
-    execute "tabnew"
-    execute "cd ".g:Reference_File_Location
-    execute "CtrlP"
-endfunction
-nnoremap <Leader>re :call OpenReference()<CR>
+" Add ten spaces before the cursor with ,<Space>. Handy for re-indenting lines 
+" that don't automatically wrap (like wrapping docblock comments).
+nnoremap <Leader><Space> 10i<Space><Esc>l
 
 " Change colors (mnemonic: change your colors {light|dark}).
 nnoremap cycl :colorscheme Tomorrow<CR>
@@ -18,6 +14,9 @@ nnoremap 0 :echoe "Stop doing that!"<CR>
 
 " Instead of using the not-so-awesome 'gf', use my awesome one.
 nnoremap gf :call Awesomegf()<CR>
+
+" Let's try this for a while. I'm still skeptical.
+inoremap jk <Esc>
 
 " Reformat paragraph.
 nnoremap <Leader>rp vipJVgq
@@ -47,7 +46,7 @@ nnoremap <Leader>s :SyntasticToggleMode<CR>
 nnoremap <Leader>S :call StripTrailingWhitespace()<CR>
 
 " Create surrounding HTML tags out of the word near the cursor.
-inoremap <C-a> <ESC>viwc<"></"><ESC>cit
+inoremap <C-a> <Esc>viwc<"></"><Esc>cit
 
 " Set Shift-Left and Shift-Right to scroll left and right. Helpful while using
 " the diff function.
