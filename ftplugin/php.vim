@@ -25,3 +25,5 @@ augroup php
     " Strip trailing whitespace on save.
     autocmd BufWritePre *.php :call StripTrailingWhitespace()
 augroup END
+
+nnoremap cydd viWol"aymaidata->:%s/\v\$\zsa(>\|-)\@=/data->&/g`a
