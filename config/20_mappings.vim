@@ -80,6 +80,12 @@ noremap <Down> gj
 nnoremap <C-w>u <C-w><Up><C-w>_
 nnoremap <C-w>d <C-w><Down><C-w>_
 
+" Why don't I do this like everyone else?
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
 " ----------------------------- Omnicompletion --------------------------------
 " Remap the omnicompletion commands because all the <C-x> shit is annoying.
 
