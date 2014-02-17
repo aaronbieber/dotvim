@@ -63,20 +63,21 @@ Bundle 'tangledhelix/vim-octopress'
 
 " Helpers -- these use the direct call to vundle#config#bundle because the
 " Bundle command thinks that the comments at the end are arguments. Woof.
-call vundle#config#bundle('ervandew/supertab')            " One tab to rule them all.
-call vundle#config#bundle('junegunn/vim-easy-align')      " Align things. Easily.
-call vundle#config#bundle('kien/ctrlp.vim')               " Fuzzy finder like Sublime Text.
-call vundle#config#bundle('tacahiroy/ctrlp-funky')        " Fuzzy find tags!
-call vundle#config#bundle('majutsushi/tagbar')            " Display tags in a file and navigate.
-call vundle#config#bundle('mattn/emmet-vim')              " Create HTML quickly.
-call vundle#config#bundle('Raimondi/delimitMate')         " Type matching surrounds quickly.
-call vundle#config#bundle('SirVer/ultisnips')             " Like snippets from TextMate.
-call vundle#config#bundle('mileszs/ack.vim')              " Use ack directly from Vim.
-call vundle#config#bundle('rking/ag.vim')                 " Use ag directly from Vim.
-call vundle#config#bundle('justinmk/vim-sneak')           " Sneak around by two-letter searches.
-call vundle#config#bundle('Keithbsmiley/investigate.vim') " Look up language definitions.
-call vundle#config#bundle('vim-php/tagbar-phpctags.vim')  " TagBar support for phpctags.
-call vundle#config#bundle('terryma/vim-multiple-cursors') " Eat it, Sublime Text.
+call vundle#config#bundle('ervandew/supertab')              " One tab to rule them all.
+call vundle#config#bundle('junegunn/vim-easy-align')        " Align things. Easily.
+call vundle#config#bundle('kien/ctrlp.vim')                 " Fuzzy finder like Sublime Text.
+call vundle#config#bundle('tacahiroy/ctrlp-funky')          " Fuzzy find tags!
+call vundle#config#bundle('majutsushi/tagbar')              " Display tags in a file and navigate.
+call vundle#config#bundle('mattn/emmet-vim')                " Create HTML quickly.
+call vundle#config#bundle('Raimondi/delimitMate')           " Type matching surrounds quickly.
+call vundle#config#bundle('SirVer/ultisnips')               " Like snippets from TextMate.
+call vundle#config#bundle('mileszs/ack.vim')                " Use ack directly from Vim.
+call vundle#config#bundle('rking/ag.vim')                   " Use ag directly from Vim.
+call vundle#config#bundle('justinmk/vim-sneak')             " Sneak around by two-letter searches.
+call vundle#config#bundle('Keithbsmiley/investigate.vim')   " Look up language definitions.
+call vundle#config#bundle('vim-php/tagbar-phpctags.vim')    " TagBar support for phpctags.
+call vundle#config#bundle('terryma/vim-multiple-cursors')   " Eat it, Sublime Text.
+call vundle#config#bundle('christoomey/vim-tmux-navigator') " Navigate Tmux pane-lessly.
 
 if vundle_autoinstall
     echo "Installing bundles..."
