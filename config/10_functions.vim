@@ -108,6 +108,16 @@ function! CreateInserts()
     endfor
 endfun
 
+function! Pandoc(from, to, ...)
+    let tempfile = tempname()
+    let savemodified = &modified
+    exe 'w ' . tempfile
+    let &modified = savemodified
+    exe 'split ' . tempfile
+    exe 'silent %! pandoc -f markdown -t html'
+endfunction
+command! -nargs=+ Pandoc call Pandoc(<f-args>)
+
 function! MarkdownFilter()
     let path_to_source_file = expand('%:p')
     let path_to_html_file = path_to_source_file . '.html'
