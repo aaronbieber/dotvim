@@ -38,9 +38,9 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-vinegar'
 Bundle 'tpope/vim-obsession'
+Bundle 'tpope/vim-markdown'
 
 " Scrooloose FTW.
-" Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 
 " Colors
@@ -55,7 +55,7 @@ Bundle 'baverman/vim-babymate256'
 
 " Syntaxes and language support
 Bundle 'pangloss/vim-javascript'
-Bundle 'tangledhelix/vim-octopress'
+" Bundle 'tangledhelix/vim-octopress'
 " This plug-in is huge and causes errors during BundleInstall, but it's the
 " de-facto standard for LaTeX so I'm leaving it here as a reminder for the
 " day I want to edit LaTeX, which is not uncommon for me at all.
@@ -69,7 +69,8 @@ call vundle#config#bundle('kien/ctrlp.vim')                 " Fuzzy finder like 
 call vundle#config#bundle('tacahiroy/ctrlp-funky')          " Fuzzy find tags!
 call vundle#config#bundle('majutsushi/tagbar')              " Display tags in a file and navigate.
 call vundle#config#bundle('mattn/emmet-vim')                " Create HTML quickly.
-call vundle#config#bundle('Raimondi/delimitMate')           " Type matching surrounds quickly.
+"call vundle#config#bundle('Raimondi/delimitMate')           " Type matching surrounds quickly.
+call vundle#config#bundle('jiangmiao/auto-pairs')           " Type matching surrounds quickly.
 call vundle#config#bundle('SirVer/ultisnips')               " Like snippets from TextMate.
 call vundle#config#bundle('mileszs/ack.vim')                " Use ack directly from Vim.
 call vundle#config#bundle('rking/ag.vim')                   " Use ag directly from Vim.
