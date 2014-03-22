@@ -72,6 +72,7 @@ call vundle#config#bundle('mattn/emmet-vim')                " Create HTML quickl
 "call vundle#config#bundle('Raimondi/delimitMate')           " Type matching surrounds quickly.
 call vundle#config#bundle('jiangmiao/auto-pairs')           " Type matching surrounds quickly.
 call vundle#config#bundle('SirVer/ultisnips')               " Like snippets from TextMate.
+call vundle#config#bundle('honza/vim-snippets')             " Community snippets.
 call vundle#config#bundle('mileszs/ack.vim')                " Use ack directly from Vim.
 call vundle#config#bundle('rking/ag.vim')                   " Use ag directly from Vim.
 call vundle#config#bundle('justinmk/vim-sneak')             " Sneak around by two-letter searches.
