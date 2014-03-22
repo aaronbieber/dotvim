@@ -119,7 +119,7 @@ let g:quicktask_snip_win_maximize = 1
 
 " -------------------------------- Snippets ----------------------------------
 let g:snips_author = 'Aaron Bieber <abieber@wayfair.com>'
-let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snippets"]
+let g:UltiSnipsSnippetDirectories = ["UltiSnips", "ultisnips"]
 let g:UltiSnipsDontReverseSearchPath = "0"
 
 " -------------------------------- Syntastic ---------------------------------
