@@ -63,11 +63,14 @@ nnoremap <S-Right> 5zl
 nnoremap ]c ]cz.
 nnoremap [c [cz.
 
-" Indent or 'outdent' the last 'put' block with Ctrl-H (outdent) and Ctrl-L
+" Indent or 'outdent' the last 'put' block with shift-tab (outdent) and tab
 " (indent). This way you can put a block and immediately move it to the
 " correct indention. This is probably my favorite mapping.
-nnoremap <C-h> '[<lt>']
-nnoremap <C-l> '[>']
+nnoremap <S-Tab> '[<lt>']
+nnoremap <Tab> '[>']
+
+nnoremap [j <C-i>
+nnoremap ]j <C-o>
 
 " Ctrl-E while in insert mode moves the cursor to the end of the line, a la
 " OS X and other UN*X interfaces (e.g. bash).
