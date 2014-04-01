@@ -106,7 +106,9 @@ let g:ctrlp_user_command = "find %s -type f " .
                          \ "-not -iname '*.gif' " .
                          \ "-not -iname '*.pdf' " .
                          \ "-not -iname '*.png' " .
-                         \ "| sort -d"
+                         \ "| while read filename; do " .
+                         \ "FN=${filename##*/}; echo $#FN $filename; ".
+                         \ "done | sort -n | awk '{print $2}'"
 let g:ctrlp_custom_ignore = {
     \ 'dir': '\.git$|\.svn$',
     \ 'file': '\.so$|\.dat$|\.DS_Store$|Thumbs.db|\.pdf$|\.jpg$|\.png$|\.ttf$|\.gif$'
