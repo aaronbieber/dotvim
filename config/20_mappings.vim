@@ -1,7 +1,7 @@
 " Allows incsearch highlighting for range commands.
-cnoremap $t <CR>:t''<CR>
-cnoremap $m <CR>:m''<CR>
-cnoremap $d <CR>:d<CR>``
+cnoremap ~~t <CR>:t''<CR>
+cnoremap ~~m <CR>:m''<CR>
+cnoremap ~~d <CR>:d<CR>``
 
 " Add ten spaces before the cursor with ,<Space>. Handy for re-indenting lines 
 " that don't automatically wrap (like wrapping docblock comments).
