@@ -81,6 +81,7 @@ call vundle#config#bundle('Keithbsmiley/investigate.vim')   " Look up language d
 call vundle#config#bundle('vim-php/tagbar-phpctags.vim')    " TagBar support for phpctags.
 call vundle#config#bundle('terryma/vim-multiple-cursors')   " Eat it, Sublime Text.
 call vundle#config#bundle('christoomey/vim-tmux-navigator') " Navigate Tmux pane-lessly.
+call vundle#config#bundle('gcmt/wildfire.vim')              " Ever expanding text objects.
 
 if vundle_autoinstall
     echo "Installing bundles..."

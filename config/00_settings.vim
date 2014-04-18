@@ -107,7 +107,7 @@ let g:ctrlp_user_command = "find %s -type f " .
                          \ "-not -iname '*.pdf' " .
                          \ "-not -iname '*.png' " .
                          \ "| while read filename; do " .
-                         \ "FN=${filename##*/}; echo $#FN $filename; ".
+                         \ "echo $#filename $filename; ".
                          \ "done | sort -n | awk '{print $2}'"
 let g:ctrlp_custom_ignore = {
     \ 'dir': '\.git$|\.svn$',
@@ -150,5 +150,9 @@ let g:signify_disable_by_default = 1
 " ------------------------------- Investigate -------------------------------
 " I'm using devdocs.io because searches on php.net never work. Thanks, php.net.
 let g:investigate_url_for_php="http://devdocs.io/#q=^s"
+
+" Wildfire
+let g:wildfire_fuel_map = "\\"
+let g:wildfire_water_map = "<BS>"
 
 " vim: set et ts=4 sw=4 :
