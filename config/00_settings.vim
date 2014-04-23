@@ -151,8 +151,11 @@ let g:signify_disable_by_default = 1
 " I'm using devdocs.io because searches on php.net never work. Thanks, php.net.
 let g:investigate_url_for_php="http://devdocs.io/#q=^s"
 
-" Wildfire
+" -------------------------------- Wildfire ---------------------------------
 let g:wildfire_fuel_map = "\\"
 let g:wildfire_water_map = "<BS>"
+
+" -------------------------------- Supertab ---------------------------------
+let g:SuperTabDefaultCompletionType = "context"
 
 " vim: set et ts=4 sw=4 :

@@ -54,6 +54,11 @@ Bundle 'Lokaltog/vim-distinguished'
 Bundle 'blackgate/tropikos-vim-theme'
 Bundle 'baverman/vim-babymate256'
 
+" PHP stuffs.
+Bundle 'vim-php/tagbar-phpctags.vim'
+Bundle 'arnaud-lb/vim-php-namespace'
+Bundle 'shawncplus/phpcomplete.vim'
+
 " Syntaxes and language support
 Bundle 'pangloss/vim-javascript'
 " Bundle 'tangledhelix/vim-octopress'
@@ -70,7 +75,6 @@ call vundle#config#bundle('kien/ctrlp.vim')                 " Fuzzy finder like 
 call vundle#config#bundle('tacahiroy/ctrlp-funky')          " Fuzzy find tags!
 call vundle#config#bundle('majutsushi/tagbar')              " Display tags in a file and navigate.
 call vundle#config#bundle('mattn/emmet-vim')                " Create HTML quickly.
-"call vundle#config#bundle('Raimondi/delimitMate')           " Type matching surrounds quickly.
 call vundle#config#bundle('jiangmiao/auto-pairs')           " Type matching surrounds quickly.
 call vundle#config#bundle('SirVer/ultisnips')               " Like snippets from TextMate.
 call vundle#config#bundle('honza/vim-snippets')             " Community snippets.
@@ -78,7 +82,6 @@ call vundle#config#bundle('mileszs/ack.vim')                " Use ack directly f
 call vundle#config#bundle('rking/ag.vim')                   " Use ag directly from Vim.
 call vundle#config#bundle('justinmk/vim-sneak')             " Sneak around by two-letter searches.
 call vundle#config#bundle('Keithbsmiley/investigate.vim')   " Look up language definitions.
-call vundle#config#bundle('vim-php/tagbar-phpctags.vim')    " TagBar support for phpctags.
 call vundle#config#bundle('terryma/vim-multiple-cursors')   " Eat it, Sublime Text.
 call vundle#config#bundle('christoomey/vim-tmux-navigator') " Navigate Tmux pane-lessly.
 call vundle#config#bundle('gcmt/wildfire.vim')              " Ever expanding text objects.
