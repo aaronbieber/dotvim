@@ -1,3 +1,6 @@
+set colorcolumn=+1
 set expandtab
-set ts=4
+set spell
 set sw=4
+set textwidth=80
+set ts=4
