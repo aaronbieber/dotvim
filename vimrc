@@ -13,78 +13,61 @@ if !filereadable(vundle_readme)
 endif
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " Vundle manages Vundle. Vundleception!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " Lightline is a nice alternative to Powerline.
-Bundle 'itchyny/lightline.vim'
+Plugin 'itchyny/lightline.vim'
 
 " A whole collection of language support files.
-Bundle 'sheerun/vim-polyglot'
-Bundle 'StanAngeloff/php.vim'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'StanAngeloff/php.vim'
 
 " My own stuff.
-Bundle 'git@github.com:aaronbieber/vim-quicktask.git'
-Bundle 'git@github.com:aaronbieber/vim-vault.git'
+Plugin 'git@github.com:aaronbieber/vim-quicktask.git'
+Plugin 'git@github.com:aaronbieber/vim-vault.git'
 
 " Nyan cat is critical.
-Bundle 'koron/nyancat-vim'
+Plugin 'koron/nyancat-vim'
 
 " Tim Pope FTW.
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-vinegar'
-Bundle 'tpope/vim-obsession'
-Bundle 'tpope/vim-markdown'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-obsession'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-vinegar'
 
 " Scrooloose FTW.
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
-" Colors
-Bundle 'ciaranm/inkpot'
-Bundle 'MaxSt/FlatColor'
-Bundle 'w0ng/vim-hybrid'
-Bundle 'sjl/badwolf'
-Bundle 'shawncplus/skittles_berry'
-Bundle 'Lokaltog/vim-distinguished'
-Bundle 'blackgate/tropikos-vim-theme'
-Bundle 'baverman/vim-babymate256'
+" Helpers.
+Plugin 'Keithbsmiley/investigate.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'ervandew/supertab'
+Plugin 'gcmt/wildfire.vim'
+Plugin 'honza/vim-snippets'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'justinmk/vim-sneak'
+Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'mattn/emmet-vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'terryma/vim-multiple-cursors'
 
-" PHP stuffs.
-Bundle 'vim-php/tagbar-phpctags.vim'
-Bundle 'arnaud-lb/vim-php-namespace'
-Bundle 'shawncplus/phpcomplete.vim'
-
-" Syntaxes and language support
-Bundle 'pangloss/vim-javascript'
-" Bundle 'tangledhelix/vim-octopress'
 " This plug-in is huge and causes errors during BundleInstall, but it's the
 " de-facto standard for LaTeX so I'm leaving it here as a reminder for the
 " day I want to edit LaTeX, which is not uncommon for me at all.
 " Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 
-" Helpers -- these use the direct call to vundle#config#bundle because the
-" Bundle command thinks that the comments at the end are arguments. Woof.
-call vundle#config#bundle('ervandew/supertab')              " One tab to rule them all.
-call vundle#config#bundle('junegunn/vim-easy-align')        " Align things. Easily.
-call vundle#config#bundle('kien/ctrlp.vim')                 " Fuzzy finder like Sublime Text.
-call vundle#config#bundle('tacahiroy/ctrlp-funky')          " Fuzzy find tags!
-call vundle#config#bundle('majutsushi/tagbar')              " Display tags in a file and navigate.
-call vundle#config#bundle('mattn/emmet-vim')                " Create HTML quickly.
-call vundle#config#bundle('jiangmiao/auto-pairs')           " Type matching surrounds quickly.
-call vundle#config#bundle('SirVer/ultisnips')               " Like snippets from TextMate.
-call vundle#config#bundle('honza/vim-snippets')             " Community snippets.
-call vundle#config#bundle('mileszs/ack.vim')                " Use ack directly from Vim.
-call vundle#config#bundle('rking/ag.vim')                   " Use ag directly from Vim.
-call vundle#config#bundle('justinmk/vim-sneak')             " Sneak around by two-letter searches.
-call vundle#config#bundle('Keithbsmiley/investigate.vim')   " Look up language definitions.
-call vundle#config#bundle('terryma/vim-multiple-cursors')   " Eat it, Sublime Text.
-call vundle#config#bundle('christoomey/vim-tmux-navigator') " Navigate Tmux pane-lessly.
-call vundle#config#bundle('gcmt/wildfire.vim')              " Ever expanding text objects.
+call vundle#end()
 
 if vundle_autoinstall
     echo "Installing bundles..."
