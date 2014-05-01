@@ -48,6 +48,7 @@ set sessionoptions=blank,buffers,curdir,folds,help,tabpages,unix
 
 " If there is support for the unnamed plus register (default X11 clipboard), use
 " it as the default yank, delete, change, and put operations.
+set clipboard=unnamed
 if has('unnamedplus')
     set clipboard=unnamedplus
 endif
