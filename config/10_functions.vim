@@ -142,15 +142,22 @@ function! StripTrailingWhitespace()
 endfunction
 
 function! Awesomegf()
-    let possible_filename_matches = matchlist(getline("."), "\\v['\"]([^'\"]+)['\"]")
+    let possible_filename = expand('<cfile>')
 
-    if len(possible_filename_matches) > 0
-        let possible_filename = possible_filename_matches[1]
-        if filereadable(expand(possible_filename))
-            exec "e " . expand(possible_filename)
-        elseif filereadable(expand(strpart(possible_filename, 1)))
-            exec "e " . expand(strpart(possible_filename, 1))
-        endif
+    if len(possible_filename) == 0
+        return
+    endif
+
+    " This is the built-in method. If there is a string under the cursor that 
+    " resembles a file and it can be opened directly with `e`, just do it.
+    if filereadable(possible_filename)
+        exec "e " . expand('<cfile>')
+    elseif filereadable(strpart(possible_filename, 1))
+        " If we couldn't open it as-is, try hacking off the first character. If 
+        " that first character was a leading forward slash and our working 
+        " directory is the root, everything will work. I realize that this 
+        " solution is dependent on my environment and workflow.
+        exec "e " . strpart(possible_filename, 1)
     endif
 endfunction
 
