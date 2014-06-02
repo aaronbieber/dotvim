@@ -1,7 +1,54 @@
 " Allows incsearch highlighting for range commands.
-cnoremap ~~t <CR>:t''<CR>
+cnoremap ~~c <CR>:t''<CR>
 cnoremap ~~m <CR>:m''<CR>
 cnoremap ~~d <CR>:d<CR>``
+
+function! HangingIndentSetCol()
+    let b:hanging_indent_col = string(col('.'))
+
+    " Add a colorcolumn if we need it.
+    if index(split(&colorcolumn, ','), b:hanging_indent_col) == -1
+        let &colorcolumn = &colorcolumn . ',' . b:hanging_indent_col
+    endif
+
+    echo "Hanging indent column set to " . b:hanging_indent_col
+endfunction
+
+function! HangingIndentAlignCol()
+    if line('.') > 1
+        let previous_line = getline(line('.') - 1)
+        let next_column = match(previous_line, ' [^ ]', col('.') - 1)
+        if next_column > -1
+            let next_column += 1
+            exec "normal " . (next_column - col('.') + 1) . "i \<Esc>l"
+        endif
+    endif
+
+    return
+
+    if !exists('b:hanging_indent_col') || b:hanging_indent_col == ''
+        echom "No hanging indent is set!"
+    else
+        let b:count = b:hanging_indent_col - col('.')
+        exec "normal " . b:count . "i \<Esc>l"
+    endif
+endfunction
+
+function! HangingIndentUnsetCol()
+    let colorcolumn_list = split(&colorcolumn, ',')
+    if len(colorcolumn_list) > 1 && index(colorcolumn_list, b:hanging_indent_col) > -1
+        let hanging_indent_index = index(colorcolumn_list, b:hanging_indent_col)
+        call remove(colorcolumn_list, hanging_indent_index)
+        let &colorcolumn = join(colorcolumn_list, ',')
+    endif
+
+    let b:hanging_indent_col = ''
+endfunction
+
+nnoremap chs :call HangingIndentSetCol()<CR>
+nnoremap chu :call HangingIndentUnsetCol()<CR>
+nnoremap <Leader><Tab> :call HangingIndentAlignCol()<CR>
+inoremap <Leader><Tab> <Esc>:call HangingIndentAlignCol()<CR>a
 
 " Add ten spaces before the cursor with ,<Space>. Handy for re-indenting lines 
 " that don't automatically wrap (like wrapping docblock comments).
@@ -69,8 +116,8 @@ nnoremap [c [cz.
 nnoremap <S-Tab> '[<lt>']
 nnoremap <Tab> '[>']
 
-nnoremap [j <C-i>
-nnoremap ]j <C-o>
+nnoremap [j <C-o>
+nnoremap ]j <C-i>
 
 " Ctrl-E while in insert mode moves the cursor to the end of the line, a la
 " OS X and other UN*X interfaces (e.g. bash).
@@ -98,7 +145,7 @@ nnoremap <C-l> <C-w>l
 " Remap the omnicompletion commands because all the <C-x> shit is annoying.
 
 " Words
-inoremap <Leader><Tab> <C-x><C-o>
+"inoremap <Leader><Tab> <C-x><C-o>
 
 " Filenames
 inoremap <Leader>: <C-x><C-f>
@@ -110,6 +157,7 @@ inoremap <Leader>= <C-x><C-l>
 nnoremap <C-p> :CtrlP<CR>
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>f :CtrlPFunky<CR>
+nnoremap <Leader>t :CtrlPTag<CR>
 
 " --------------------------- Visual Mode Mappings ----------------------------
 " In visual mode, D will Duplicate the selected lines after the visual block.
