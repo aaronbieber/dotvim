@@ -33,13 +33,14 @@ Plugin 'git@github.com:aaronbieber/vim-vault.git'
 Plugin 'koron/nyancat-vim'
 
 " Tim Pope FTW.
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-obsession'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-vinegar'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-vinegar'
+Bundle 'tpope/vim-obsession'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-eunuch'
 
 " Scrooloose FTW.
 Plugin 'scrooloose/syntastic'
