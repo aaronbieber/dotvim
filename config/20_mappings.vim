@@ -3,54 +3,46 @@ cnoremap ~~c <CR>:t''<CR>
 cnoremap ~~m <CR>:m''<CR>
 cnoremap ~~d <CR>:d<CR>``
 
-function! HangingIndentSetCol()
-    let b:hanging_indent_col = string(col('.'))
-
-    " Add a colorcolumn if we need it.
-    if index(split(&colorcolumn, ','), b:hanging_indent_col) == -1
-        let &colorcolumn = &colorcolumn . ',' . b:hanging_indent_col
-    endif
-
-    echo "Hanging indent column set to " . b:hanging_indent_col
-endfunction
-
+" Insert the required number of spaces to move the cursor to align with the next
+" column of text based upon the line immediately above the cursor's location.
+" This has the effect of allowing you to easily move to the next 'hanging
+" indent' location.
+"
+" Example:
+"
+" The quick brown fox jumped over the lazy dog.
+"      |
+"
+" With the cursor at the location of the pipe, pressing <Leader><Tab> will
+" insert spaces adequate to move the cursor to directly beneath the 'b' in
+" 'brown'. Pressing <Leader><Tab> again will move the cursor to beneath the 'f'
+" in 'fox'.
 function! HangingIndentAlignCol()
     if line('.') > 1
         let previous_line = getline(line('.') - 1)
-        let next_column = match(previous_line, ' [^ ]', col('.') - 1)
+        let next_column = match(previous_line, ' [^ ]', col('.'))
+
         if next_column > -1
             let next_column += 1
-            exec "normal " . (next_column - col('.') + 1) . "i \<Esc>l"
+            let thecount = next_column - col('.')
+            let operator = 'a'
+
+            if col('$') == 1
+                let thecount += 1
+            endif
+
+            if (col('$') - 1) != col('.')
+                let operator = 'i'
+            endif
+
+            exec "normal " . thecount . operator . " \<Esc>"
         endif
     endif
-
-    return
-
-    if !exists('b:hanging_indent_col') || b:hanging_indent_col == ''
-        echom "No hanging indent is set!"
-    else
-        let b:count = b:hanging_indent_col - col('.')
-        exec "normal " . b:count . "i \<Esc>l"
-    endif
 endfunction
 
-function! HangingIndentUnsetCol()
-    let colorcolumn_list = split(&colorcolumn, ',')
-    if len(colorcolumn_list) > 1 && index(colorcolumn_list, b:hanging_indent_col) > -1
-        let hanging_indent_index = index(colorcolumn_list, b:hanging_indent_col)
-        call remove(colorcolumn_list, hanging_indent_index)
-        let &colorcolumn = join(colorcolumn_list, ',')
-    endif
-
-    let b:hanging_indent_col = ''
-endfunction
-
-nnoremap chs :call HangingIndentSetCol()<CR>
-nnoremap chu :call HangingIndentUnsetCol()<CR>
-nnoremap <Leader><Tab> :call HangingIndentAlignCol()<CR>
 inoremap <Leader><Tab> <Esc>:call HangingIndentAlignCol()<CR>a
 
-" Add ten spaces before the cursor with ,<Space>. Handy for re-indenting lines 
+" Add ten spaces before the cursor with ,<Space>. Handy for re-indenting lines
 " that don't automatically wrap (like wrapping docblock comments).
 nnoremap <Leader><Space> 10i<Space><Esc>l
 
@@ -83,8 +75,8 @@ nnoremap <Leader>. :e #<CR>
 " Toggle search highlighting.
 nnoremap <Space> :set hlsearch!<CR>
 
-" Display a list of all search matches. This mapping cleverly uses the :g 
-" command to find lines matching the last-used search pattern and implicitly 
+" Display a list of all search matches. This mapping cleverly uses the :g
+" command to find lines matching the last-used search pattern and implicitly
 " runs its default command "p", which prints matches.
 nnoremap g/ :g//<CR>
 
