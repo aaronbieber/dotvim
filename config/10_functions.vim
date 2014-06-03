@@ -114,9 +114,11 @@ function! Pandoc(from, to, ...)
     exe 'w ' . tempfile
     let &modified = savemodified
     exe 'split ' . tempfile
-    exe 'silent %! pandoc -f markdown -t html'
+    exe 'silent %! pandoc -f ' . a:from . ' -t ' . a:to
+    exe 'setlocal filetype=' . a:to
 endfunction
 command! -nargs=+ Pandoc call Pandoc(<f-args>)
+command! Markdown call Pandoc('markdown', 'html')
 
 function! MarkdownFilter()
     let path_to_source_file = expand('%:p')
