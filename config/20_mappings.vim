@@ -20,10 +20,15 @@ cnoremap ~~d <CR>:d<CR>``
 function! HangingIndentAlignCol()
     if line('.') > 1
         let previous_line = getline(line('.') - 1)
-        let next_column = match(previous_line, ' [^ ]', col('.'))
+        let next_column = match(previous_line, ' \zs[^ ]', col('.'))
+        echom "HangingIndentAlignCol: matched on offset " . next_column
 
         if next_column > -1
-            let next_column += 1
+            " match() returns a byte offset. Convert to a column number by
+            " adding one.
+            "let next_column += 1
+
+            "echom "HangingIndentAlignCol: cursor column is " . col('.')
             let thecount = next_column - col('.')
             let operator = 'a'
 
@@ -31,10 +36,25 @@ function! HangingIndentAlignCol()
                 let thecount += 1
             endif
 
-            if (col('$') - 1) != col('.')
+            " The cursor is NOT at the end of the line.
+            if col('.') < (col('$') - 1)
+                " Use 'i' to insert before the cursor if we're not at the end.
                 let operator = 'i'
+
+                " If the cursor is not in the first column, move it forward to
+                " compensate for having just pressed <Esc> to leave insert mode.
+                if col('.') > 1
+                    exec "normal l"
+                else
+                    " If the cursor is in the first column (but not at the end
+                    " of the line), then we are inserting spaces before text
+                    " that already exists on this line. Add one more space
+                    " to the offset to compensate for that.
+                    let thecount += 1
+                endif
             endif
 
+            "echom "HangingIndentAlignCol: add " . thecount . " spaces with '" . operator . "' to col " . next_column
             exec "normal " . thecount . operator . " \<Esc>"
         endif
     endif
