@@ -144,7 +144,9 @@ function! StripTrailingWhitespace()
 endfunction
 
 function! Awesomegf()
-    let possible_filename = expand('<cfile>')
+    " Double-expand because the inner one gets the path-like string under the 
+    " cursor and the outer one expands shell symbols like `~`
+    let possible_filename = expand(expand('<cfile>'))
 
     if len(possible_filename) == 0
         return
