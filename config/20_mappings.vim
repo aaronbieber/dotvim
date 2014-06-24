@@ -3,6 +3,10 @@ cnoremap ~~c <CR>:t''<CR>
 cnoremap ~~m <CR>:m''<CR>
 cnoremap ~~d <CR>:d<CR>``
 
+" Open the current line of the current file in our online codebase search.
+nnoremap gS :call system("xdg-open http://dox.wayfair.com/source/xref/php/" . expand("%") . '\#' . line('.'))<CR>
+vnoremap gO "ay :call system("xdg-open " . @a)<CR>gv
+
 " Insert the required number of spaces to move the cursor to align with the next
 " column of text based upon the line immediately above the cursor's location.
 " This has the effect of allowing you to easily move to the next 'hanging
@@ -169,7 +173,6 @@ inoremap <Leader>= <C-x><C-l>
 nnoremap <C-p> :CtrlP<CR>
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>f :CtrlPFunky<CR>
-nnoremap <Leader>t :CtrlPTag<CR>
 
 " --------------------------- Visual Mode Mappings ----------------------------
 " In visual mode, D will Duplicate the selected lines after the visual block.
