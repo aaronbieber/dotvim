@@ -113,9 +113,10 @@ function! Pandoc(from, to, ...)
     let savemodified = &modified
     exe 'w ' . tempfile
     let &modified = savemodified
-    exe 'split ' . tempfile
-    exe 'silent %! pandoc -f ' . a:from . ' -t ' . a:to
+    exe 'new'
+    exe 'r ' . tempfile
     exe 'setlocal filetype=' . a:to
+    exe 'silent %! pandoc -f ' . a:from . ' -t ' . a:to
 endfunction
 command! -nargs=+ Pandoc call Pandoc(<f-args>)
 command! Markdown call Pandoc('markdown', 'html')
