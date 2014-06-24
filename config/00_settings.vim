@@ -99,7 +99,8 @@ let NERDTreeQuitOnOpen=0
 
 " --------------------------------- CtrlP ------------------------------------
 let g:ctrlp_open_new_file = 'h'
-let g:ctrlp_extensions = ['funky']
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_extensions = ['funky', 'gazetteer']
 let g:ctrlp_user_command = "find %s -type f " .
                          \ "-not -wholename '*.svn*' " .
                          \ "-not -wholename '*.git*' " .
@@ -158,5 +159,9 @@ let g:wildfire_water_map = "<BS>"
 
 " -------------------------------- Supertab ---------------------------------
 let g:SuperTabDefaultCompletionType = "context"
+
+" ------------------------------- EasyMotion --------------------------------
+nmap s <Plug>(easymotion-s)
+let g:EasyMotion_smartcase = 1
 
 " vim: set et ts=4 sw=4 :
