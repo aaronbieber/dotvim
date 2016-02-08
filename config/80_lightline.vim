@@ -12,8 +12,8 @@ let g:lightline = {
       \   'fileencoding': 'LLFileEncoding',
       \   'mode': 'LLMode'
       \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
       \ }
 
 function! LLModified()
@@ -21,7 +21,7 @@ function! LLModified()
 endfunction
 
 function! LLReadOnly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &ro ? '⭤ ' : ''
+  return &ft !~? 'help\|vimfiler\|gundo' && &ro ? '!' : ''
 endfunction
 
 function! LLFilename()
@@ -31,7 +31,7 @@ function! LLFilename()
 endfunction
 
 function! LLFugitive()
-  return &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head') && strlen(fugitive#head()) ? '⭠ '.fugitive#head() : ''
+  return &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head') && strlen(fugitive#head()) ? 'git:'.fugitive#head() : ''
 endfunction
 
 function! LLFileFormat()

@@ -54,7 +54,7 @@ if has('unnamedplus')
 endif
 
 " Set my colorscheme.
-colorscheme xoria256
+colorscheme jellybeans
 
 " Don't create backup files when editing in these locations.
 set backupskip=/tmp/*,/private/tmp/*
