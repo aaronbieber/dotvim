@@ -77,9 +77,6 @@ nnoremap cycd :colorscheme xoria256<CR>
 " Pass the selected lines through tidy with ,x.
 vnoremap <Leader>x :<Home>silent <End>!tidy -q -i --show-errors 0<CR>
 
-" Try to ween myself off of pressing zero ALL THE TIME.
-nnoremap 0 :echoe "Stop doing that!"<CR>
-
 " Instead of using the not-so-awesome 'gf', use my awesome one.
 nnoremap gf :call Awesomegf()<CR>
 
